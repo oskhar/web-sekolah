@@ -1,66 +1,17 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Perencanaan dari model database, dan desain arsitektur program website sekolah menggunakan Laravel:
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Perencanaan**:
+- Tujuan: Membangun website sekolah yang berfungsi sebagai platform informasi dan interaksi antara siswa, guru, dan orang tua.
+- Fitur: Halaman beranda, profil sekolah, daftar pengumuman, jadwal pelajaran, daftar siswa, daftar guru, sistem autentikasi pengguna, dll.
+- Sketsa: Buat sketsa tata letak halaman beranda dengan elemen-elemen seperti header dengan logo dan menu navigasi, bagian pengumuman terbaru, daftar siswa, dan bagian kontak sekolah.
 
-## About Laravel
+**Model Database**:
+- Entitas utama: Siswa, Guru, Kelas, Mata Pelajaran, Pengumuman.
+- Tabel Database: Buat tabel-tabel dalam database seperti students, teachers, classes, subjects, dan announcements.
+- Kolom-kolom dalam Tabel: Untuk tabel siswa (students), misalnya, Anda dapat memiliki kolom seperti id, nama, jenis_kelamin, alamat, kelas_id, dll. Sedangkan untuk tabel guru (teachers), Anda dapat memiliki kolom seperti id, nama, mata_pelajaran, email, dll. Pastikan untuk menyesuaikan kolom dengan kebutuhan dan atribut setiap entitas.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Desain Arsitektur Program**:
+- Pendekatan MVC: Implementasikan pendekatan Model-View-Controller (MVC) dalam aplikasi Anda.
+- Model: Buat kelas model seperti Student, Teacher, Class, Subject, dan Announcement yang merepresentasikan entitas-entitas dalam database. Definisikan hubungan antar entitas menggunakan fitur Eloquent ORM Laravel, seperti hubungan satu-ke-banyak dan banyak-ke-banyak antara entitas.
+- Kontroler: Buat pengontrol seperti StudentController, TeacherController, dan AnnouncementController yang mengatur logika bisnis aplikasi. Pengontrol ini akan mengelola permintaan pengguna, memvalidasi data, berinteraksi dengan model, dan memberikan respons yang sesuai.
+- Tampilan: Gunakan Blade, mesin templating Laravel, untuk membuat tampilan halaman HTML yang interaktif. Gunakan template, komponen, dan direktif Blade untuk menghasilkan tampilan dinamis berdasarkan data yang dikirimkan dari kontroler.
