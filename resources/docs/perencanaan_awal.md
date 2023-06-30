@@ -25,9 +25,10 @@
 ##### Halaman Login Guru
 - Pembuatan blog
 - Pembuatan event dan berita terkini
-- Edit profile
-- Upload foto galeri
+- Edit profile sendiri
+- Upload foto pada halaman galeri
 - Melakukan penilaian terhadap murid
+- Memberikan pr
 
 ##### Halaman Login Admin
 - Pemilihan template
@@ -36,3 +37,4 @@
 - Penerimaan pesan
 - Ubah logo
 - Ubah bentuk dari halaman website
+
