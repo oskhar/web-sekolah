@@ -18,7 +18,7 @@
 - Lulusan
 
 ##### Halaman Login Murid
-- Penilaian setiap murid [nilai, dan saran tentang kemampuan apa yang harus ditingkatkan]
+- Nilai murid [nilai, dan saran tentang kemampuan apa yang harus ditingkatkan]
 - Ubah password
 - Info pr yang sedang harus dikumpulkan minggu depan
 
@@ -27,6 +27,7 @@
 - Pembuatan event dan berita terkini
 - Edit profile
 - Upload foto galeri
+- Melakukan penilaian terhadap murid
 
 ##### Halaman Login Admin
 - Pemilihan template
