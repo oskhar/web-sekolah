@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Murid;
 
 class DashbaordAdminController extends Controller
 {
@@ -12,6 +13,8 @@ class DashbaordAdminController extends Controller
     public function index()
     {
         //
+        $murid = Murid::all();
+        return view('admin.dashboard', ['murid' => $murid]);
     }
 
     /**
