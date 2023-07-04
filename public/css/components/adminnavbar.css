@@ -34,7 +34,7 @@ nav button:nth-child(1) {
     transform: rotate(90deg);
 }
 nav button {
-    opacity: 0.7;
+    opacity: 0.8;
     color: var(--w4);
     background: transparent;
     border: none;
