@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
+   id="ilustrasisekolah"
    enable-background="new 0 0 1000 1000"
    viewBox="0 0 1000 700"
    id="trajectory-education"

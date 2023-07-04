@@ -35,7 +35,7 @@ document.querySelector('.dropdown-toggle').addEventListener("click",  (params) =
 });
 
 window.onscroll = () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 100) {
         document.querySelector(".navbar").classList.add("nav-fixed");
     } else {
         document.querySelector(".navbar").classList.remove("nav-fixed");

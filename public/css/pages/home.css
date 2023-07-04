@@ -1,0 +1,27 @@
+
+#container-1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-inline: 50px;
+    margin-top: 30px;
+}
+#container-1 div {
+    padding-left: 100px;
+    padding-top: 200px;
+}
+#container-1 #ilustrasisekolah {
+    padding: 50px;
+}
+#container-2 {
+    position: relative;
+    background-color: #c2d8f2;
+    margin-top: 200px;
+    height: 700px;
+}
+#container-2 svg {
+    position: relative;
+    margin-top:-100%;
+}
+#container-2 path {
+    fill: #c2d8f2;
+}
