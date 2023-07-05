@@ -18,15 +18,3 @@ use App\Http\Controllers\Home;
 Route::get('/', [Home::class, 'index']);
 
 Route::get('/dashboard/', [DashboardAdminController::class, 'index']);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
