@@ -117,6 +117,16 @@ header #gridHeader button {
     opacity: 0.8;
     color: var(--w2);
 }
+header #gridHeader button:nth-child(1) p::after {
+display: inline-block;
+margin-left: 0.255em;
+vertical-align: 0.255em;
+content: "";
+border-top: 0.3em solid var(--w2);
+border-right: 0.3em solid transparent;
+border-bottom: 0;
+border-left: 0.3em solid transparent;}
+
 header #gridHeader button:hover {
     opacity: 1;
     box-shadow: 3px 3px 10px var(--w5);

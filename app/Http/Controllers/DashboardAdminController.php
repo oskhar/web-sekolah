@@ -15,7 +15,11 @@ class DashboardAdminController extends Controller
     {
         //
         $murid = Student::all();
-        return view('admin.dashboard', ['data' => $murid]);
+
+        return view('admin.dashboard', [
+            'data' => $murid,
+            'namaTabel' => 'student'
+        ]);
     }
 
     /**

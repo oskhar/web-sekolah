@@ -41,17 +41,17 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+                            <a class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
-                                <a class="dropdown-item" href="#">Page 1</a>
-                                <a class="dropdown-item" href="#">Page 2</a>
-                                <a class="dropdown-item" href="#">Page 3</a>
-                                <a class="dropdown-item" href="#">Page 4</a>
+                                <a class="dropdown-item" href="#">Tentang</a>
+                                <a class="dropdown-item" href="#">Latar Belakang</a>
+                                <a class="dropdown-item" href="#">Visi Misi</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a href="#" class="nav-link">Catalog</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Galeri</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Acara & Berita</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
                     </ul>
                 </div>
             </div>

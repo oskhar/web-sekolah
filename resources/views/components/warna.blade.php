@@ -4,7 +4,7 @@
         --w2: #fafafa;
         --w3: #E4E5F1;
         --w4: #282A36;
-        --w5: #ECAFFF;
+        --w5: #99bbdd;
         --darktable: #22242e;
         --selected: #c072d7;
         --shadow: rgba(0, 0, 0, 0.5);
