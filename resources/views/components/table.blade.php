@@ -2,7 +2,7 @@
 <table>
     <thead>
         <tr>
-            @foreach($data[0] as $column => $value)
+            @foreach($data->first()->toArray() as $column => $value)
                 <td>{{ $column }}</td>
             @endforeach
         </tr>
@@ -10,7 +10,7 @@
     <tbody>
         @foreach($data as $row)
             <tr>
-                @foreach($row as $value)
+                @foreach($row->toArray() as $value)
                     <td>{{ $value }}</td>
                 @endforeach
             </tr>

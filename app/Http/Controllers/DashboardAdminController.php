@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Murid;
+use App\Models\Student;
 use Illuminate\Support\Facades\DB;
 
 class DashboardAdminController extends Controller
@@ -14,7 +14,7 @@ class DashboardAdminController extends Controller
     public function index()
     {
         //
-        $murid = DB::table('murid')->get();
+        $murid = Student::all();
         return view('admin.dashboard', ['data' => $murid]);
     }
 

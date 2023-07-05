@@ -10,6 +10,15 @@ body {
     font-size: 1.2rem;
 }
 
+/* BAGIAN INTI */
+main {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: 220px auto;
+}
+
 /* BAGIAN NAVBAR */
 nav {
     height: 60px;
