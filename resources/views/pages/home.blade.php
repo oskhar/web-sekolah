@@ -1,4 +1,4 @@
-@extends('components.pagesnavbar')
+@extends('components.template_pages')
 
 @section('title', "Halaman Utama")
 @section('mainContainer')
@@ -8,7 +8,7 @@
             <h2>SELAMAT DATANG</h2>
             <p>Generasi bangsa perlu kita didik sejak dini untuk membentuk kedasaran akan pentingnya pengetahuan dan membentuk kebiasaan yang baik serta memperdalam etika dan moral agar anak tumbuh menjadi sosok yang kita harapkan</p>
         </div>
-        @include('components.svgilustrasisekolah')
+        @include('components.svg_ilustrasisekolah')
     </div>
     <div id="container-2">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
