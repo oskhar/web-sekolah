@@ -11,7 +11,7 @@
 
 -   Tujuan: Membangun website sekolah yang berfungsi sebagai platform informasi dan interaksi antara siswa, guru, dan orang tua.
 -   Fitur: Halaman beranda, profil sekolah, daftar pengumuman, jadwal pelajaran, daftar siswa, daftar guru, sistem autentikasi pengguna, dll.
-    <a href="resource/docs/info_lanjutan.md">Info lebih lanjut</a>
+    <a href="resources/docs/info_lanjutan.md">Info lebih lanjut</a>
 
 ## B. Persiapan dan Installasi
 
