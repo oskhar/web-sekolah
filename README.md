@@ -61,13 +61,33 @@ Berikut adalah beberapa aturan yang harus dijadikan pedoman selama pembuatan pro
 
 #### Standar Penamaan
 
-Kesepakatan untuk penamaan pada setiap bagian yang ada di dalam project
+Kesepakatan untuk penamaan pada setiap bagian yang ada di dalam project.
+
+Penamaan harus bersifat informatif tapi effektif, Maksimal terdiri 5 kata.
 
 -   Menggunakan snake case (Ex. penulisan_seperti_ini)
-    -   file
-    -   folder
+    -   penamaan file
+    -   penamaan folder
+    -   key pada array, season, dan semacamnya
+    -   penamaan database
+    -   penamaan tabel pada database
+    -   penamaan field pada table
 -   Menggunakan camel case (Ex. penulisanSepertiIni)
     -   variabel
     -   fungsi
+    -   atribute pada class
+    -   method pada class
 -   Menggunakan kebab case (Ex. penulisan-seperti-ini)
     -   class dan id pada html
+
+#### Lebar Tab
+
+Untuk lebar tab sementara sepakat menggunakan 4 spasi untuk setiap bahasa pemrograman dan setiap program.
+
+#### Ketentuan Komentar
+
+Pastikan bahwa komentar tidak dibuat untuk menjelaskan nama variabel, nama fungsi, atau semacamnya, karna informasi tentang variabel terdapat pada nama variabel tersebut, sehingga komentar tidak diperlukan untuk menjelaskan ulang mengenai info atau deskripsi dari variabel.
+
+Komentar hanya menjelaskan tetang logic yang berjalan pada program dibawahnya.
+
+Khusus untuk HTML, komentar bisa digunakan untuk memisahkan setiap bagian yang ada sehingga developer dapat fokus pada satu bagian yang jelas jika ingin melakukan perubahan.
