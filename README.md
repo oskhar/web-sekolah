@@ -15,7 +15,7 @@
 
 ## B. Persiapan dan Installasi
 
-Tidak seperti CodeIgniter, Laravel saat pertama kali diinstall projectnya sudah termasuk dengan depedensi yang dibutuhkan. Tapi meski begitu, tetap saja kita perlu beberapa persiapan dan konfigurasi untuk menjalankan project laravel agar dapat berkontribusi dengan baik.
+Tidak seperti CodeIgniter, Laravel saat pertama kali diinstall projectnya sudah termasuk dengan depedensi yang dibutuhkan. Tapi meski begitu, tetap saja kita perlu beberapa persiapan dan konfigurasi agar program laravel dapat berjalan dengan baik.
 
 Pastikan php yang terinstall di laptop kalian adalah php versi 7 keatas. Saya menggunakan PHP versi 8.2.6 (cli).
 
