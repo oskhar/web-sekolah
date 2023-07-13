@@ -7,34 +7,67 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Info Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### Perencanaan:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Tujuan: Membangun website sekolah yang berfungsi sebagai platform informasi dan interaksi antara siswa, guru, dan orang tua.
+-   Fitur: Halaman beranda, profil sekolah, daftar pengumuman, jadwal pelajaran, daftar siswa, daftar guru, sistem autentikasi pengguna, dll.
+    <a href="resource/docs/info_lanjutan.md">Info lebih lanjut</a>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Persiapan dan Installasi
 
-## Perencanaan dari model database, dan desain arsitektur program website sekolah menggunakan Laravel:
+Tidak seperti CodeIgniter, Laravel saat pertama kali projectnya sudah termasuk dengan depedensi yang dibutuhkan. Tapi meski begitu, tetap saja kita perlu beberapa persiapan dan konfigurasi untuk menjalankan project laravel agar dapat berkontribusi dengan baik.
 
-**Perencanaan**:
-- Tujuan: Membangun website sekolah yang berfungsi sebagai platform informasi dan interaksi antara siswa, guru, dan orang tua.
-- Fitur: Halaman beranda, profil sekolah, daftar pengumuman, jadwal pelajaran, daftar siswa, daftar guru, sistem autentikasi pengguna, dll.
-- Sketsa: Buat sketsa tata letak halaman beranda dengan elemen-elemen seperti header dengan logo dan menu navigasi, bagian pengumuman terbaru, daftar siswa, dan bagian kontak sekolah.
+Pastikan php yang terinstall di laptop kalian adalah php versi 7 keatas. Saya menggunakan PHP versi 8.2.6 (cli).
 
-**Model Database**:
-- Entitas utama: Siswa, Guru, Kelas, Mata Pelajaran, Pengumuman.
-- Tabel Database: Buat tabel-tabel dalam database seperti students, teachers, classes, subjects, dan announcements.
-- Kolom-kolom dalam Tabel: Untuk tabel siswa (students), misalnya, Anda dapat memiliki kolom seperti id, nama, jenis_kelamin, alamat, kelas_id, dll. Sedangkan untuk tabel guru (teachers), Anda dapat memiliki kolom seperti id, nama, mata_pelajaran, email, dll. Pastikan untuk menyesuaikan kolom dengan kebutuhan dan atribut setiap entitas.
+1.) Konfigurasi pada file php.ini => Pastikan beberapa ekstensi berikut siap dipakai dan sudah di-uncomment
 
-**Desain Arsitektur Program**:
-- Pendekatan MVC: Implementasikan pendekatan Model-View-Controller (MVC) dalam aplikasi Anda.
-- Model: Buat kelas model seperti Student, Teacher, Class, Subject, dan Announcement yang merepresentasikan entitas-entitas dalam database. Definisikan hubungan antar entitas menggunakan fitur Eloquent ORM Laravel, seperti hubungan satu-ke-banyak dan banyak-ke-banyak antara entitas.
-- Kontroler: Buat pengontrol seperti StudentController, TeacherController, dan AnnouncementController yang mengatur logika bisnis aplikasi. Pengontrol ini akan mengelola permintaan pengguna, memvalidasi data, berinteraksi dengan model, dan memberikan respons yang sesuai.
-- Tampilan: Gunakan Blade, mesin templating Laravel, untuk membuat tampilan halaman HTML yang interaktif. Gunakan template, komponen, dan direktif Blade untuk menghasilkan tampilan dinamis berdasarkan data yang dikirimkan dari kontroler.
+    - extension=bcmath
+    - extension=curl
+    - extension=exif
+    - extension=intl
+    - extension=zip
+
+2.) Duplikat file .env.example dan ubah namanya menjadi .env saja. lalu kalian hanya perlu memasukan informasi yang sesuai dengan kondisi server kalian, seperti database, username database, password database dan semacamnya.
+
+3.) Generate key yang baru untuk tujuan keamanan. Untuk membuat key enkripsi yang baru anda dapat menjalankan perintah berikut dalam terminal.
+
+```
+    ~$ php artisan key:generate
+```
+
+4.) Lakukan migrasi database untuk memangun struktur database yang sesuai dengan project yang sedang dibangun.
+
+```
+    ~$ php artisan migrate
+```
+
+5.) Lakukan seeding database bila diperlukan, untuk menambahkan data palsu atau data uji coba ke dalam database.
+
+```
+    ~$ php artisan db:seed
+```
+
+6.) Sampai tahap ini semua sudah selesai dan tinggal menjalankan program saja, dan melakukan proses developing. Perlu diketahui bahwa 5 perintah di atas biasanya hanya sekali dilakukan, tapi masih bisa diotak atik lagi sesuai kebutuhan. Berikut adalah cara untuk menjalankan server laravel
+
+```
+    ~$ php artisan serve
+```
+
+## Rule atau Aturan
+
+Berikut adalah beberapa aturan yang harus dijadikan pedoman selama pembuatan program, aturan ini harus ditaati baik oleh saya sendiri maupun anggota tim yang lain guna menciptakan kondusifitas selama kegiatan kolaboratif.
+
+#### Standar Penamaan
+
+Kesepakatan untuk penamaan pada setiap bagian yang ada di dalam project
+
+-   Menggunakan snake case (Ex. penulisan_seperti_ini)
+    -   file
+    -   folder
+-   Menggunakan camel case (Ex. penulisanSepertiIni)
+    -   variabel
+    -   fungsi
+-   Menggunakan kebab case (Ex. penulisan-seperti-ini)
+    -   class dan id pada html

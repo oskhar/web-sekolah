@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('massages', function (Blueprint $table) {
             $table->id();
             $table->text('isi');
-            $table->string('tanggal');
             $table->integer('murid_id')->nullable();
+            $table->date('created_at');
+            $table->date('updated_at')->nullable();
         });
     }
 

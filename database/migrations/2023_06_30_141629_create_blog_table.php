@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('judul')->unique();
             $table->text('isi');
             $table->string('gambar')->nullable();
-            $table->string('tanggal');
             $table->integer('guru_id');
+            $table->date('created_at');
+            $table->date('updated_at')->nullable();
         });
     }
 
