@@ -1,4 +1,4 @@
-@extends('components.pagesnavbar')
+@extends('components.template_pages')
 
 @section('title', 'login')
 @section('mainContainer')
