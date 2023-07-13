@@ -7,15 +7,13 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Info Project
-
-#### Perencanaan:
+## A. Info Project
 
 -   Tujuan: Membangun website sekolah yang berfungsi sebagai platform informasi dan interaksi antara siswa, guru, dan orang tua.
 -   Fitur: Halaman beranda, profil sekolah, daftar pengumuman, jadwal pelajaran, daftar siswa, daftar guru, sistem autentikasi pengguna, dll.
     <a href="resource/docs/info_lanjutan.md">Info lebih lanjut</a>
 
-## Persiapan dan Installasi
+## B. Persiapan dan Installasi
 
 Tidak seperti CodeIgniter, Laravel saat pertama kali projectnya sudah termasuk dengan depedensi yang dibutuhkan. Tapi meski begitu, tetap saja kita perlu beberapa persiapan dan konfigurasi untuk menjalankan project laravel agar dapat berkontribusi dengan baik.
 
@@ -55,11 +53,11 @@ Pastikan php yang terinstall di laptop kalian adalah php versi 7 keatas. Saya me
     ~$ php artisan serve
 ```
 
-## Rule atau Aturan
+## C. Rule atau Aturan
 
 Berikut adalah beberapa aturan yang harus dijadikan pedoman selama pembuatan program, aturan ini harus ditaati baik oleh saya sendiri maupun anggota tim yang lain guna menciptakan kondusifitas selama kegiatan kolaboratif.
 
-#### Standar Penamaan
+#### a. standar penamaan
 
 Kesepakatan untuk penamaan pada setiap bagian yang ada di dalam project.
 
@@ -80,14 +78,20 @@ Penamaan harus bersifat informatif tapi effektif, Maksimal terdiri 5 kata.
 -   Menggunakan kebab case (Ex. penulisan-seperti-ini)
     -   class dan id pada html
 
-#### Lebar Tab
+#### b. lebar tab
 
 Untuk lebar tab sementara sepakat menggunakan 4 spasi untuk setiap bahasa pemrograman dan setiap program.
 
-#### Ketentuan Komentar
+#### d. ketentuan komentar
 
 Pastikan bahwa komentar tidak dibuat untuk menjelaskan nama variabel, nama fungsi, atau semacamnya, karna informasi tentang variabel terdapat pada nama variabel tersebut, sehingga komentar tidak diperlukan untuk menjelaskan ulang mengenai info atau deskripsi dari variabel.
 
 Komentar hanya menjelaskan tetang logic yang berjalan pada program dibawahnya.
 
 Khusus untuk HTML, komentar bisa digunakan untuk memisahkan setiap bagian yang ada sehingga developer dapat fokus pada satu bagian yang jelas jika ingin melakukan perubahan.
+
+## D. Alur Pengembangan
+
+Berikut adalah alur yang harus diikuti baik bagi saya maupun bagi setiap anggota tim.
+
+#### a. struktur folder
