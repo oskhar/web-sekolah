@@ -95,3 +95,5 @@ Khusus untuk HTML, komentar bisa digunakan untuk memisahkan setiap bagian yang a
 Berikut adalah alur yang harus diikuti baik bagi saya maupun bagi setiap anggota tim.
 
 #### a. struktur folder
+
+Laravel memiliki struktur folder yang cantik, terutama pada vendor yang menyimpan library inti laravel. Khusus untuk frontend developer yang tidak terlalu mendalami laravel atau bahkan tidak tau cara kerja dengan laravel, berikut adalah beberapa folder yang perlu dipahami dalam membuat view yang akan ditampilkan kepada user.
