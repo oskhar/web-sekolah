@@ -19,7 +19,7 @@ Tidak seperti CodeIgniter, Laravel saat pertama kali diinstall projectnya sudah 
 
 Pastikan php yang terinstall di laptop kalian adalah php versi 7 keatas. Saya menggunakan PHP versi 8.2.6 (cli).
 
-1.) Konfigurasi pada file php.ini => Pastikan beberapa ekstensi berikut siap dipakai dan sudah di-uncomment
+1.) Konfigurasi pada file php.ini => Pastikan beberapa ekstensi berikut siap dipakai (sudah di-uncomment)
 
     - extension=bcmath
     - extension=curl
