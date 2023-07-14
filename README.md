@@ -90,6 +90,10 @@ Komentar hanya menjelaskan tetang logic yang berjalan pada program dibawahnya.
 
 Khusus untuk HTML, komentar bisa digunakan untuk memisahkan setiap bagian yang ada sehingga developer dapat fokus pada satu bagian yang jelas jika ingin melakukan perubahan.
 
+#### e. pelaporan bug dan error
+
+Bug dan error yang terjadi selama pengembangan hanya dibahas pada issue yang sudah disediakan dalam task project github, hal ini bertujuan agar pembahasan topik menjadi lebih jelas dan menyingkirkan berbagai topik yang tidak berkaitan, sehingga forum diskusi menjadi lebih effektif dan terarah.
+
 ## D. Alur Pengembangan
 
 Berikut adalah alur yang harus diikuti baik bagi saya maupun bagi setiap anggota tim.
@@ -97,3 +101,34 @@ Berikut adalah alur yang harus diikuti baik bagi saya maupun bagi setiap anggota
 #### a. struktur folder
 
 Laravel memiliki struktur folder yang cantik, terutama pada vendor yang menyimpan library inti laravel. Khusus untuk frontend developer yang tidak terlalu mendalami laravel atau bahkan tidak tau cara kerja dengan laravel, berikut adalah beberapa folder yang perlu dipahami dalam membuat view yang akan ditampilkan kepada user.
+
+#### b. melaksanakan sprint
+
+Sprint adalah jangka waktu untuk melakukan fokus dalam mencapai objektif yang telah ditentukan (<a href="resources/docs/sprint.md">Lebih detail mengenai sprint</a>).
+
+#### c. panduan pembuatan file
+
+Saat anggota tim developer akan membuat tampilan kedalam bentuk kode program, tentu seorang developer harus membuat file yang menampung kode programnya. Berikut adalah panduan untuk pembuatan file pada setiap halaman web yang akan dibuat.
+
+##### page general (Tanpa Login)
+
+-   halaman home => resources/views/pages/`home.blade.php`
+-   halaman tentang => resources/views/pages/`tentang.blade.php`
+-   halaman latar belakang => resources/views/pages/`latar_belakang.blade.php`
+-   halaman visi misi => resources/views/pages/`visi_misi.blade.php`
+-   halaman berita & acara => resources/views/pages/`berita_acara.blade.php`
+-   halaman contact => resources/views/pages/`contact.blade.php`
+-   halaman login murid => resources/views/pages/`login_murid.blade.php`
+-   halaman login guru => resources/views/pages/`login_guru.blade.php`
+-   halaman login admin => resources/views/pages/`login_admin.blade.php`
+
+template penulisan:
+
+```blade
+@extends('components.template_pages')
+
+@section('title', "masukan title sesuai halaman di sini (Ex. Halaman Home)")
+
+@section('mainContainer')
+@endsection
+```
