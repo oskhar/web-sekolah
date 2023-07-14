@@ -94,6 +94,16 @@ Khusus untuk HTML, komentar bisa digunakan untuk memisahkan setiap bagian yang a
 
 Bug dan error yang terjadi selama pengembangan hanya dibahas pada issue yang sudah disediakan dalam task project github, hal ini bertujuan agar pembahasan topik menjadi lebih jelas dan menyingkirkan berbagai topik yang tidak berkaitan, sehingga forum diskusi menjadi lebih effektif dan terarah.
 
+#### f. penggunaan blade
+
+Blade merupakan program yang dirancang dengan tujuan agar developer tidak perlu lagi membuat program php yang berantakan dan menyatu dengan html. Program yang rapi akan memberikan kemudahan tersendiri dalam mengembangkan program sekala besar.
+
+Hindari penggunaan program php dalam laravel view, pasikan semua program php yang ingin digunakan harus diganti dengan blade.
+
+1.) mengakses file css dan javascript menggunakan blade. Untuk mengakses file css, pertama anda harus siapkan file css dan masukan file css tersebut ke dalam folder public seperti ini: `public/css/nama_folder_induk/nama_file.css`
+
+setelah progam cssnya tersedia, developer bisa memanggil filenya dengan program ini: `<link rel="stylesheet" href="{{ asset('css/pages/home.css' )}}">` jadi pastikan anda memanggil nama file dalam folder dengan penggunaan link seperti ini `{{ asset('css/pages/home.css' )}}`
+
 ## D. Alur Pengembangan
 
 Berikut adalah alur yang harus diikuti baik bagi saya maupun bagi setiap anggota tim.
@@ -127,8 +137,9 @@ template penulisan:
 ```blade
 @extends('components.template_pages')
 
-@section('title', "masukan title sesuai halaman di sini (Ex. Halaman Home)")
+@section('title', "{{Masukan title sesuai halaman di sini (Ex. Halaman Home)}}")
 
 @section('mainContainer')
+    {{Masukan isi code program sesuai dengan disain yang diberikan}}
 @endsection
 ```
