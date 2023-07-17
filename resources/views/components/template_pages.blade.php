@@ -121,8 +121,11 @@
     </div>
 </nav>
 
+
     <main style="height: 200vh;">
         @yield('mainContainer')
+
+        {{-- Bagian Footer --}}
         <footer class="footer mt-5">
             <div class="container">
                 <div class="row align-items-center">
