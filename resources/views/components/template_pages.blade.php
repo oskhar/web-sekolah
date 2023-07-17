@@ -123,6 +123,27 @@
 
     <main style="height: 200vh;">
         @yield('mainContainer')
+        <footer class="footer mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-12 text-center footer-logo p-2">
+                        <!-- Logo Perusahaan -->
+                        <img src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 12" style="width:80px; height: 80px;">
+                    </div>
+                    <div class="col-md-12 text-center footer-info">
+                        <!-- Email, Alamat, dan Lokasi -->
+                        <p>Email: info@perusahaan.com</p>
+                        <p>Alamat: Jl. Jalan Raya No. 123</p>
+                        <p>Hubungi : + 62 98788759002</p>
+                        <p>Lokasi: Kota, Negara</p>
+                    </div>
+                    <div class="col-md-6 text-md-left" style="font-size: 15px">
+                        <!-- Copy right -->
+                        <p>&copy; 2023 Perusahaan. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
 
 
