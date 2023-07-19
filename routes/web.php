@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\Home;
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\Pages;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,7 @@ use App\Http\Controllers\Home;
 |
 */
 
+// Pages views
 Route::get('/', [Pages::class, 'home']);
 Route::get('/tentang/', [Pages::class, 'tentang']);
 Route::get('/visi_misi/', [Pages::class, 'visiMisi']);
@@ -23,5 +24,10 @@ Route::get('/galeri/', [Pages::class, 'galeri']);
 Route::get('/berita_acara/', [Pages::class, 'beritaAcara']);
 Route::get('/contact/', [Pages::class, 'contact']);
 
-Route::get('/dashboard/', [DashboardAdminController::class, 'index']);
+// Student views
 
+// Teacher views
+Route::get('/teacher/', [Teacher::class, 'index']);
+
+// Admin views
+Route::get('/admin/', [Admin::class, 'index']);
