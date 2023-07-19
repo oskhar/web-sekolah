@@ -86,9 +86,9 @@
     </div>
 
     <!-- Bagian Slide Kotak -->
-    <div id="myCarousel" class="carousel slide mt-5" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide mt-5" data-ride="carousel" style=" padding-top: 150px;">
         <!-- Wrapper untuk konten Carousel -->
-        <div class="carousel-inner bg-cyan">
+        <div class="carousel-inner bg-cyan pt-5">
             <p style="text-align: center; font-weight: bold; font-size: 40px;">KUMPULAN MATERI</p>
           <div class="carousel-item active bg-cyan">
             <!-- Konten Pertama -->
@@ -173,14 +173,14 @@
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only" style="z-index: 1000;">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <a class="carousel-control-next " href="#myCarousel" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only" style="z-index: 1000;">Next</span>
         </a>
       </div>
 
       {{-- Bagian Daftar Presentasi --}}
-      <div class="container mt-5">
+      <div class="container mt-5" style=" padding-top: 150px;">
         <h2 class="text-center">DAFTAR PRESENTASI</h2>
         <div class="row no-gutters">
     
