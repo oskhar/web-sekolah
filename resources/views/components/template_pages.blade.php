@@ -86,30 +86,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link active text-light" href="">Home</a>
+                <a class="nav-link active text-light" href="{{url('/')}}">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="text-light nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
+                <a class="text-light nav-link dropdown-toggle" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Profile
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="text-light dropdown-item" href="">Tentang</a>
-                    <a class="text-light dropdown-item" href="">Latar Belakang</a>
-                    <a class="text-light dropdown-item" href="">Visi Misi</a>
+                    <a class="text-light dropdown-item text-dark" href="{{url('/tentang')}}">Tentang</a>
+                    <a class="text-light dropdown-item text-dark" href="{{url('/latar_belakang')}}">Latar Belakang</a>
+                    <a class="text-light dropdown-item text-dark" href="{{url('/visi_misi')}}">Visi Misi</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="text-light nav-link" href="">Galeri</a>
+                <a class="text-light nav-link" href="{{url('/')}}">Galeri</a>
             </li>
             <li class="nav-item">
-                <a class="text-light nav-link" href="">Berita & Acara</a>
+                <a class="text-light nav-link" href="{{url('/berita_acara')}}">Berita & Acara</a>
             </li>
             <li class="nav-item">
-                <a class="text-light nav-link" href="">Contact</a>
+                <a class="text-light nav-link" href="{{url('/contact')}}">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="text-light nav-link" href="">Materi</a>
+                <a class="text-light nav-link" href="{{url('/materi')}}">Materi</a>
             </li>
         </ul>
 
@@ -135,10 +135,9 @@
                     </div>
                     <div class="col-md-12 text-center footer-info">
                         <!-- Email, Alamat, dan Lokasi -->
-                        <p>Email: info@perusahaan.com</p>
-                        <p>Alamat: Jl. Jalan Raya No. 123</p>
-                        <p>Hubungi : + 62 98788759002</p>
-                        <p>Lokasi: Kota, Negara</p>
+                        <p><i class="far fa-envelope"></i> Email: info@perusahaan.com</p>
+                        <p><i class="fas fa-globe"></i> Lokasi: jalan, kecamatan, kelurahan, no, Kota, Negara</p>
+                        <p><i class="fas fa-phone"></i> Hubungi : + 62 98788759002</p>
                     </div>
                     <div class="col-md-6 text-md-left" style="font-size: 15px">
                         <!-- Copy right -->

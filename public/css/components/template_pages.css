@@ -51,3 +51,26 @@ body{
 main{
   padding-bottom: 200px;
 }
+
+/* Bagian Footer */
+.footer {
+  background-color: #202040;
+  color: #fff;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.footer-info {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-info p {
+  margin: 0;
+}
