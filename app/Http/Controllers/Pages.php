@@ -9,9 +9,57 @@ class Home extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function home()
     {
         return view('pages.home');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function tentang()
+    {
+        return view('pages.tentang');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function visiMisi()
+    {
+        return view('pages.visi_misi');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function latarBelakang()
+    {
+        return view('pages.latar_belakang');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function galeri()
+    {
+        return view('pages.galeri');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function beritaAcara()
+    {
+        return view('pages.berita_acara');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function contact()
+    {
+        return view('pages.contact');
     }
 
     /**
