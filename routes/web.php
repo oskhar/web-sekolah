@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pages;
+use App\Http\Controllers\Teacher;
 
 /*
 |--------------------------------------------------------------------------
