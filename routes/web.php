@@ -31,3 +31,8 @@ Route::get('/teacher/', [Teacher::class, 'index']);
 
 // Admin views
 Route::get('/admin/', [Admin::class, 'index']);
+
+// Testing
+Route::get('/testing/', function(){
+    return view("test");
+});
