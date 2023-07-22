@@ -27,27 +27,41 @@ Pastikan php yang terinstall di laptop kalian adalah php versi 7 keatas. Saya me
     - extension=intl
     - extension=zip
 
-2.) Duplikat file .env.example dan ubah namanya menjadi .env saja. lalu kalian hanya perlu memasukan informasi yang sesuai dengan kondisi server kalian, seperti database, username database, password database dan semacamnya.
+2.) clone repository ke dalam folder yang diinginkan
 
-3.) Generate key yang baru untuk tujuan keamanan. Untuk membuat key enkripsi yang baru anda dapat menjalankan perintah berikut dalam terminal.
+```
+    ~$ cd folder_tujuan
+    ~$ git clone https://github.com/MuhamadOskhar/web-sekolah.git
+    ~$ cd web-sekolah
+```
+
+3.) Install semua depedensi yang dibutuhkan laravel
+
+```
+    ~$ composer install
+```
+
+4.) Duplikat file `.env.example` dan ubah namanya menjadi `.env`. lalu kalian hanya perlu memasukan informasi yang sesuai dengan kondisi server kalian, seperti database, username database, password database dan semacamnya.
+
+5.) Generate key yang baru untuk tujuan keamanan. Untuk membuat key enkripsi yang baru anda dapat menjalankan perintah berikut dalam terminal.
 
 ```
     ~$ php artisan key:generate
 ```
 
-4.) Lakukan migrasi database untuk memangun struktur database yang sesuai dengan project yang sedang dibangun.
+6.) Lakukan migrasi database untuk memangun struktur database yang sesuai dengan project yang sedang dibangun.
 
 ```
     ~$ php artisan migrate
 ```
 
-5.) Lakukan seeding database bila diperlukan, untuk menambahkan data palsu atau data uji coba ke dalam database.
+7.) Lakukan seeding database **bila diperlukan**, untuk menambahkan data palsu atau data uji coba ke dalam database.
 
 ```
     ~$ php artisan db:seed
 ```
 
-6.) Sampai tahap ini semua sudah selesai dan tinggal menjalankan program saja, dan melakukan proses developing. Perlu diketahui bahwa 5 perintah di atas biasanya hanya sekali dilakukan, tapi masih bisa diotak atik lagi sesuai kebutuhan. Berikut adalah cara untuk menjalankan server laravel
+8.) Sampai tahap ini semua sudah selesai dan tinggal menjalankan program saja, dan melakukan proses developing. Perlu diketahui bahwa 5 perintah di atas biasanya hanya sekali dilakukan, tapi masih bisa diotak atik lagi sesuai kebutuhan. Berikut adalah cara untuk menjalankan server laravel
 
 ```
     ~$ php artisan serve
@@ -122,17 +136,20 @@ Saat anggota tim developer akan membuat tampilan kedalam bentuk kode program, te
 
 ##### page general (Tanpa Login)
 
+1.) standar penamaan file:
+
 -   halaman home => resources/views/pages/`home.blade.php`
 -   halaman tentang => resources/views/pages/`tentang.blade.php`
 -   halaman latar belakang => resources/views/pages/`latar_belakang.blade.php`
 -   halaman visi misi => resources/views/pages/`visi_misi.blade.php`
 -   halaman berita & acara => resources/views/pages/`berita_acara.blade.php`
 -   halaman contact => resources/views/pages/`contact.blade.php`
+-   halaman materi => resources/views/pages/`materi.blade.php`
 -   halaman login murid => resources/views/pages/`login_murid.blade.php`
 -   halaman login guru => resources/views/pages/`login_guru.blade.php`
 -   halaman login admin => resources/views/pages/`login_admin.blade.php`
 
-template penulisan:
+2.) template penulisan:
 
 ```blade
 @extends('components.template_pages')
@@ -143,3 +160,18 @@ template penulisan:
     {{Masukan isi code program sesuai dengan disain yang diberikan}}
 @endsection
 ```
+
+3.) link untuk akses setiap halaman
+
+-   halaman home => https://domain/
+-   halaman tentang => https://domain/tentang
+-   halaman latar belakang => https://domain/latar-belakang
+-   halaman visi misi => https://domain/visi-misi
+-   halaman berita & acara => https://domain/berita-acara
+-   halaman contact => https://domain/contact
+-   halaman materi => https://domain/materi
+-   halaman login murid => https://domain/login/murid
+-   halaman login guru => https://domain/login/guru
+-   halaman login admin => https://domain/login/admin
+
+##### page student (Login Akun Murid)

@@ -19,10 +19,10 @@ use App\Http\Controllers\Teacher;
 // Pages views
 Route::get('/', [Pages::class, 'home']);
 Route::get('/tentang/', [Pages::class, 'tentang']);
-Route::get('/visi_misi/', [Pages::class, 'visiMisi']);
-Route::get('/latar_belakang/', [Pages::class, 'latarBelakang']);
+Route::get('/visi-misi/', [Pages::class, 'visiMisi']);
+Route::get('/latar-belakang/', [Pages::class, 'latarBelakang']);
 Route::get('/galeri/', [Pages::class, 'galeri']);
-Route::get('/berita_acara/', [Pages::class, 'beritaAcara']);
+Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
 Route::get('/contact/', [Pages::class, 'contact']);
 
 // Student views
