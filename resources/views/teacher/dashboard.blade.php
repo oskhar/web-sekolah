@@ -46,10 +46,10 @@
                 <div class="inner">
                   <h3>53</h3>
   
-                  <p>Blog Materi</p>
+                  <p>Jumlah Blog atau Materi</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
+                  <i class="ion ion-receipt"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
