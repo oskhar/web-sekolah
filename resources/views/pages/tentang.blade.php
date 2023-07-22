@@ -27,4 +27,99 @@
   </div>
 
 
+  {{-- Bagian fasilitas dan sarana --}}
+  <div id="myCarousel" class="carousel slide mt-5" data-ride="carousel" style=" padding-top: 150px;">
+    <!-- Wrapper untuk konten Carousel -->
+    <div class="carousel-inner pt-5 bg-cyan">
+        <p style="text-align: center; font-weight: bold; font-size: 40px;">FASILITAS DAN SARANA</p>
+      <div class="carousel-item active bg-cyan">
+        <!-- Konten Pertama -->
+        <div class="row align-items-center justify-content-center">
+          <div class="col-sm-3 p-5">
+            <div class="card">
+                <div class="p-4 bg-green rounded">
+                    <h2>Ini Judul</h2>
+                </div>
+                <div class="p-4 bg-white">
+                    <p>Ini Isi Materi</p>
+                </div>
+              <!-- Isi Konten Pertama -->
+            </div>
+          </div>
+          <div class="col-sm-3 p-5">
+            <div class="card">
+                <div class="p-4 bg-green rounded">
+                    <h2>Ini Judul</h2>
+                </div>
+                <div class="p-4 bg-white">
+                    <p>Ini Isi Materi</p>
+                </div>
+              <!-- Isi Konten Pertama -->
+            </div>
+          </div>
+          <div class="col-sm-3 p-5">
+            <div class="card">
+                <div class="p-4 bg-green rounded">
+                    <h2>Ini Judul</h2>
+                </div>
+                <div class="p-4 bg-white">
+                    <p>Ini Isi Materi</p>
+                </div>
+              <!-- Isi Konten Pertama -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item bg-cyan">
+        <!-- Konten Kedua -->
+        <div class="row align-items-center justify-content-center">
+            <div class="col-sm-3 p-5">
+                <div class="card">
+                    <div class="p-4 bg-green rounded">
+                        <h2>Ini Judul</h2>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p>Ini Isi Materi</p>
+                    </div>
+                  <!-- Isi Konten Pertama -->
+                </div>
+              </div>
+              <div class="col-sm-3 p-5">
+                <div class="card">
+                    <div class="p-4 bg-green rounded">
+                        <h2>Ini Judul</h2>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p>Ini Isi Materi</p>
+                    </div>
+                  <!-- Isi Konten Pertama -->
+                </div>
+              </div>
+              <div class="col-sm-3 p-5">
+                <div class="card">
+                    <div class="p-4 bg-green rounded">
+                        <h2>Ini Judul</h2>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p>Ini Isi Materi</p>
+                    </div>
+                  <!-- Isi Konten Pertama -->
+                </div>
+              </div>
+        </div>
+      </div>
+      <!-- Tambahkan konten berikutnya sesuai kebutuhan -->
+    </div>
+    <!-- Tombol Navigasi -->
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only" style="z-index: 1000;">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon " aria-hidden="true"></span>
+      <span class="sr-only text-primary" style="z-index: 1000;">Next</span>
+    </a>
+  </div>
+
+
 @endsection
