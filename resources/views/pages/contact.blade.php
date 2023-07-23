@@ -6,38 +6,43 @@
 <link rel="stylesheet" href="{{ asset('css/pages/contact.css')}} ">
 
 {{-- Bagian List contact --}}
-    <div class="teks-list">
-        <h1>LIST CONTACT</h1>
-    </div>
-
-    <div class="container-contact border-bottom border-dark border-4">
-        <p>Guru-2</p>
-        <p>098767908675</p>
-    </div>
-
-    <div class="container-contact border-bottom border-dark border-4">
-        <p>Guru-2</p>
-        <p>098767908675</p>
-    </div>
-
-    <div class="container-contact border-bottom border-dark border-4">
-        <p>Guru-2</p>
-        <p>098767908675</p>
-    </div>
-
+        <section class="content">
+            <div class="container-fluid">
+                <div class="text-center mt-5 text-darkblue">
+                    <h1>LIST CONTACT</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <ul class="list-group list-group-unbordered mb-3 col-sm-10 mt-3">
+                        <li class="list-group-item">
+                        <b>Kepala Sekolah</b> <span class="float-right">+62 813-8638-0481</span>
+                        </li>
+                        <li class="list-group-item">
+                        <b>Tata Usaha</b> <span class="float-right">+62 813-8638-0481</span>
+                        </li>
+                        <li class="list-group-item">
+                        <b>Penanggung Jawab IT</b> <span class="float-right">+62 813-8638-0481</span>
+                        </li>
+                    </ul>
+                    <!-- /.card-body -->
+                    
+                    <div class="container-jam-kerja mt-3">
+                        <h4 class="text-muted">
+                          <i class="far fa-clock text-muted"></i> 
+                          <span class="transparan">JAM KERJA</span> 10.00 - 20.00
+                        </h4>
+                      </div>
+                </div>
+            </div>
+        </section>
     {{-- Teks Jam Kerja --}}
-    <div class="container-jam-kerja">
-        <h1 class="font-weight-bold text-muted">
-          <i class="far fa-clock text-muted"></i> 
-          <span class="transparan">JAM KERJA</span> 10.00 - 20.00
-        </h1>
-      </div>
+    
+    
 
 
 {{-- Bagian Ajukan Pertanyaan --}}
-<div class="container-ajukan">
+<div class="container-ajukan mt-5">
     <div class="row">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-10 offset-md-1 py-5">
         <div class="card-ajukan">
           <div class="card-body-ajukan">
             <!-- Form untuk mengajukan pertanyaan -->
@@ -55,6 +60,8 @@
       </div>
     </div>
   </div>
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.9120209215215!2d106.67810345537558!3d-6.1852755502622845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9aa395dbbbf%3A0x4f45b2c2865f40ca!2sPAUD%20Bunda%20Kasih%20Bangsa!5e0!3m2!1sid!2sid!4v1690116271440!5m2!1sid!2sid"  height="450" style="border:0; width: 100vw;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 {{-- Bagian Kebijakan Privasi--}}
 <div class="container-kp">
