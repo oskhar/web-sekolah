@@ -126,6 +126,11 @@
 
   {{-- Bagian Profile --}}
     {{-- Card Kepala sekolah --}}
+    <div class="teks-card-tentang">
+      <h1>PROFILE GURU</h1>
+    </div>
+
+    <div class="display-kepala row justify-content-around align-items-center center-box">
     <div class="card-profile card-primary card-outline">
       <div class="card-body-profile box-profile ">
         <div class="text-center gambar-profile">
@@ -155,6 +160,7 @@
       </div>
       <!-- /.card-body -->
     </div>
+  </div>
 
 
     {{-- Card Guru - Guru --}}

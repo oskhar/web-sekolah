@@ -26,6 +26,14 @@
     }
 
 /* Bagian Profile */
+    .teks-card-tentang{
+        color: #355389;
+        margin-top: 100px;
+        text-align: center; 
+        font-weight: bold; 
+        font-size: 40px;
+    }
+
     .card-profile{
         padding: 10px;
         width: 300px;
@@ -35,6 +43,14 @@
     .card-body-profile .gambar-profile img{
         height: 100px;
         border-radius: 100%;
+    }
+
+    .display-kepala{
+        margin-top: 100px;
+    }
+
+    .display-satu{
+        margin-top: 100px;
     }
 
     .display-dua{
