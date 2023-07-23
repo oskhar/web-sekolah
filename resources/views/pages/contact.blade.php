@@ -59,7 +59,7 @@
 {{-- Bagian Kebijakan Privasi--}}
 <div class="container-kp">
     <h1>KEBIJAKAN PRIVASI</h1>
-
+    <br>
     <div class="teks-kp">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laudantium esse eos obcaecati nisi qui ipsum neque dolorem. Ea consectetur, sunt veritatis asperiores natus laboriosam quia doloribus. Cumque voluptatibus a at, aut sed libero deserunt quibusdam fugit numquam expedita minima beatae provident laudantium quaerat atque explicabo praesentium nesciunt iste hic?</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus temporibus repudiandae doloribus asperiores nesciunt veritatis commodi ut, maiores veniam reprehenderit quasi similique corporis laboriosam autem quod. Distinctio dolore deleniti, aspernatur asperiores cum mollitia natus repellendus explicabo aut earum? Sed quas quibusdam animi eius modi atque unde voluptatum expedita. Harum, at!</p>

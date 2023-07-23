@@ -132,7 +132,7 @@
 
     <div class="display-kepala row justify-content-around align-items-center center-box">
     <div class="card-profile card-primary card-outline">
-      <div class="card-body-profile box-profile ">
+      <div class="card-body-profile ">
         <div class="text-center gambar-profile">
           <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>

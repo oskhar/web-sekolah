@@ -29,10 +29,11 @@
 /* Bagian Profile */
     .teks-card-tentang{
         color: #355389;
-        margin-top: 100px;
+        margin-top: 200px;
         text-align: center; 
         font-weight: bold; 
         font-size: 40px;
+        padding: 5px;
     }
 
     .card-profile{
@@ -47,7 +48,7 @@
     }
 
     .display-kepala{
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     .display-satu{
@@ -56,4 +57,5 @@
 
     .display-dua{
         margin-top: 100px;
+        margin-bottom: 200px;
     }
