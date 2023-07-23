@@ -30,3 +30,25 @@
         font-size: 20px;
         font-family: sans-serif;
     }
+
+
+/* Bagian Ajukan Kurikulum */
+    .container-ajukan{
+        background-color: #C2D8F2;
+        margin-top: 250px;
+    }
+
+    .card-ajukan .card-body-ajukan{
+        margin: 30px;
+    }
+
+    .form-group-ajukan label{
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .form-group-ajukan p{
+        font-family: sans-serif;
+        font-size: 15px;
+    }

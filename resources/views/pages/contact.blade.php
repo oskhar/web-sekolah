@@ -34,6 +34,29 @@
       </div>
 
 
+{{-- Bagian Ajukan Pertanyaan --}}
+<div class="container-ajukan">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card-ajukan">
+          <div class="card-body-ajukan">
+            <!-- Form untuk mengajukan pertanyaan -->
+            <form>
+              <div class="form-group-ajukan">
+                <label for="pertanyaan border-0">Pertanyaan Anda</label>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, tempora perferendis. Minus maxime dignissimos ea quisquam necessitatibus tempore nesciunt placeat?</p>
+                <textarea class="form-control" id="pertanyaan" rows="5" required></textarea>
+                <br>
+              </div>
+              <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 
 @endsection
