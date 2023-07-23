@@ -6,17 +6,34 @@
 <link rel="stylesheet" href="{{ asset('css/pages/contact.css')}} ">
 
 {{-- Bagian List contact --}}
-<div class="container-contact">
-    <div class="row tentang">
-      <div class="col-md-6">
-        <!-- Nama Kepala Sekolah -->
-        <p style="border-bottom: 1px solid black;">John Doe</p>
-      </div>
-      <div class="col-md-6">
-        <!-- Nomor Telepon -->
-        <p style="border-bottom: 1px solid black;">(123) 456-7890</p>
-      </div>
+    <div class="teks-list">
+        <h1>LIST CONTACT</h1>
     </div>
-  </div>
+
+    <div class="container-contact border-bottom border-dark border-4">
+        <p>Guru-2</p>
+        <p>098767908675</p>
+    </div>
+
+    <div class="container-contact border-bottom border-dark border-4">
+        <p>Guru-2</p>
+        <p>098767908675</p>
+    </div>
+
+    <div class="container-contact border-bottom border-dark border-4">
+        <p>Guru-2</p>
+        <p>098767908675</p>
+    </div>
+
+    {{-- Teks Jam Kerja --}}
+    <div class="container-jam-kerja">
+        <h1 class="font-weight-bold text-muted">
+          <i class="far fa-clock text-muted"></i> 
+          <span class="transparan">JAM KERJA</span> 10.00 - 20.00
+        </h1>
+      </div>
+
+
+
 
 @endsection
