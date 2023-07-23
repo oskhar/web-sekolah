@@ -1,6 +1,7 @@
 /* Bagian Kurikulum  */
     .card-info {
         background-color: #C2D8F2;
+        border-radius: 10px;
     }
     
     .card-info .border-0 {

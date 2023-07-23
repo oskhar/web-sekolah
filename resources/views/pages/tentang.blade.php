@@ -17,7 +17,7 @@
         </div>
         <!-- Wilayah 2 (Kecil) -->
         <div class="col-md-4">
-          <div class="card-body-info">
+          <div class="card-body-info p-4">
             <h1 class="card-title-info">INFO</h1>
             <p class="card-text-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut magnam consequatur numquam ut laborum enim commodi reiciendis, cumque beatae laudantium debitis aliquid perferendis. Dicta voluptas rem soluta, voluptate totam harum voluptates magnam sit libero .</p>
             <P>Informasi kegiatan silahkan klik <a href="" style="color: #355389; font-weight: bold;">disini</a></P>
