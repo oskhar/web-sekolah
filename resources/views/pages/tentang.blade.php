@@ -4,9 +4,11 @@
 @section('mainContainer')
 
 <link rel="stylesheet" href="{{ asset('css/pages/tentang.css')}} ">
+
+  {{-- Bagian Kurikulum --}}
   <!-- Card -->
-  <div class="container p-5">
-    <div class="card border-0">
+  <div class="container-tentang p-5">
+    <div class="card-info border-0">
       <div class="row g-0">
         <!-- Wilayah 1 (Lebar) -->
         <div class="col-md-8 p-4">
@@ -15,9 +17,9 @@
         </div>
         <!-- Wilayah 2 (Kecil) -->
         <div class="col-md-4">
-          <div class="card-body">
-            <h1 class="card-title">INFO</h1>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut magnam consequatur numquam ut laborum enim commodi reiciendis, cumque beatae laudantium debitis aliquid perferendis. Dicta voluptas rem soluta, voluptate totam harum voluptates magnam sit libero .</p>
+          <div class="card-body-info">
+            <h1 class="card-title-info">INFO</h1>
+            <p class="card-text-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut magnam consequatur numquam ut laborum enim commodi reiciendis, cumque beatae laudantium debitis aliquid perferendis. Dicta voluptas rem soluta, voluptate totam harum voluptates magnam sit libero .</p>
             <P>Informasi kegiatan silahkan klik <a href="" style="color: #355389; font-weight: bold;">disini</a></P>
             <a href="#" class="btn btn-primary cek">Cek Lowongan Kerja</a>
           </div>
@@ -36,7 +38,7 @@
         <!-- Konten Pertama -->
         <div class="row align-items-center justify-content-center">
           <div class="col-sm-3 p-5">
-            <div class="card">
+            <div class="card-materi">
                 <div class="p-4 bg-green rounded">
                     <h2>Ini Judul</h2>
                 </div>
@@ -47,7 +49,7 @@
             </div>
           </div>
           <div class="col-sm-3 p-5">
-            <div class="card">
+            <div class="card-materi">
                 <div class="p-4 bg-green rounded">
                     <h2>Ini Judul</h2>
                 </div>
@@ -58,7 +60,7 @@
             </div>
           </div>
           <div class="col-sm-3 p-5">
-            <div class="card">
+            <div class="card-materi">
                 <div class="p-4 bg-green rounded">
                     <h2>Ini Judul</h2>
                 </div>
@@ -74,7 +76,7 @@
         <!-- Konten Kedua -->
         <div class="row align-items-center justify-content-center">
             <div class="col-sm-3 p-5">
-                <div class="card">
+                <div class="card-materi">
                     <div class="p-4 bg-green rounded">
                         <h2>Ini Judul</h2>
                     </div>
@@ -85,7 +87,7 @@
                 </div>
               </div>
               <div class="col-sm-3 p-5">
-                <div class="card">
+                <div class="card-materi">
                     <div class="p-4 bg-green rounded">
                         <h2>Ini Judul</h2>
                     </div>
@@ -96,7 +98,7 @@
                 </div>
               </div>
               <div class="col-sm-3 p-5">
-                <div class="card">
+                <div class="card-materi">
                     <div class="p-4 bg-green rounded">
                         <h2>Ini Judul</h2>
                     </div>
@@ -119,6 +121,166 @@
       <span class="carousel-control-next-icon " aria-hidden="true"></span>
       <span class="sr-only text-primary" style="z-index: 1000;">Next</span>
     </a>
+  </div>
+
+
+  {{-- Bagian Profile --}}
+    {{-- Card Kepala sekolah --}}
+    <div class="card-profile card-primary card-outline">
+      <div class="card-body-profile box-profile ">
+        <div class="text-center gambar-profile">
+          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+        </div>
+
+        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+
+        <p class="text-muted text-center">Nama Lengkap</p>
+
+        <ul class="list-group list-group-unbordered mb-3">
+          <li class="list-group-item">
+            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+          </li>
+          <li class="list-group-item">
+            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+          </li>
+          <li class="list-group-item">
+            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+          </li>
+          <li class="list-group-item">
+            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+          </li>
+        </ul>
+
+        <a href="#" class="btn btn-primary btn-block"><b>Hubungi</b></a>
+      </div>
+      <!-- /.card-body -->
+    </div>
+
+
+    {{-- Card Guru - Guru --}}
+    <div class="display-satu row justify-content-around align-items-center center-box">
+    <div class="card-profile card-primary card-outline">
+      <div class="card-body-profile box-profile ">
+        <div class="text-center gambar-profile">
+          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+        </div>
+
+        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+
+        <p class="text-muted text-center">Nama Lengkap</p>
+
+        <ul class="list-group list-group-unbordered mb-3">
+          <li class="list-group-item">
+            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+          </li>
+          <li class="list-group-item">
+            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+          </li>
+          <li class="list-group-item">
+            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+          </li>
+          <li class="list-group-item">
+            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+          </li>
+        </ul>
+
+        <a href="#" class="btn btn-primary btn-block"><b>Hubungi</b></a>
+      </div>
+      <!-- /.card-body -->
+    </div>
+
+    <div class="card-profile card-primary card-outline">
+      <div class="card-body-profile box-profile ">
+        <div class="text-center gambar-profile">
+          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+        </div>
+
+        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+
+        <p class="text-muted text-center">Nama Lengkap</p>
+
+        <ul class="list-group list-group-unbordered mb-3">
+          <li class="list-group-item">
+            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+          </li>
+          <li class="list-group-item">
+            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+          </li>
+          <li class="list-group-item">
+            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+          </li>
+          <li class="list-group-item">
+            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+          </li>
+        </ul>
+
+        <a href="#" class="btn btn-primary btn-block"><b>Hubungi</b></a>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  </div>
+
+   {{-- Card Guru - Guru --}}
+   <div class="display-dua row justify-content-around align-items-center center-box">
+    <div class="card-profile card-primary card-outline">
+      <div class="card-body-profile box-profile ">
+        <div class="text-center gambar-profile">
+          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+        </div>
+
+        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+
+        <p class="text-muted text-center">Nama Lengkap</p>
+
+        <ul class="list-group list-group-unbordered mb-3">
+          <li class="list-group-item">
+            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+          </li>
+          <li class="list-group-item">
+            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+          </li>
+          <li class="list-group-item">
+            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+          </li>
+          <li class="list-group-item">
+            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+          </li>
+        </ul>
+
+        <a href="#" class="btn btn-primary btn-block"><b>Hubungi</b></a>
+      </div>
+      <!-- /.card-body -->
+    </div>
+
+    <div class="card-profile card-primary card-outline">
+      <div class="card-body-profile box-profile ">
+        <div class="text-center gambar-profile">
+          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+        </div>
+
+        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+
+        <p class="text-muted text-center">Nama Lengkap</p>
+
+        <ul class="list-group list-group-unbordered mb-3">
+          <li class="list-group-item">
+            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+          </li>
+          <li class="list-group-item">
+            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+          </li>
+          <li class="list-group-item">
+            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+          </li>
+          <li class="list-group-item">
+            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+          </li>
+        </ul>
+
+        <a href="#" class="btn btn-primary btn-block"><b>Hubungi</b></a>
+      </div>
+      <!-- /.card-body -->
+    </div>
   </div>
 
 
