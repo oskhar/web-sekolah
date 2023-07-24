@@ -6,8 +6,8 @@
 <br><br><br><br>
 <section class="content">
     <div class="container-fluid">
-        <div class="">
-            <ul class="list-group list-group-unbordered mb-3">
+        <div class="row justify-content-center">
+            <ul class="list-group list-group-unbordered mb-3 col-sm-10">
                 <li class="list-group-item">
                 <b>Kepala Sekolah</b> <span class="float-right">+62 813-8638-0481</span>
                 </li>

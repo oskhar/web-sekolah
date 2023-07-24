@@ -8,12 +8,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Create Data</h1>
+                <h1>Dashboard</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item active">Create Data</li>
+                <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </div>
             </div>
@@ -31,10 +30,10 @@
                 <div class="inner">
                   <h3>150</h3>
   
-                  <p>Jumlah Murid</p>
+                  <p>Murid yang Terdaftar</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-person"></i>
+                  <i class="fas fa-user"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -46,10 +45,10 @@
                 <div class="inner">
                   <h3>53</h3>
   
-                  <p>Jumlah Blog atau Materi</p>
+                  <p>Blog atau Materi</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-receipt"></i>
+                  <i class="fas fa-book"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -61,10 +60,10 @@
                 <div class="inner">
                   <h3>65</h3>
   
-                  <p>Unique Visitors</p>
+                  <p>Galeri Diupload</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
+                  <i class="fas fa-image"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -76,16 +75,48 @@
                 <div class="inner">
                   <h3>44</h3>
   
-                  <p>User Registrations</p>
+                  <p>Jumlah Acara</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-person-add"></i>
+                  <i class="fas fa-calendar-day"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
           </div>
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-9 connectedSortable">
+              @include('components.table', [
+                'data' => $data,
+              ])
+            </section>
+            <!-- /.Left col -->
+            <!-- right col (We are only adding the ID to make the widgets sortable)-->
+            <section class="col-lg-3 connectedSortable">
+              <!-- Calendar -->
+              <div class="card bg-gradient-secondary">
+                <div class="card-header border-0">
+      
+                  <h3 class="card-title">
+                    <i class="far fa-calendar-alt"></i>
+                    Calendar
+                  </h3>
+                <!-- /.card-header -->
+                <div class="card-body pt-0">
+                  <!--The calendar -->
+                  <div id="calendar" style="width: 100%"></div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </section>
+            <!-- right col -->
+          </div>
         </div>
     </section>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
 @endsection

@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -16,7 +15,8 @@ return new class extends Migration
             $table->string('judul');
             $table->text('isi');
             $table->string('gambar')->nullable();
-            $table->string('tanggal');
+            $table->date('create_at');
+            $table->date('updated_at')->nullable();
             $table->integer('guru_id');
         });
     }

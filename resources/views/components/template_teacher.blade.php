@@ -8,8 +8,6 @@
     {{-- Template AdminLTE --}}
     <base href="{{ asset('adminLTE') }}/">
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
 
     {{-- Boostrap --}}
@@ -51,9 +49,7 @@
     <!-- overlayScrollbars -->
     <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard.js"></script>
+  <script src="dist/js/adminlte.js"></script>
     <script>
       $.widget.bridge('uibutton', $.ui.button);
     </script>
@@ -231,42 +227,13 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-book"></i>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('/dashboard') }}" class="nav-link @isset($dashboard) active @endisset">
-                  <i class="ml-2 far fa-eye nav-icon"></i>
-                  <p>Read</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('/dashboard/create') }}" class="nav-link @isset($create) active @endisset">
-                  <i class="ml-2 fas fa-plus-square nav-icon"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('/dashboard/update') }}" class="nav-link @isset($update) active @endisset">
-                  <i class="ml-2 fas fa-pencil-alt nav-icon"></i>
-                  <p>Update</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('/dashboard/trash') }}" class="nav-link @isset($trash) active @endisset">
-                  <i class="ml-2 fas fa-trash nav-icon"></i>
-                  <p>Trash</p>
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
       </nav>
