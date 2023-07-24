@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\HomeWork;
 
 class Teacher extends Controller
 {
@@ -14,7 +15,12 @@ class Teacher extends Controller
     public function index()
     {
         //
-        return view('teacher.dashboard');
+        $banyak_pekerjaan_rumah = HomeWork::count();
+        $data_pekerjaan_rumah = HomeWork::all();
+        return view('teacher.dashboard', [
+            'banyak_pekerjaan_rumah' => $banyak_pekerjaan_rumah,
+            'data_pekerjaan_rumah' => $data_pekerjaan_rumah,
+        ]);
     }
 
     /**

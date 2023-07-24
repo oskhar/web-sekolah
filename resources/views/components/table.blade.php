@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/components/table.css') }}">
 <div class="card">
     <div class="card-body">
+        {{-- Tombol aksi --}}
         <div class="row">
             <a href="{{ url('dashboard/create') }}" class="btn border-primary text-primary btn-sm col-sm-1 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
                 Tambah Data
@@ -12,6 +13,7 @@
                 Import Data
             </a>
         </div>
+
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>

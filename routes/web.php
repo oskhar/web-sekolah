@@ -25,6 +25,13 @@ Route::get('/galeri/', [Pages::class, 'galeri']);
 Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
 Route::get('/contact/', [Pages::class, 'contact']);
 
+// Login views
+Route::prefix('login')->group(function () {
+    // Route login guru
+    Route::get('/guru', [Pages::class, 'loginGuru']);
+    Route::post('/guru', [Pages::class, 'loginGuru']);
+});
+
 // Student views
 
 // Teacher views
@@ -37,3 +44,5 @@ Route::get('/admin/', [Admin::class, 'index']);
 Route::get('/testing/', function () {
     return view('test');
 });
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

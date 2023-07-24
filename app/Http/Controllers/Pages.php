@@ -63,6 +63,14 @@ class Pages extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     */
+    public function loginGuru()
+    {
+        return view('pages.login_guru');
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()

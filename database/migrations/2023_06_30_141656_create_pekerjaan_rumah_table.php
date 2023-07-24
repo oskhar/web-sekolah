@@ -12,8 +12,10 @@ return new class extends Migration {
     {
         Schema::create('home_works', function (Blueprint $table) {
             $table->id();
+            $table->text('gambar');
             $table->text('deskripsi');
             $table->date('tanggal_dikumpulkan');
+            $table->integer('gedung');
         });
     }
 
