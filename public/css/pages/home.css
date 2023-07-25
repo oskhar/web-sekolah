@@ -22,8 +22,8 @@
     #container-2 {
         position: relative;
         background-color: #c2d8f2;
-        margin-top: 300px;
-        height: 500px;
+        margin-top: 150px;
+        height: 300px;
     }
     #container-2 svg {
         position: relative;
@@ -47,6 +47,7 @@
     .data-sekolah{
         position: relative;
         top: -200px;
+        color: #355389;
     }    
 
 /* Bagian Pengumuman */
@@ -96,26 +97,4 @@
         margin: 0;
     }
 
-/* Bagian Footer */
-    .footer {
-        background-color: #202040;
-        color: #fff;
-    }
-
-    .footer-logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 10px;
-    }
-
-    .footer-info {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .footer-info p {
-        margin: 0;
-    }
 

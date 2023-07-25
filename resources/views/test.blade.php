@@ -1,26 +1,31 @@
-@extends('components.template_pages')
 
-@section('title', "testing")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    {{-- Template AdminLTE --}}
+    <base href="{{ asset('adminLTE') }}/">
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <title>Belajar JQuery</title>
+</head>
+<body>
 
-@section('mainContainer')
-<br><br><br><br>
-<section class="content">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <ul class="list-group list-group-unbordered mb-3 col-sm-10">
-                <li class="list-group-item">
-                <b>Kepala Sekolah</b> <span class="float-right">+62 813-8638-0481</span>
-                </li>
-                <li class="list-group-item">
-                <b>Tata Usaha</b> <span class="float-right">+62 813-8638-0481</span>
-                </li>
-                <li class="list-group-item">
-                <b>Penanggung Jawab IT</b> <span class="float-right">+62 813-8638-0481</span>
-                </li>
-            </ul>
-            <!-- /.card-body -->
-        </div>
-    </div>
-</section>
-<br><br><br><br>
-@endsection
+    <script>
+        
+    </script>
+    
+</body>
+</html>
