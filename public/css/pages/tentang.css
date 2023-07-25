@@ -1,25 +1,9 @@
 /* Bagian Kurikulum  */
-    .card-info {
+    .container-tentang .card{
         background-color: #C2D8F2;
-        border-radius: 10px;
-    }
-    
-    .card-info .border-0 {
-        border: none;
     }
 
     .border-0 .row .col-md-8 h3{
-        font-size: 30px;
-        font-weight: bold;
-        color: #355389;
-        font-family: sans-serif;
-    }
-    
-    .card-info .img-fluid.rounded-0 {
-        border: none;
-    }
-
-    .card-body-info h1{
         font-size: 30px;
         font-weight: bold;
         color: #355389;
