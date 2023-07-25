@@ -8,7 +8,7 @@
   {{-- Bagian Kurikulum --}}
   <!-- Card -->
   <div class="container-tentang p-5">
-    <div class="card-info border-0">
+    <div class="card border-0">
       <div class="row g-0">
         <!-- Wilayah 1 (Lebar) -->
         <div class="col-md-8 p-4">
@@ -17,9 +17,9 @@
         </div>
         <!-- Wilayah 2 (Kecil) -->
         <div class="col-md-4">
-          <div class="card-body-info p-4">
-            <h1 class="card-title-info">INFO</h1>
-            <p class="card-text-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut magnam consequatur numquam ut laborum enim commodi reiciendis, cumque beatae laudantium debitis aliquid perferendis. Dicta voluptas rem soluta, voluptate totam harum voluptates magnam sit libero .</p>
+          <div class="card-body p-4">
+            <h1 class="card-title">INFO</h1>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut magnam consequatur numquam ut laborum enim commodi reiciendis, cumque beatae laudantium debitis aliquid perferendis. Dicta voluptas rem soluta, voluptate totam harum voluptates magnam sit libero .</p>
             <P>Informasi kegiatan silahkan klik <a href="" style="color: #355389; font-weight: bold;">disini</a></P>
             <a href="#" class="btn btn-primary cek">Cek Lowongan Kerja</a>
           </div>
@@ -131,9 +131,9 @@
     </div>
 
     <div class="display-kepala row justify-content-around align-items-center center-box">
-    <div class="card-profile card-primary card-outline">
-      <div class="card-body-profile ">
-        <div class="text-center gambar-profile">
+    <div class="card card-primary card-outline col-sm-5">
+      <div class="card-body ">
+        <div class="text-center gambar">
           <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
@@ -164,10 +164,10 @@
 
 
     {{-- Card Guru - Guru --}}
-    <div class="display-satu row justify-content-around align-items-center center-box">
-    <div class="card-profile card-primary card-outline">
-      <div class="card-body-profile box-profile ">
-        <div class="text-center gambar-profile">
+    <div class="display-satu row justify-content-around align-items-center center-box col-sm-15">
+    <div class="card-profile card-primary card-outline col-sm-4">
+      <div class="card-body box-profile ">
+        <div class="text-center gambar">
           <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
@@ -195,9 +195,9 @@
       <!-- /.card-body -->
     </div>
 
-    <div class="card-profile card-primary card-outline">
-      <div class="card-body-profile box-profile ">
-        <div class="text-center gambar-profile">
+    <div class="card-profile card-primary card-outline col-sm-4">
+      <div class="card-body box-profile">
+        <div class="text-center gambar">
           <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
@@ -227,10 +227,10 @@
   </div>
 
    {{-- Card Guru - Guru --}}
-   <div class="display-dua row justify-content-around align-items-center center-box">
-    <div class="card-profile card-primary card-outline">
-      <div class="card-body-profile box-profile ">
-        <div class="text-center gambar-profile">
+   <div class="display-dua row justify-content-around align-items-center center-box col-sm-15">
+    <div class="card-profile card-primary card-outline col-sm-4">
+      <div class="card-body box-profile ">
+        <div class="text-center gambar">
           <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
@@ -258,9 +258,9 @@
       <!-- /.card-body -->
     </div>
 
-    <div class="card-profile card-primary card-outline">
-      <div class="card-body-profile box-profile ">
-        <div class="text-center gambar-profile">
+    <div class="card-profile card-primary card-outline col-sm-4">
+      <div class="card-body box-profile ">
+        <div class="text-center gambar">
           <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 

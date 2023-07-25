@@ -1,23 +1,7 @@
-:root{
-    --putih : #F8F9FA;
+    :root{
+        --putih : #F8F9FA;
 
-}
-
-/* Bagian Slide Home 1 */
-    /* #container-1 {
-        display: grid;
-        grid-template-columns: auto auto;
-        padding-inline: 50px;
-        margin-top: 30px;
-    } */
-    /* #container-1 div {
-        padding-left: 100px;
-        padding-top: 200px;
-    } */
-
-    /* #container-1 #ilustrasisekolah {
-        padding: 50px;
-    } */
+    }
 
     #container-2 {
         position: relative;
@@ -98,3 +82,8 @@
     }
 
 
+/* Bagian Prestasi */
+    .daftar-prestasi{
+        padding-top: 150px;
+        padding-bottom: 200px;
+    }
