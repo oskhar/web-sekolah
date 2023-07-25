@@ -52,7 +52,7 @@
             <div class="kotak-tiga col-sm-4 p-5">
                 <div class="text-kotak-dua bg-red rounded shadow p-5">
                     <h1>Banyak Kelas</h1>
-                    <p>4</p>
+                    <p>4 Kelas</p>
                 </div>
             </div>
         </div>

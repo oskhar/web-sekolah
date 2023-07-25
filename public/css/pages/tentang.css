@@ -1,0 +1,61 @@
+/* Bagian Kurikulum  */
+    .card-info {
+        background-color: #C2D8F2;
+        border-radius: 10px;
+    }
+    
+    .card-info .border-0 {
+        border: none;
+    }
+
+    .border-0 .row .col-md-8 h3{
+        font-size: 30px;
+        font-weight: bold;
+        color: #355389;
+        font-family: sans-serif;
+    }
+    
+    .card-info .img-fluid.rounded-0 {
+        border: none;
+    }
+
+    .card-body-info h1{
+        font-size: 30px;
+        font-weight: bold;
+        color: #355389;
+        font-family: sans-serif;
+    }
+
+/* Bagian Profile */
+    .teks-card-tentang{
+        color: #355389;
+        margin-top: 200px;
+        text-align: center; 
+        font-weight: bold; 
+        font-size: 40px;
+        padding: 5px;
+    }
+
+    .card-profile{
+        padding: 10px;
+        width: 300px;
+        border-radius: 10px;
+    }
+
+    .card-body-profile .gambar-profile img{
+        height: 100px;
+        border-radius: 100%;
+    }
+
+    .display-kepala{
+        margin-top: 50px;
+    }
+
+    .display-satu{
+        margin-top: 100px;
+    }
+
+    .display-dua{
+        margin-top: 100px;
+        margin-bottom: 200px;
+    }
