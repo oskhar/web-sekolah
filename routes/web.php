@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pages;
+use App\Http\Controllers\Teacher;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,21 +19,32 @@ use App\Http\Controllers\Pages;
 // Pages views
 Route::get('/', [Pages::class, 'home']);
 Route::get('/tentang/', [Pages::class, 'tentang']);
-Route::get('/visi_misi/', [Pages::class, 'visiMisi']);
-Route::get('/latar_belakang/', [Pages::class, 'latarBelakang']);
+Route::get('/visi-misi/', [Pages::class, 'visiMisi']);
+Route::get('/latar-belakang/', [Pages::class, 'latarBelakang']);
 Route::get('/galeri/', [Pages::class, 'galeri']);
-Route::get('/berita_acara/', [Pages::class, 'beritaAcara']);
+Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
 Route::get('/contact/', [Pages::class, 'contact']);
+
+// Login views
+Route::prefix('login')->group(function () {
+    // Route login guru
+    Route::get('/guru', [Pages::class, 'loginGuru']);
+    Route::post('/guru', [Pages::class, 'loginGuru']);
+});
 
 // Student views
 
 // Teacher views
 Route::get('/teacher/', [Teacher::class, 'index']);
+Route::get('/teacher/materi', [Teacher::class, 'materi']);
 
 // Admin views
 Route::get('/admin/', [Admin::class, 'index']);
+Route::post('/admin/', [Admin::class, 'insertTeacher']);
 
-// Testing
-Route::get('/testing/', function(){
-    return view("test");
+// Testing purpose
+Route::get('/testing/', function () {
+    return view('test');
 });
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
