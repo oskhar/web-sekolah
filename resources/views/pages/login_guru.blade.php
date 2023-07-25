@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-primary"><i class="fas fa-chalkboard-teacher mr-2"></i> {{ __('Login sebagai Guru') }}</div>
+                    <div class="card-header text-primary"><i class="fas fa-chalkboard-teacher mr-2"></i> Login sebagai Guru</div>
     
                     <div class="card-body login-card-body">
                         <p class="login-box-msg">Login for advance fiture</p>

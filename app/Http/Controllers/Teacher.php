@@ -20,6 +20,7 @@ class Teacher extends Controller
         return view('teacher.dashboard', [
             'banyak_pekerjaan_rumah' => $banyak_pekerjaan_rumah,
             'data_pekerjaan_rumah' => $data_pekerjaan_rumah,
+            'dashboard' => true,
         ]);
     }
 
@@ -28,9 +29,12 @@ class Teacher extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function materi()
     {
         //
+        return view('teacher.materi', [
+            'materi' => true,
+        ]);
     }
 
     /**

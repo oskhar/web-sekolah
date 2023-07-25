@@ -36,9 +36,11 @@ Route::prefix('login')->group(function () {
 
 // Teacher views
 Route::get('/teacher/', [Teacher::class, 'index']);
+Route::get('/teacher/materi', [Teacher::class, 'materi']);
 
 // Admin views
 Route::get('/admin/', [Admin::class, 'index']);
+Route::post('/admin/', [Admin::class, 'insertTeacher']);
 
 // Testing purpose
 Route::get('/testing/', function () {
