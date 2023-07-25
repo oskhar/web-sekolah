@@ -26,17 +26,19 @@ Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
 Route::get('/contact/', [Pages::class, 'contact']);
 
 // Login views
-Route::prefix('login')->group(function () {
+Route::group(['middleware' => 'guest'], function () {
     // Route login guru
-    Route::get('/guru', [Pages::class, 'loginGuru']);
-    Route::post('/guru', [Pages::class, 'loginGuru']);
+    Route::get('/login/guru', [Pages::class, 'loginGuru'])->name('login.guru');
+    Route::post('/login/guru', [Pages::class, 'verifikasiLoginGuru'])->name('login.guru');
 });
 
 // Student views
 
 // Teacher views
-Route::get('/teacher/', [Teacher::class, 'index']);
-Route::get('/teacher/materi', [Teacher::class, 'materi']);
+Route::group(['middleware' => 'auth:teacher'], function () {
+    Route::get('/teacher/', [Teacher::class, 'index'])->name('teacher');
+    Route::get('/teacher/materi', [Teacher::class, 'materi']);
+});
 
 // Admin views
 Route::get('/admin/', [Admin::class, 'index']);

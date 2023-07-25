@@ -15,6 +15,9 @@
             <div class="login-box col-md-12 mt-5">
                 <div class="login-logo mt-5">
                     <a href="{{ url('/') }}" class="col-sm-12"><b>Paud</b> KASIH BUNDA</a>
+                    @if(Session::has('error_message'))
+                        <h1>{{ Session::get('error_message') }}</h1>
+                    @endif
                 </div>
             </div>
             <div class="col-md-8">
@@ -23,14 +26,14 @@
     
                     <div class="card-body login-card-body">
                         <p class="login-box-msg">Login for advance fiture</p>
-                        <form method="POST" action="{{ url('/login/guru') }}">
+                        <form method="POST" action="{{ route('login.guru') }}">
                             @csrf
     
                             <div class="row mb-3">
                                 <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
     
                                 <div class="input-group col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     <div class="input-group-append">
                                       <div class="input-group-text">
                                         <span class="fas fa-envelope"></span>

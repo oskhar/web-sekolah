@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Pages extends Controller
 {
@@ -68,6 +69,24 @@ class Pages extends Controller
     public function loginGuru()
     {
         return view('pages.login_guru');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function verifikasiLoginGuru(Request $request)
+    {
+        $credential = $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required',
+        ]);
+        if (Auth::guard('teacher')->attempt($credential)) {
+            // Login berhasil, redirect ke halaman dashboard guru
+            return redirect()->route('teacher');
+        } else {
+            // Login gagal, tampilkan pesan error
+            return back()->with(['error_message' => 'Email atau Password salah!']);
+        }
     }
 
     /**
