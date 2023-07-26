@@ -57,7 +57,7 @@
                 <a class="text-light nav-link" href="{{url('/galeri')}}">Galeri</a>
             </li>
             <li class="nav-item">
-                <a class="text-light nav-link" href="{{url('/berita_acara')}}">Berita & Acara</a>
+                <a class="text-light nav-link" href="{{url('/berita-acara')}}">Berita & Acara</a>
             </li>
             <li class="nav-item">
                 <a class="text-light nav-link" href="{{url('/contact')}}">Contact</a>
