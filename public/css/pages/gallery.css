@@ -1,0 +1,12 @@
+/* Bagian container */
+.container-fluid{
+    width: 930px;
+}
+
+
+/* Bagian Teks */
+    .gallery h2{
+        color: #355389;
+        font-weight: bold;
+        font-family: sans-serif;
+    }

@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.9120209215215!2d106.67810345537558!3d-6.1852755502622845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9aa395dbbbf%3A0x4f45b2c2865f40ca!2sPAUD%20Bunda%20Kasih%20Bangsa!5e0!3m2!1sid!2sid!4v1690116271440!5m2!1sid!2sid"  height="450" style="border:0; width: 100vw;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5419754841055!2d106.69103507449742!3d-6.191983993795659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9ba18d52e67%3A0xc9b61e36f2e71de2!2sPAUD%20Kasih%20Bunda%20Kenanga%20Bangsa!5e0!3m2!1sid!2sid!4v1690357146240!5m2!1sid!2sid" height="450" style="border:0; width: 100vw;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 {{-- Bagian Kebijakan Privasi--}}
 <div class="container-kp">
@@ -79,5 +79,6 @@
 
 
 </div>
+
 
 @endsection
