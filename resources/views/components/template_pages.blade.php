@@ -50,7 +50,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="text-light dropdown-item text-dark" href="{{url('/tentang')}}">Tentang</a>
                     <a class="text-light dropdown-item text-dark" href="{{url('/latar-belakang')}}">Latar Belakang</a>
-                    <a class="text-light dropdown-item text-dark" href="{{url('//visi-misi')}}">Visi Misi</a>
+                    <a class="text-light dropdown-item text-dark" href="{{url('/visi-misi')}}">Visi Misi</a>
                 </div>
             </li>
             <li class="nav-item">
