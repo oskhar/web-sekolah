@@ -65,6 +65,14 @@ class Pages extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function materi()
+    {
+        return view('pages.materi');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function loginGuru()
     {
         return view('pages.login_guru');

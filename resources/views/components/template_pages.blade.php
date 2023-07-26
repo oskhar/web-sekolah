@@ -16,17 +16,9 @@
 </head>
 <body>
 
-{{-- Bagian Header --}}
+    {{-- Bagian Header --}}
     <div class="header">
         <div class="logo">Logo Perusahaan</div>
-        <div class="social-icons">
-
-            {{-- Bagian 4 Tombol Sosial Media --}}
-            <a href=""><button class="btn"><i class="fab fa-facebook-f"></i></button></a>
-            <a href=""><button class="btn"><i class="fab fa-twitter"></i></button></a>
-            <a href=""><button class="btn"><i class="fab fa-instagram"></i></button></a>
-            <a href=""><button class="btn"><i class="fab fa-linkedin-in"></i></button></a>
-        </div>
     </div>
 
 {{-- Bagian Toggle --}}
@@ -93,9 +85,16 @@
                         <p><i class="fas fa-globe"></i> Lokasi: jalan, kecamatan, kelurahan, no, Kota, Negara</p>
                         <p><i class="fas fa-phone"></i> Hubungi : + 62 98788759002</p>
                     </div>
-                    <div class="col-md-6 text-md-left" style="font-size: 15px">
-                        <!-- Copy right -->
-                        <p>&copy; 2023 Perusahaan. All rights reserved.</p>
+                </div>
+                <div class="row col-md-6 justify-content-between" style="font-size: 15px;">
+                    <!-- Copy right -->
+                    <p class="text-md-left">&copy; 2023 Perusahaan. All rights reserved.</p>
+                    {{-- Bagian 4 Tombol Sosial Media --}}
+                    <div class="social-icons justify-content-end">
+                        <a href=""><button class="btn"><i class="fab fa-facebook-f"></i></button></a>
+                        <a href=""><button class="btn"><i class="fab fa-twitter"></i></button></a>
+                        <a href=""><button class="btn"><i class="fab fa-instagram"></i></button></a>
+                        <a href=""><button class="btn"><i class="fab fa-linkedin-in"></i></button></a>
                     </div>
                 </div>
             </div>

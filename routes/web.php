@@ -24,6 +24,7 @@ Route::get('/latar-belakang/', [Pages::class, 'latarBelakang']);
 Route::get('/galeri/', [Pages::class, 'galeri']);
 Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
 Route::get('/contact/', [Pages::class, 'contact']);
+Route::get('/materi/', [Pages::class, 'materi']);
 
 // Login views
 Route::prefix('login')->group(function () {
