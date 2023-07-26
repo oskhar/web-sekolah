@@ -1,4 +1,26 @@
 /* Bagian container */
-    .container{
-        width: 800px;
+    .container-fluid{
+        width: 930px;
+    }
+
+/* Bagian Foto Dan Teks*/
+    .text-overlay{
+        color: #355389;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+/* Bagian Sejarah */
+    .sejarah h2{
+        margin-top: 100px;
+        color: #355389;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+/* Bagian 3 Kotak */
+    .data-sekolah{
+        color: #355389;
+        margin-top: 200px;
     }
