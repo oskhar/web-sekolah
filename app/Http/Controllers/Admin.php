@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class Admin extends Controller
 {
@@ -25,7 +26,7 @@ class Admin extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function insertTeacher(Request $request)
+    public function createTeacher(Request $request)
     {
         //
         $data_validated = $request->validate([
@@ -39,10 +40,11 @@ class Admin extends Controller
             'jabatan' => '',
             'gender' => '',
         ]);
+        $data_validated['password'] = Hash::make($data_validated['password']);
 
         Teacher::create($data_validated);
 
-        return redirect('/admin');
+        return back()->with('success_message', 'Akun guru berhasil ditambahkan.');
     }
 
     /**

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HomeWork;
+use App\Models\Blog;
+use Illuminate\Support\Facades\Auth;
 
 class Teacher extends Controller
 {
@@ -20,7 +22,6 @@ class Teacher extends Controller
         return view('teacher.dashboard', [
             'banyak_pekerjaan_rumah' => $banyak_pekerjaan_rumah,
             'data_pekerjaan_rumah' => $data_pekerjaan_rumah,
-            'dashboard' => true,
         ]);
     }
 
@@ -33,8 +34,60 @@ class Teacher extends Controller
     {
         //
         return view('teacher.materi', [
-            'materi' => true,
         ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createMateri(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'judul' => 'required|unique:blogs',
+            'isi' => 'required',
+            'gambar' => 'mimes:jpeg,jpg,png',
+        ]);
+
+        // Simpan file yang diupload ke direktori 'public/assets/upload'
+        $path = $request->file('gambar')->store('upload', 'public_uploads');
+
+        $data_validated['gambar'] = $path;
+        $data_validated['guru_id'] = Auth::user()->id;
+        Blog::create($data_validated);
+
+        // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
+        return back()->with('success_message', 'File berhasil diupload.');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pekerjaanRumah()
+    {
+        //
+        return view('teacher.pekerjaan_rumah', [
+        ]);
+    }
+    /**
+     * Logout user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 
     /**

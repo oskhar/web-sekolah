@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Illuminate\Support\Str;
 
 class Authenticate extends Middleware
 {
@@ -15,7 +16,12 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (!$request->expectsJson()) {
-            return route('login.guru');
+            // Mendapatkan url
+            $url = $request->url();
+            // Cek url yang dilindungi otentikasi
+            if (Str::startsWith($url, url('/teacher'))) {
+                return route('login.guru');
+            }
         }
     }
 }

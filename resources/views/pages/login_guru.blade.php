@@ -15,9 +15,6 @@
             <div class="login-box col-md-12 mt-5">
                 <div class="login-logo mt-5">
                     <a href="{{ url('/') }}" class="col-sm-12"><b>Paud</b> KASIH BUNDA</a>
-                    @if(Session::has('error_message'))
-                        <h1>{{ Session::get('error_message') }}</h1>
-                    @endif
                 </div>
             </div>
             <div class="col-md-8">
@@ -98,5 +95,16 @@
             </div>
         </div>
     </div>
+    @if(Session::has('error_message'))
+        <script>
+            // Menampilkan pesan error AJAX
+            Swal.fire({
+                title: 'Login gagal!',
+                text: "{{ Session::get('error_message') }}",
+                icon: 'error',
+                confirmButtonText: 'Okey',
+            });
+        </script>
+    @endif
 </body>
 </html>

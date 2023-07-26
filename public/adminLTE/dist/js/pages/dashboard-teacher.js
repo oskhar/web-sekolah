@@ -8,15 +8,6 @@
 /* global moment:false, Chart:false, Sparkline:false */
 
 $(function () {
-  $("#example1").DataTable({
-    "responsive": true,
-    "lengthChange": false,
-    "autoWidth": false,
-    "language": {
-        "info": ''
-    }
-  }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
   'use strict'
 
   // Make the dashboard widgets sortable Using jquery UI

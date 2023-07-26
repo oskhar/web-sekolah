@@ -143,7 +143,7 @@
                     </div>
                     <!-- Input Gambar Profile Guru -->
                     <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-6">
                         <label for="inputFoto">
                             Foto Profile:
                         </label>
@@ -200,21 +200,21 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                    <tr>
-                                        @foreach($data_guru as $data)
-                                            <td>{{ $loop->first }}</td>
+                                    @foreach($data_guru as $data)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $data->nama_lengkap }}</td>
                                             <td>{{ $data->email }}</td>
-                                        @endforeach
-                                        <td>
-                                          <a href="{{ url('/dashboard/update') }}/{{ 'nis' }}" class="btn bg-primary btn-sm">
-                                            <i class="fas fa-pencil-alt"></i>
-                                          </a>
-                                          <a onclick="" class="btn bg-danger btn-sm">
-                                            <i class="fas fa-trash"></i>
-                                          </a>
-                                        </td>
-                                    </tr>
+                                            <td>
+                                            <a href="{{ url('/dashboard/update') }}/{{ 'nis' }}" class="btn bg-primary btn-sm">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a onclick="" class="btn bg-danger btn-sm">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                               </tbody>
                           </table>
                       </div>
@@ -224,6 +224,12 @@
         </div>
     </div>
 </section>
+{{-- Notifikasi --}}
+@if(Session::has('success_message'))
+    <script>
+      Swal.fire('{{ Session::get('success_message') }}', '', 'success');
+    </script>
+@endif
 <!-- DataTables  & Plugins -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

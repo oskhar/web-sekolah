@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pages;
 use App\Http\Controllers\Teacher;
+use App\Http\Controllers\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,8 @@ Route::get('/contact/', [Pages::class, 'contact']);
 // Login views
 Route::group(['middleware' => 'guest'], function () {
     // Route login guru
-    Route::get('/login/guru', [Pages::class, 'loginGuru'])->name('login.guru');
-    Route::post('/login/guru', [Pages::class, 'verifikasiLoginGuru'])->name('login.guru');
+    Route::get('/login/guru', [Login::class, 'guru'])->name('login.guru');
+    Route::post('/login/guru', [Login::class, 'verifikasiGuru'])->name('login.guru');
 });
 
 // Student views
@@ -37,12 +38,18 @@ Route::group(['middleware' => 'guest'], function () {
 // Teacher views
 Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher/', [Teacher::class, 'index'])->name('teacher');
+
     Route::get('/teacher/materi', [Teacher::class, 'materi']);
+    Route::get('/teacher/write-materi', [Teacher::class, 'writeMateri'])->name('teacher.write-materi');
+    Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
+
+    Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
+    Route::post('/teacher/logout', [Teacher::class, 'logout'])->name('teacher.logout');
 });
 
 // Admin views
 Route::get('/admin/', [Admin::class, 'index']);
-Route::post('/admin/', [Admin::class, 'insertTeacher']);
+Route::post('/admin/', [Admin::class, 'createTeacher']);
 
 // Testing purpose
 Route::get('/testing/', function () {

@@ -20,60 +20,100 @@
 
 <!-- Main content -->
 <section class="content">
-    <div class="container-fluid">
-        <div class="card card-primary card-outline">
-            <div class="card-header">
-                <h3 class="card-title">Compose New Message</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <!-- Input Gambar Profile Guru -->
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="text-center">
-                              <div class="mt-2">
-                                <input type="file" class="custom-file-input" id="inputFoto" accept="image/*">
-                                <label class="custom-file-label" for="inputFoto">Upload Foto Materi (Jika Ada)</label>
-                              </div>
-                              <label id="icon-upload-foto" for="inputFoto">
-                                  <i class="text-primary fas fa-upload fa-3x"></i>
-                              </label>
-                                <div id="imagePreview" style="display: none;">
-                                    <img src="#" alt="Foto Profil Guru" class="img-thumbnail">
-                                  </div>
-                            </div>
-                          </div>
-                        </div>
+  <div class="container-fluid">
+    <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST" action="{{ route('teacher.write-materi') }}">
+      @csrf
+      <div class="card-header">
+        <h3 class="card-title">Compose New Message</h3>
+      </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <!-- Input Gambar Profile Guru -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="text-center">
+                      <div class="mt-2">
+                        <input type="file" class="custom-file-input" id="inputFoto" accept="image/*" name="gambar">
+                        <label class="custom-file-label" for="inputFoto">Upload Foto Materi (Jika Ada)</label>
+                      </div>
+                      <label id="icon-upload-foto" for="inputFoto">
+                          <i class="text-primary fas fa-upload fa-3x"></i>
+                      </label>
+                      <div id="imagePreview" style="display: none;">
+                        <img src="#" alt="Foto Profil Guru" class="img-thumbnail">
                       </div>
                     </div>
-                    <!-- End Input Gambar Profile Guru -->
-                <div class="form-group">
-                    <label for="judul">Judul Materi:</label>
-                    <input class="form-control" placeholder="Judul...">
+                    @error('gambar')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                  </div>
                 </div>
-                <div class="form-group">
-                    <textarea id="compose-textarea" class="form-control" style="height: 300px">
-                    </textarea>
-                </div>
+              </div>
             </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-                <div class="float-right">
-                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
-                </div>
+            <!-- End Input Gambar Profile Guru -->
+            <div class="form-group">
+                <label for="judul">Judul Materi:</label>
+                <input class="form-control @error('judul') is-invalid @enderror" placeholder="Judul..." name="judul" value="{{ old('judul') }}">
+                @error('judul')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
-            <!-- /.card-footer -->
+            <div class="form-group">
+                <textarea id="compose-textarea" class="form-control @error('isi') is-invalid @enderror" style="height: 300px" name="isi">
+                  {{ old('isi') }}
+                </textarea>
+                @error('isi')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+          </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <div class="float-right">
+                <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
+            </div>
         </div>
-        <!-- /.card -->
-    </div>
+        <!-- /.card-footer -->
+    </form>
+    <!-- /.card -->
+  </div>
 </section>
+@if(Session::has('success_message'))
+    <script>
+      Swal.fire({{ Session::get('success_message') }}, '', 'success');
+    </script>
+@endif
 <!-- Page specific script -->
 <script>
   $(function () {
     //Add text editor
     $('#compose-textarea').summernote()
   })
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      $('#icon-upload-foto').remove();
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        $('#imagePreview img').attr('src', e.target.result);
+        $('#imagePreview').show();
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  // Ketika input file dipilih, panggil fungsi readURL
+  $('#inputFoto').change(function() {
+    readURL(this);
+  });
 </script>
 @endsection

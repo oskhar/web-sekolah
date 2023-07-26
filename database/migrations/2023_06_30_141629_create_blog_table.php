@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -14,11 +13,11 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('judul')->unique();
-            $table->text('isi');
+            $table->text('isi')->nullable();
             $table->string('gambar')->nullable();
             $table->integer('guru_id');
-            $table->date('created_at');
-            $table->date('updated_at')->nullable();
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

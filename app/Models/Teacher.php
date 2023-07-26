@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Teacher extends Authenticatable
 {
     use HasFactory;
+
     /**
      * The attributes that are mass assignable.
      *

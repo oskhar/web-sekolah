@@ -21,8 +21,8 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('gender');
-            $table->date('created_at');
-            $table->date('updated_at');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 
