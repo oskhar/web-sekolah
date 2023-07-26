@@ -24,3 +24,21 @@
         color: #355389;
         margin-top: 200px;
     }
+
+    .table-kegiatan{
+        margin-bottom: 200px;
+    }
+
+    .table-kegiatan h1{
+        color: #355389;
+        margin-top: 200px;
+        text-align: center;
+    }
+
+    .kolom-satu{
+        background-color: #C2D8F2;
+    }
+
+    .kolom-satu tr td{
+        border-radius: 10px;
+    }

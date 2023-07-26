@@ -22,6 +22,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis doloremque aliquam at sunt odit vel ipsam eum blanditiis, ipsa aliquid quas eaque nostrum soluta, laboriosam, architecto fuga delectus ad. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maximead. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maxime</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis doloremque aliquam at sunt odit vel ipsam eum blanditiis, ipsa aliquid quas eaque nostrum soluta, laboriosam, architecto fuga delectus ad. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maximead. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maxime</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis doloremque aliquam at sunt odit vel ipsam eum blanditiis, ipsa aliquid quas eaque nostrum soluta, laboriosam, architecto fuga delectus ad. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maximead. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maxime</p>
+    </div>
     
     {{-- 3 Kotak --}}
     <div class="data-sekolah">
@@ -53,11 +54,55 @@
         </div>
     </div>
     
-    </div>
+{{-- Bagian Table --}}
+    <div class="container table-kegiatan">
+        <h1>Kegiatan Hari - Hari</h1>
+        <div class="row">
+          <div class="col">
+            <!-- Tabel dengan 4 baris dan 4 kolom -->
+            <table class="table mt-5 text-center">
+              <thead class="kolom-satu">
+                <tr>
+                  <th>No</th>
+                  <th>Kegiatan</th>
+                  <th>Waktu</th>
+                  <th>Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Membaca Buku</td>
+                  <td>10.00-12.00</td>
+                  <td>hari ini harus di kumpulkan tugasnya</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Membaca Buku</td>
+                  <td>08.00-09.30</td>
+                  <td>hari ini harus di kumpulkan tugasnya</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Membaca Buku</td>
+                  <td>14.00-16.00</td>
+                  <td>hari ini harus di kumpulkan tugasnya</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Membaca Buku</td>
+                  <td>19.00-20.30</td>
+                  <td>hari ini harus di kumpulkan tugasnya</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
 
 
-  </div>
+</div>
 
 
 
