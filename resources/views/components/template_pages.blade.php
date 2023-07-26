@@ -16,7 +16,7 @@
 </head>
 <body>
 
-        {{-- Bagian Header --}}
+{{-- Bagian Header --}}
     <div class="header">
         <div class="logo">Logo Perusahaan</div>
         <div class="social-icons">
@@ -75,7 +75,7 @@
     </div>
 </nav>
 
-
+{{-- Bagian Main --}}
     <main style="height: 200vh;">
         @yield('mainContainer')
 
