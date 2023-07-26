@@ -107,4 +107,5 @@
 
     <script src="{{ asset('js/components/pagesnavbar.js') }}"></script>
 </body>
+@include('components.sweetalert')
 </html>

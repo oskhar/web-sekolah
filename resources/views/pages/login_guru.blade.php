@@ -95,16 +95,6 @@
             </div>
         </div>
     </div>
-    @if(Session::has('error_message'))
-        <script>
-            // Menampilkan pesan error AJAX
-            Swal.fire({
-                title: 'Login gagal!',
-                text: "{{ Session::get('error_message') }}",
-                icon: 'error',
-                confirmButtonText: 'Okey',
-            });
-        </script>
-    @endif
 </body>
+@include('components.sweetalert')
 </html>

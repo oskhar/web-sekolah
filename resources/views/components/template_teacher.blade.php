@@ -172,6 +172,7 @@
 
   <!-- /.control-sidebar -->
 </div>
+@include('components.sweetalert')
 <!-- ./wrapper -->
 </body>
 </html>

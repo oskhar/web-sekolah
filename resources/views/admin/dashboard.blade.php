@@ -224,12 +224,6 @@
         </div>
     </div>
 </section>
-{{-- Notifikasi --}}
-@if(Session::has('success_message'))
-    <script>
-      Swal.fire('{{ Session::get('success_message') }}', '', 'success');
-    </script>
-@endif
 <!-- DataTables  & Plugins -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

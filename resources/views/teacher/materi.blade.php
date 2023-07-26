@@ -45,15 +45,15 @@
                         <img src="#" alt="Foto Profil Guru" class="img-thumbnail">
                       </div>
                     </div>
-                    @error('gambar')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
                   </div>
                 </div>
               </div>
             </div>
+            @error('gambar')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             <!-- End Input Gambar Profile Guru -->
             <div class="form-group">
                 <label for="judul">Judul Materi:</label>
