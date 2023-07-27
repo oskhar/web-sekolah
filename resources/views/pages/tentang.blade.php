@@ -21,7 +21,7 @@
             <h1 class="card-title">INFO</h1>
             <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut magnam consequatur numquam ut laborum enim commodi reiciendis, cumque beatae laudantium debitis aliquid perferendis. Dicta voluptas rem soluta, voluptate totam harum voluptates magnam sit libero .</p>
             <P>Informasi kegiatan silahkan klik <a href="" style="color: #355389; font-weight: bold;">disini</a></P>
-            <a href="#" class="btn btn-primary cek">Cek Lowongan Kerja</a>
+            <a href="{{url('/lowongan-kerja')}}" class="btn btn-primary cek">Cek Lowongan Kerja</a>
           </div>
         </div>
       </div>
