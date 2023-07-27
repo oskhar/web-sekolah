@@ -4,6 +4,7 @@
 @section('mainContainer')
 
 <link rel="stylesheet" href="{{ asset('css/pages/kebijakan_privasi.css')}} ">
+
 {{-- Bagian Kebijakan Privasi--}}
 <div class="container-kp">
     <h1>KEBIJAKAN PRIVASI</h1>
