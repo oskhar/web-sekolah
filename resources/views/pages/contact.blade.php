@@ -73,7 +73,7 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quod perspiciatis pariatur deleniti, totam nulla dolorum cupiditate doloremque quis blanditiis dignissimos maxime quo cumque adipisci eos recusandae ducimus ex, assumenda distinctio? Harum veniam ut maxime? Quos inventore minima explicabo libero quam temporibus natus soluta. Repudiandae ipsa fugit molestiae assumenda eaque?</p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia veniam, voluptatem accusamus optio nesciunt delectus nobis! Inventore maxime explicabo illum, doloribus laboriosam nemo. Corporis animi error quos unde libero quidem repellat? Ipsa aliquam sit nesciunt repellat porro. Asperiores quibusdam eaque non perferendis tenetur deleniti nam hic ullam, consectetur quaerat soluta?</p>
 
-        <p><a href="#">Selengkapnya</a></p>
+        <p><a href="{{url('/kebijakan-privasi')}}">Selengkapnya</a></p>
     </div>
 
 
