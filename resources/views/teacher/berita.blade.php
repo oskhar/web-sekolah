@@ -34,11 +34,11 @@
       <!-- Small boxes (Stat box) -->
         <div class="card">
             <div class="card-header">
-              <h3 class="card-title my-2">Blog dan Materi</h3>
+                <h3 class="card-title my-2">Pekerjaan Rumah (PR)</h3>
             </div>
             <div class="card-body">
                 <div class="row">
-                  <a href="{{ url('/teacher/write-materi') }}" class="btn border-primary text-primary btn-sm col-sm-1 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
+                  <a href="{{ url('/teacher/write-berita') }}" class="btn border-primary text-primary btn-sm col-sm-1 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
                     Tambah Materi
                   </a>
                 </div>
@@ -48,17 +48,21 @@
                             <td>No</td>
                             <td>Gambar</td>
                             <td>Judul</td>
-                            <td>Tanggal</td>
+                            <td>Waktu Dibuat</td>
+                            <td>Mulai Acara</td>
+                            <td>Durasi</td>
                             <td>Action</td>
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data_materi as $data)
+                      @foreach ($data_berita as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td><img src="{{ asset('/assets/'.$data->gambar) }}" class="img-fluid" alt="Ini Gambar" style="height: 5rem"></td>
                             <td>{{ $data->judul }}</td>
-                            <td>{{ $data->created_at->format('Y-m-d') }}</td>
+                            <td>{{ $data->created_at }}</td>
+                            <td>{{ $data->tanggal_acara }}</td>
+                            <td>{{ $data->durasi_hari }} Hari</td>
                             <td>
                               <a onmouseover="this.classList.add('btn-info');this.classList.remove('text-info')" onmouseout="this.classList.remove('btn-info');this.classList.add('text-info')" href="{{ url('/dashboard/detail') }}/{{ $data['nis'] }}" class="btn border-info text-info btn-sm">
                                 <i class="fas fa-eye"></i>

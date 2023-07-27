@@ -2,6 +2,8 @@
 
 @section('title', "Dashboard")
 @section('mainContainer')
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href="plugins/fullcalendar/main.css">
   <!-- Content Header (Page header) -->
   <section class="content-header">
       <div class="container-fluid">
@@ -84,35 +86,61 @@
           </div>
           <!-- ./col -->
         </div>
+        <h4 class="text-muted mt-2">Kalender Acara</h4>
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <section class="col-lg-9 connectedSortable">
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-3 connectedSortable">
-            <!-- Calendar -->
-            <div class="card bg-gradient-secondary">
-              <div class="card-header border-0">
-    
-                <h3 class="card-title">
-                  <i class="far fa-calendar-alt"></i>
-                  Calendar
-                </h3>
-              <!-- /.card-header -->
-              <div class="card-body pt-0">
-                <!--The calendar -->
-                <div id="calendar" style="width: 100%"></div>
+          <section class="col-lg-10 connectedSortable">
+            <div class="card card-primary">
+              <div class="card-body p-0">
+                <!-- THE CALENDAR -->
+                <div id="calendar"></div>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
           </section>
           <!-- right col -->
+          <section class="col-lg-2 connectedSortable">
+            <div class="card card-primary">
+              <div class="card-body p-3 row">
+                <a class="btn bg-info col-sm-12 m-1">
+                  <i class="fas fa-star"></i>
+                  <strong>Event 1</strong>
+                </a>
+                <a class="btn bg-info col-sm-12 m-1">
+                  <i class="fas fa-star"></i>
+                  <strong>Event 2</strong>
+                </a>
+              <!-- Tambahkan item lainnya sesuai kebutuhan -->
+              </div>
+            </div>
+          </section>
         </div>
       </div>
   </section>
+  <!-- fullCalendar 2.2.5 -->
+  <script src="plugins/moment/moment.min.js"></script>
+  <script src="plugins/fullcalendar/main.js"></script>
+  <script>
+    var listAcaraPaud = [
+      {
+            title          : 'Meeting',
+            start          : '2023-07-10',
+            end            : '2023-07-12',
+            allDay         : false,
+            backgroundColor: 'var(--info)', //Blue
+            borderColor    : 'var(--info)' //Blue
+      },
+      {
+            title          : 'Meeting',
+            start          : '2023-07-28',
+            allDay         : false,
+            backgroundColor: 'var(--info)', //Blue
+            borderColor    : 'var(--info)' //Blue
+      }
+    ];
+  </script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard-teacher.js"></script>
 @endsection

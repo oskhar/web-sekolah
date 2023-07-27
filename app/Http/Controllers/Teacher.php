@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HomeWork;
 use App\Models\Blog;
+use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 
 class Teacher extends Controller
@@ -30,11 +31,39 @@ class Teacher extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function materi()
+    public function berita()
     {
         //
-        return view('teacher.materi', [
+        $data_berita = Event::all();
+        return view('teacher.berita', [
+            'data_berita' => $data_berita,
         ]);
+    }
+    public function writeBerita()
+    {
+        //
+        return view('teacher.write_berita');
+    }
+    public function createBerita(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'judul' => 'required|unique:events',
+            'isi' => '',
+            'gambar' => 'required|mimes:jpeg,jpg,png',
+            'tanggal_acara' => 'required',
+            'durasi_hari' => 'required',
+        ]);
+
+        // Simpan file yang diupload ke direktori 'public/assets/upload'
+        $path = $request->file('gambar')->store('upload', 'public_uploads');
+
+        $data_validated['gambar'] = $path;
+        $data_validated['guru_id'] = Auth::user()->id;
+        Event::create($data_validated);
+
+        // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
+        return back()->with('success_message', 'File berhasil diupload.');
     }
 
     /**
@@ -42,13 +71,26 @@ class Teacher extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function materi()
+    {
+        //
+        $data_materi = Blog::all();
+        return view('teacher.materi', [
+            'data_materi' => $data_materi,
+        ]);
+    }
+    public function writeMateri()
+    {
+        //
+        return view('teacher.write_materi');
+    }
     public function createMateri(Request $request)
     {
         //
         $data_validated = $request->validate([
             'judul' => 'required|unique:blogs',
-            'isi' => 'required',
-            'gambar' => 'mimes:jpeg,jpg,png',
+            'isi' => '',
+            'gambar' => 'required|mimes:jpeg,jpg,png',
         ]);
 
         // Simpan file yang diupload ke direktori 'public/assets/upload'

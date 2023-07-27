@@ -103,7 +103,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a class="nav-link">
               <i class="nav-icon fas fa-database"></i>
               <p>
                 Kelola Data
@@ -112,19 +112,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{ url('/teacher/murid') }}" class="nav-link @if(request()->is('teacher/murid')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Murid Terdaftar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{{ url('/teacher/galeri') }}" class="nav-link @if(request()->is('teacher/galeri')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Galeri Paud</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{ url('/teacher/profile') }}" class="nav-link @if(request()->is('teacher/profile')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profile Pribadi</p>
                 </a>
@@ -132,7 +132,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ url('/teacher/berita') }}" class="nav-link @if(request()->is('teacher/berita')) active @endif">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 Berita & Acara

@@ -25,6 +25,7 @@ Route::get('/latar-belakang/', [Pages::class, 'latarBelakang']);
 Route::get('/galeri/', [Pages::class, 'galeri']);
 Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
 Route::get('/contact/', [Pages::class, 'contact']);
+Route::get('/materi/', [Pages::class, 'materi']);
 
 // Login views
 Route::group(['middleware' => 'guest'], function () {
@@ -39,9 +40,15 @@ Route::group(['middleware' => 'guest'], function () {
 Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher/', [Teacher::class, 'index'])->name('teacher');
 
+    // Halaman kelola materi
     Route::get('/teacher/materi', [Teacher::class, 'materi']);
     Route::get('/teacher/write-materi', [Teacher::class, 'writeMateri'])->name('teacher.write-materi');
     Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
+
+    // Halaman kelola berita
+    Route::get('/teacher/berita', [Teacher::class, 'berita']);
+    Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
+    Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
 
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
     Route::post('/teacher/logout', [Teacher::class, 'logout'])->name('teacher.logout');

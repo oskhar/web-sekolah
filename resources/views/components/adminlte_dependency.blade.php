@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('sweetalert/sweetalert2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/rasio_gambar.css') }}">
 <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 <!-- Tempusdominus Bootstrap 4 -->
 
