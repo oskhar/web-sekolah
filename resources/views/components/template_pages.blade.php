@@ -68,7 +68,7 @@
 </nav>
 
 {{-- Bagian Main --}}
-    <main style="height: 200vh;">
+    <main style="height: 100vh;">
         @yield('mainContainer')
 
         {{-- Bagian Footer --}}
@@ -86,7 +86,7 @@
                         <p><i class="fas fa-phone"></i> Hubungi : + 62 98788759002</p>
                     </div>
                 </div>
-                <div class="row col-md-6 justify-content-between" style="font-size: 15px;">
+                <div class="row col-md-12 justify-content-between" style="font-size: 15px; width: 700%;">
                     <!-- Copy right -->
                     <p class="text-md-left">&copy; 2023 Perusahaan. All rights reserved.</p>
                     {{-- Bagian 4 Tombol Sosial Media --}}
