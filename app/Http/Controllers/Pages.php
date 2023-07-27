@@ -78,6 +78,14 @@ class Pages extends Controller
         return view('pages.kebijakan_privasi');
     }
 
+        /**
+     * Display a listing of the resource.
+     */
+    public function lowonganKerja()
+    {
+        return view('pages.lowongan-kerja');
+    }
+
     /**
      * Display a listing of the resource.
      */

@@ -26,6 +26,7 @@ Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
 Route::get('/contact/', [Pages::class, 'contact']);
 Route::get('/materi/', [Pages::class, 'materi']);
 Route::get('/kebijakan-privasi/', [Pages::class, 'kebijakanPrivasi']);
+Route::get('/lowongan-kerja/', [Pages::class, 'lowonganKerja']);
 
 // Login views
 Route::prefix('login')->group(function () {
