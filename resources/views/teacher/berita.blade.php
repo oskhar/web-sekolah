@@ -1,6 +1,6 @@
 @extends('components.template_teacher')
 
-@section('title', "Pekerjaan Rumah")
+@section('title', "Berita dan Acara")
 @section('mainContainer')
 <style>
   .dataTables_filter {
@@ -16,12 +16,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Pekerjaan Rumah</h1>
+            <h1>Berita dan Acara</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item active">Dashboard</li>
-            <li class="breadcrumb-item active">Pekerjaan Rumah</li>
+            <li class="breadcrumb-item active">Berita dan Acara</li>
             </ol>
         </div>
         </div>
@@ -34,12 +34,12 @@
       <!-- Small boxes (Stat box) -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title my-2">Pekerjaan Rumah (PR)</h3>
+                <h3 class="card-title my-2">Kumpulan Berita dan Acara</h3>
             </div>
             <div class="card-body">
                 <div class="row">
-                  <a href="{{ url('/teacher/write-berita') }}" class="btn border-primary text-primary btn-sm col-sm-1 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
-                    Tambah Materi
+                  <a href="{{ url('/teacher/write-berita') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
+                    Tambah Berita atau Acara
                   </a>
                 </div>
                 <table id="example1" class="table table-bordered table-striped">

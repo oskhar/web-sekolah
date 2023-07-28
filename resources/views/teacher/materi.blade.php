@@ -1,6 +1,6 @@
 @extends('components.template_teacher')
 
-@section('title', "Pekerjaan Rumah")
+@section('title', "Kumpulan Materi")
 @section('mainContainer')
 <style>
   .dataTables_filter {
@@ -16,12 +16,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Pekerjaan Rumah</h1>
+            <h1>Kumpulan Materi</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item active">Dashboard</li>
-            <li class="breadcrumb-item active">Pekerjaan Rumah</li>
+            <li class="breadcrumb-item active">Kumpulan Materi</li>
             </ol>
         </div>
         </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                  <a href="{{ url('/teacher/write-materi') }}" class="btn border-primary text-primary btn-sm col-sm-1 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
+                  <a href="{{ url('/teacher/write-materi') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
                     Tambah Materi
                   </a>
                 </div>

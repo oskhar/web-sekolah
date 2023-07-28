@@ -19,10 +19,14 @@ class Teacher extends Controller
     {
         //
         $banyak_pekerjaan_rumah = HomeWork::count();
-        $data_pekerjaan_rumah = HomeWork::all();
+        $banyak_berita = Event::count();
+
+        $data_berita = Event::all();
+
         return view('teacher.dashboard', [
             'banyak_pekerjaan_rumah' => $banyak_pekerjaan_rumah,
-            'data_pekerjaan_rumah' => $data_pekerjaan_rumah,
+            'banyak_berita' => $banyak_berita,
+            'data_berita' => $data_berita,
         ]);
     }
 

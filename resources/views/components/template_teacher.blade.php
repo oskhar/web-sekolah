@@ -36,7 +36,7 @@
           <!-- Toggle Dropdown -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <!-- User Name -->
-            <span class="hidden-xs">John Doe</span>
+            <span class="hidden-xs">{{ Auth::user()->nama_panggilan }}</span>
             <!-- User Image -->
             <img src="{{ asset('assets/avatar/guru.jpg') }}" class="user-image thumbnail" alt="User Image">
           </a>
@@ -46,18 +46,19 @@
             <li class="user-header">
               <img src="{{ asset('assets/avatar/guru.jpg') }}" class="img-circle" alt="User Image">
               <p>
-                John Doe
-                <small>Member since Jan. 2023</small>
+                <b class="">{{ Auth::user()->nama_panggilan }}</b>
+                <small class="text-gray">{{ Auth::user()->nama_lengkap }}</small>
               </p>
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Profile</a>
               </div>
-              <div class="pull-right mt-2">
-                <a href="#" class="btn btn-danger btn-flat">Log out</a>
-              </div>
+              <form method="POST" class="pull-right mt-2" action="{{ route('teacher.logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-danger btn-flat">Log out</button>
+              </form>
             </li>
           </ul>
         </li>      
@@ -114,19 +115,19 @@
               <li class="nav-item">
                 <a href="{{ url('/teacher/murid') }}" class="nav-link @if(request()->is('teacher/murid')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Murid Terdaftar</p>
+                  <p>Murid</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('/teacher/galeri') }}" class="nav-link @if(request()->is('teacher/galeri')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Galeri Paud</p>
+                  <p>Galeri</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('/teacher/profile') }}" class="nav-link @if(request()->is('teacher/profile')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profile Pribadi</p>
+                  <p>Profile</p>
                 </a>
               </li>
             </ul>

@@ -74,7 +74,7 @@
             <!-- small box -->
             <div class="small-box bg-secondary">
               <div class="inner">
-                <h3>44</h3>
+                <h3>{{ $banyak_berita }}</h3>
 
                 <p>Jumlah Acara</p>
               </div>
@@ -104,14 +104,12 @@
           <section class="col-lg-2 connectedSortable">
             <div class="card card-primary">
               <div class="card-body p-3 row">
+                @foreach ($data_berita as $data)
                 <a class="btn bg-info col-sm-12 m-1">
                   <i class="fas fa-star"></i>
-                  <strong>Event 1</strong>
+                  <strong>{{ $data->judul }}</strong>
                 </a>
-                <a class="btn bg-info col-sm-12 m-1">
-                  <i class="fas fa-star"></i>
-                  <strong>Event 2</strong>
-                </a>
+                @endforeach
               <!-- Tambahkan item lainnya sesuai kebutuhan -->
               </div>
             </div>
@@ -124,21 +122,16 @@
   <script src="plugins/fullcalendar/main.js"></script>
   <script>
     var listAcaraPaud = [
+      @foreach ($data_berita as $data)
       {
-            title          : 'Meeting',
-            start          : '2023-07-10',
-            end            : '2023-07-12',
+            title          : '{{ $data->judul }}',
+            start          : '{{ $data->tanggal_acara }}',
+            end            : '{{ \Carbon\Carbon::parse($data->tanggal)->addDays($data->durasi_hari) }}',
             allDay         : false,
             backgroundColor: 'var(--info)', //Blue
             borderColor    : 'var(--info)' //Blue
       },
-      {
-            title          : 'Meeting',
-            start          : '2023-07-28',
-            allDay         : false,
-            backgroundColor: 'var(--info)', //Blue
-            borderColor    : 'var(--info)' //Blue
-      }
+      @endforeach
     ];
   </script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
