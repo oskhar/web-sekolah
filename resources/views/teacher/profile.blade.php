@@ -26,8 +26,8 @@
             <div class="card col-md-4">
             <!-- Profile Card -->
             <div class="card-body row">
-                <div class="col-sm-12 d-flex justify-content-center">
-                    <img class="img-circle elevation-2" src="{{ asset('assets/avatar/guru.jpg') }}" alt="Foto Profil">
+                <div class="col-sm-12 d-flex justify-content-center" id="bungkus_foto">
+                    <img class="img-circle elevation-2" src="{{ asset('assets/'.Auth::user()->foto_profile) }}" alt="Foto Profil" id="foto_profile" onmouseover="munculkanTombolUbahProfile()">
                 </div>
                 <div class="col-sm-12 d-flex justify-content-center mt-4">
                     <h3 class="font-weight-light">{{ Auth::user()->nama_lengkap }}</h3>
@@ -64,4 +64,11 @@
         </div>
     </div>
 </section><!-- /.content -->
+<script>
+    function munculkanTombolUbahProfile () {
+        let tombol = document.createElement('button');
+        tombol.id = 'tombol_ganti_avatar';
+        $('foto_profile').add(tombol);
+    }
+</script>
 @endsection

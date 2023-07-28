@@ -38,13 +38,13 @@
             <!-- User Name -->
             <span class="hidden-xs">{{ Auth::user()->nama_panggilan }}</span>
             <!-- User Image -->
-            <img src="{{ asset('assets/avatar/guru.jpg') }}" class="user-image thumbnail" alt="User Image">
+            <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
           </a>
           <!-- Dropdown Menu -->
           <ul class="dropdown-menu dropdown-menu-right">
             <!-- User Image -->
             <li class="user-header">
-              <img src="{{ asset('assets/avatar/guru.jpg') }}" class="img-circle" alt="User Image">
+              <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="img-circle" alt="User Image">
               <p>
                 <b class="">{{ Auth::user()->nama_panggilan }}</b>
                 <small class="text-gray">{{ Auth::user()->nama_lengkap }}</small>

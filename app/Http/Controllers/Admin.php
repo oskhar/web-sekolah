@@ -29,29 +29,29 @@ class Admin extends Controller
     public function createTeacher(Request $request)
     {
         //
-        $list_gambar = [
-            ''
-        ];
-
         $data_validated = $request->validate([
             'nama_lengkap' => 'required',
             'nama_panggilan' => 'required',
             'nomor_telepon' => 'required|unique:teachers',
-            'email' => 'required|email:dns|unique:teachers',
+            'email' => 'required|unique:teachers',
             'password' => 'required',
-            'foto_profile' => '',
             'pengalaman_mengajar' => '',
             'jabatan' => '',
             'gender' => '',
-            'gambar' => 'required|mimes:jpeg,jpg,png',
+            'foto_profile' => 'mimes:jpeg,jpg,png',
         ]);
 
-        if (empty($data_validated['gambar'])) {
-            $data_validated['gambar'] = 
+        $list_gambar = [
+            'avatar/guru.jpg',
+            'avatar/guru-2.jpg',
+        ];
+
+        if (empty($data_validated['foto_profile'])) {
+            $data_validated['foto_profile'] = $list_gambar[$data_validated['gender']];
         } else {
             // Simpan file yang diupload ke direktori 'public/assets/upload'
-            $path = $request->file('gambar')->store('upload', 'public_uploads');
-            $data_validated['gambar'] = $path;
+            $path = $request->file('foto_profile')->store('upload', 'public_uploads');
+            $data_validated['foto_profile'] = $path;
         }
 
         $data_validated['password'] = Hash::make($data_validated['password']);
