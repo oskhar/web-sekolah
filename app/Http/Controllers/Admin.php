@@ -29,6 +29,10 @@ class Admin extends Controller
     public function createTeacher(Request $request)
     {
         //
+        $list_gambar = [
+            ''
+        ];
+
         $data_validated = $request->validate([
             'nama_lengkap' => 'required',
             'nama_panggilan' => 'required',
@@ -39,7 +43,17 @@ class Admin extends Controller
             'pengalaman_mengajar' => '',
             'jabatan' => '',
             'gender' => '',
+            'gambar' => 'required|mimes:jpeg,jpg,png',
         ]);
+
+        if (empty($data_validated['gambar'])) {
+            $data_validated['gambar'] = 
+        } else {
+            // Simpan file yang diupload ke direktori 'public/assets/upload'
+            $path = $request->file('gambar')->store('upload', 'public_uploads');
+            $data_validated['gambar'] = $path;
+        }
+
         $data_validated['password'] = Hash::make($data_validated['password']);
 
         Teacher::create($data_validated);

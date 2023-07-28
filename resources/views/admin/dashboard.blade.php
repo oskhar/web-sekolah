@@ -75,10 +75,10 @@
                             <div class="form-group">
                                 <label>Jabatan</label>
                                 <select class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="jabatan" id="jabatan">
-                                    <option value="Islam" selected="selected">Pengajar</option>
-                                    <option value="Kristen">Kepala Sekolah</option>
-                                    <option value="Hindu">Bendahara</option>
-                                    <option value="Budha">Sekretaris</option>
+                                    <option value="Pengajar" selected="selected">Pengajar</option>
+                                    <option value="Kepala Sekolah">Kepala Sekolah</option>
+                                    <option value="Bendahara">Bendahara</option>
+                                    <option value="Sekretaris">Sekretaris</option>
                                 </select>
                             </div>
                         </div>

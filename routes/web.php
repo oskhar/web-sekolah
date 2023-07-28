@@ -50,7 +50,13 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
     Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
 
+    // Halaman kelola pekerjaan rumah
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
+
+    // Halaman kelola profile
+    Route::get('/teacher/profile', [Teacher::class, 'profile']);
+
+    // Aksi logout
     Route::post('/teacher/logout', [Teacher::class, 'logout'])->name('teacher.logout');
 });
 

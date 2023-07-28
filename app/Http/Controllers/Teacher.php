@@ -119,6 +119,17 @@ class Teacher extends Controller
         return view('teacher.pekerjaan_rumah', [
         ]);
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function profile()
+    {
+        //
+        return view('teacher.profile');
+    }
     /**
      * Logout user.
      *
