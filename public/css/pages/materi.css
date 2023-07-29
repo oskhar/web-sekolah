@@ -1,0 +1,11 @@
+/* Bagian container */
+.container-fluid{
+    width: 1000px;
+}
+
+.text-overlay h2{
+    color: #355389;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+}

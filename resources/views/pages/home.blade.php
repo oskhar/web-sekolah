@@ -180,8 +180,8 @@
       </div>
 
       {{-- Bagian Daftar Presentasi --}}
-      <div class="container mt-5" style=" padding-top: 150px;">
-        <h2 class="text-center">DAFTAR PRESENTASI</h2>
+      <div class="container daftar-prestasi mt-5">
+        <h2 class="text-center mb-5">DAFTAR PRESTASI</h2>
         <div class="row no-gutters">
     
             <!-- Baris 1 -->

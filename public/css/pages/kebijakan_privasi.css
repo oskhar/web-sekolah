@@ -1,0 +1,13 @@
+/* Bagian Kebijakan Privasi */
+.container-kp{
+    width: 80%;
+    margin: 80px auto;
+    align-items: center;
+}
+
+.container-kp h1{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #355389;
+}

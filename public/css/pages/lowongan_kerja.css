@@ -1,0 +1,28 @@
+/* Bagian Lowongan Kerja */
+.lowongan{
+    width: 80%;
+    margin: 80px auto;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.container-kp h1{
+    font-weight: bold;
+    color: #355389;
+}
+
+.container-kp .teks-kp{
+    margin-bottom: 100px;
+}
+
+/* Bagian Sub Judul */
+.teks-sub-judul h2{
+    color: #355389;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.teks-sub-judul h4{
+    color: #355389;
+    font-weight: bold;
+}
