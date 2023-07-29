@@ -75,10 +75,10 @@
                             <div class="form-group">
                                 <label>Jabatan</label>
                                 <select class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="jabatan" id="jabatan">
-                                    <option value="Islam" selected="selected">Pengajar</option>
-                                    <option value="Kristen">Kepala Sekolah</option>
-                                    <option value="Hindu">Bendahara</option>
-                                    <option value="Budha">Sekretaris</option>
+                                    <option value="Pengajar" selected="selected">Pengajar</option>
+                                    <option value="Kepala Sekolah">Kepala Sekolah</option>
+                                    <option value="Bendahara">Bendahara</option>
+                                    <option value="Sekretaris">Sekretaris</option>
                                 </select>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                                     <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                     </div>
-                                    <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email..." id="email" name="email" value="{{ old('email') }}">
+                                    <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email..." id="email" name="email" value="{{ old('email') }}" @error('email') title="{{ $message }}" @enderror>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
                     </div>
                     <!-- Input Gambar Profile Guru -->
                     <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-6">
                         <label for="inputFoto">
                             Foto Profile:
                         </label>
@@ -200,21 +200,21 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                    <tr>
-                                        @foreach($data_guru as $data)
-                                            <td>{{ $loop->first }}</td>
+                                    @foreach($data_guru as $data)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $data->nama_lengkap }}</td>
                                             <td>{{ $data->email }}</td>
-                                        @endforeach
-                                        <td>
-                                          <a href="{{ url('/dashboard/update') }}/{{ 'nis' }}" class="btn bg-primary btn-sm">
-                                            <i class="fas fa-pencil-alt"></i>
-                                          </a>
-                                          <a onclick="" class="btn bg-danger btn-sm">
-                                            <i class="fas fa-trash"></i>
-                                          </a>
-                                        </td>
-                                    </tr>
+                                            <td>
+                                            <a href="{{ url('/dashboard/update') }}/{{ 'nis' }}" class="btn bg-primary btn-sm">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a onclick="" class="btn bg-danger btn-sm">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                               </tbody>
                           </table>
                       </div>

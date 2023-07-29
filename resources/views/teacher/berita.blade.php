@@ -1,6 +1,6 @@
 @extends('components.template_teacher')
 
-@section('title', "Kumpulan Materi")
+@section('title', "Berita dan Acara")
 @section('mainContainer')
 <style>
   .dataTables_filter {
@@ -16,12 +16,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Kumpulan Materi</h1>
+            <h1>Berita dan Acara</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item active">Dashboard</li>
-            <li class="breadcrumb-item active">Kumpulan Materi</li>
+            <li class="breadcrumb-item active">Berita dan Acara</li>
             </ol>
         </div>
         </div>
@@ -34,12 +34,12 @@
       <!-- Small boxes (Stat box) -->
         <div class="card">
             <div class="card-header">
-              <h3 class="card-title my-2">Blog dan Materi</h3>
+                <h3 class="card-title my-2">Kumpulan Berita dan Acara</h3>
             </div>
             <div class="card-body">
                 <div class="row">
-                  <a href="{{ url('/teacher/write-materi') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
-                    Tambah Materi
+                  <a href="{{ url('/teacher/write-berita') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
+                    Tambah Berita atau Acara
                   </a>
                 </div>
                 <table id="example1" class="table table-bordered table-striped">
@@ -48,17 +48,21 @@
                             <td>No</td>
                             <td>Gambar</td>
                             <td>Judul</td>
-                            <td>Tanggal</td>
+                            <td>Waktu Dibuat</td>
+                            <td>Mulai Acara</td>
+                            <td>Durasi</td>
                             <td>Action</td>
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data_materi as $data)
+                      @foreach ($data_berita as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td><img src="{{ asset('/assets/'.$data->gambar) }}" class="img-fluid" alt="Ini Gambar" style="height: 5rem"></td>
                             <td>{{ $data->judul }}</td>
-                            <td>{{ $data->created_at->format('Y-m-d') }}</td>
+                            <td>{{ $data->created_at }}</td>
+                            <td>{{ $data->tanggal_acara }}</td>
+                            <td>{{ $data->durasi_hari }} Hari</td>
                             <td>
                               <a onmouseover="this.classList.add('btn-info');this.classList.remove('text-info')" onmouseout="this.classList.remove('btn-info');this.classList.add('text-info')" href="{{ url('/dashboard/detail') }}/{{ $data['nis'] }}" class="btn border-info text-info btn-sm">
                                 <i class="fas fa-eye"></i>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pages;
 use App\Http\Controllers\Teacher;
+use App\Http\Controllers\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,21 +30,42 @@ Route::get('/kebijakan-privasi/', [Pages::class, 'kebijakanPrivasi']);
 Route::get('/lowongan-kerja/', [Pages::class, 'lowonganKerja']);
 
 // Login views
-Route::prefix('login')->group(function () {
+Route::group(['middleware' => 'guest'], function () {
     // Route login guru
-    Route::get('/guru', [Pages::class, 'loginGuru']);
-    Route::post('/guru', [Pages::class, 'loginGuru']);
+    Route::get('/login/guru', [Login::class, 'guru'])->name('login.guru');
+    Route::post('/login/guru', [Login::class, 'verifikasiGuru'])->name('login.guru');
 });
 
 // Student views
 
 // Teacher views
-Route::get('/teacher/', [Teacher::class, 'index']);
-Route::get('/teacher/materi', [Teacher::class, 'materi']);
+Route::group(['middleware' => 'auth:teacher'], function () {
+    Route::get('/teacher/', [Teacher::class, 'index'])->name('teacher');
+
+    // Halaman kelola materi
+    Route::get('/teacher/materi', [Teacher::class, 'materi']);
+    Route::get('/teacher/write-materi', [Teacher::class, 'writeMateri'])->name('teacher.write-materi');
+    Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
+
+    // Halaman kelola berita
+    Route::get('/teacher/berita', [Teacher::class, 'berita']);
+    Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
+    Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
+
+    // Halaman kelola pekerjaan rumah
+    Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
+
+    // Halaman kelola profile
+    Route::get('/teacher/profile', [Teacher::class, 'profile']);
+    Route::post('/teacher/ubah-foto-profile', [Teacher::class, 'ubahFotoProfile'])->name('teacher.ubah_foto_profile');
+
+    // Aksi logout
+    Route::post('/teacher/logout', [Teacher::class, 'logout'])->name('teacher.logout');
+});
 
 // Admin views
 Route::get('/admin/', [Admin::class, 'index']);
-Route::post('/admin/', [Admin::class, 'insertTeacher']);
+Route::post('/admin/', [Admin::class, 'createTeacher']);
 
 // Testing purpose
 Route::get('/testing/', function () {

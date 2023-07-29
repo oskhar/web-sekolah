@@ -23,14 +23,14 @@
     
                     <div class="card-body login-card-body">
                         <p class="login-box-msg">Login for advance fiture</p>
-                        <form method="POST" action="{{ url('/login/guru') }}">
+                        <form method="POST" action="{{ route('login.guru') }}">
                             @csrf
     
                             <div class="row mb-3">
                                 <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
     
                                 <div class="input-group col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     <div class="input-group-append">
                                       <div class="input-group-text">
                                         <span class="fas fa-envelope"></span>
@@ -96,4 +96,5 @@
         </div>
     </div>
 </body>
+@include('components.sweetalert')
 </html>

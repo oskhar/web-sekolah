@@ -1,6 +1,6 @@
 @extends('components.template_teacher')
 
-@section('title', "Kumpulan Materi")
+@section('title', "Pekerjaan Rumah")
 @section('mainContainer')
 <style>
   .dataTables_filter {
@@ -16,12 +16,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Kumpulan Materi</h1>
+            <h1>Pekerjaan Rumah</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item active">Dashboard</li>
-            <li class="breadcrumb-item active">Kumpulan Materi</li>
+            <li class="breadcrumb-item active">Pekerjaan Rumah</li>
             </ol>
         </div>
         </div>
@@ -34,44 +34,45 @@
       <!-- Small boxes (Stat box) -->
         <div class="card">
             <div class="card-header">
-              <h3 class="card-title my-2">Blog dan Materi</h3>
+            <h3 class="card-title my-2">Pekerjaan Rumah (PR)</h3>
             </div>
             <div class="card-body">
                 <div class="row">
-                  <a href="{{ url('/teacher/write-materi') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
-                    Tambah Materi
-                  </a>
+                    <a href="{{ url('dashboard/create') }}" class="btn bg-primary btn-sm col-sm-2 p-2 ml-2">
+                        Tambah Tugas
+                    </a>
+                    <a href="{{ url('dashboard/export_excel') }}" class="btn bg-primary btn-sm col-sm-2 p-2 ml-2">
+                        Export Tugas (Excel)
+                    </a>
+                    <a href="" class="btn bg-primary btn-sm col-sm-2 p-2 ml-2">
+                        Import Tugas (Excel)
+                    </a>
                 </div>
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <td>No</td>
-                            <td>Gambar</td>
-                            <td>Judul</td>
-                            <td>Tanggal</td>
+                            <td>Deskripsi</td>
+                            <td>Tanggal Dikumpulkan</td>
+                            <td>Status</td>
                             <td>Action</td>
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data_materi as $data)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td><img src="{{ asset('/assets/'.$data->gambar) }}" class="img-fluid" alt="Ini Gambar" style="height: 5rem"></td>
-                            <td>{{ $data->judul }}</td>
-                            <td>{{ $data->created_at->format('Y-m-d') }}</td>
+                            <td>1</td>
+                            <td>Membuat gambar hewan menggunakan potongan kertas origami</td>
+                            <td>10 September 2023</td>
+                            <td><div class="badge bg-success">Aktif</div></td>
                             <td>
-                              <a onmouseover="this.classList.add('btn-info');this.classList.remove('text-info')" onmouseout="this.classList.remove('btn-info');this.classList.add('text-info')" href="{{ url('/dashboard/detail') }}/{{ $data['nis'] }}" class="btn border-info text-info btn-sm">
-                                <i class="fas fa-eye"></i>
-                              </a>
-                              <a onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')" href="{{ url('/dashboard/update') }}/{{ $data['nis'] }}" class="btn border-primary text-primary btn-sm">
+                                <a href="{{ url('/dashboard/update') }}/{{ 'nis' }}" class="btn bg-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i>
-                              </a>
-                              <a onmouseover="this.classList.add('btn-danger');this.classList.remove('text-danger')" onmouseout="this.classList.remove('btn-danger');this.classList.add('text-danger')" onclick="doSoftDelete(\'{{ $data['nis'] }}\')" class="btn border-danger text-danger btn-sm">
+                                </a>
+                                <a onclick="doSoftDelete(\'{{ 'nis' }}\')" class="btn bg-danger btn-sm">
                                 <i class="fas fa-trash"></i>
-                              </a>
+                                </a>
                             </td>
                         </tr>
-                      @endforeach
                     </tbody>
                 </table>
             </div>

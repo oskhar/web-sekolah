@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="{{ asset('node_modules/sweetalert2/dist/sweetalert2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('sweetalert/sweetalert2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/rasio_gambar.css') }}">
 <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 <!-- Tempusdominus Bootstrap 4 -->
 
@@ -45,4 +46,4 @@
 <script>
     $.widget.bridge('uibutton', $.ui.button);
 </script>
-<script src="{{ asset('node_modules/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('sweetalert/sweetalert2.min.js') }}"></script>

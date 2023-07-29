@@ -91,7 +91,15 @@ class Pages extends Controller
      */
     public function loginGuru()
     {
-        return view('pages.login_guru');
+        return view('pages.materi');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function lowonganKerja()
+    {
+        return view('pages.lowongan_kerja');
     }
 
     /**

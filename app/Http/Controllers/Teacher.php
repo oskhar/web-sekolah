@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HomeWork;
+use App\Models\TeacherModel;
+use App\Models\Blog;
+use App\Models\Event;
+use Illuminate\Support\Facades\Auth;
 
 class Teacher extends Controller
 {
@@ -16,12 +20,55 @@ class Teacher extends Controller
     {
         //
         $banyak_pekerjaan_rumah = HomeWork::count();
-        $data_pekerjaan_rumah = HomeWork::all();
+        $banyak_berita = Event::count();
+
+        $data_berita = Event::all();
+
         return view('teacher.dashboard', [
             'banyak_pekerjaan_rumah' => $banyak_pekerjaan_rumah,
-            'data_pekerjaan_rumah' => $data_pekerjaan_rumah,
-            'dashboard' => true,
+            'banyak_berita' => $banyak_berita,
+            'data_berita' => $data_berita,
         ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function berita()
+    {
+        //
+        $data_berita = Event::all();
+        return view('teacher.berita', [
+            'data_berita' => $data_berita,
+        ]);
+    }
+    public function writeBerita()
+    {
+        //
+        return view('teacher.write_berita');
+    }
+    public function createBerita(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'judul' => 'required|unique:events',
+            'isi' => '',
+            'gambar' => 'required|mimes:jpeg,jpg,png',
+            'tanggal_acara' => 'required',
+            'durasi_hari' => 'required',
+        ]);
+
+        // Simpan file yang diupload ke direktori 'public/assets/upload'
+        $path = $request->file('gambar')->store('upload', 'public_uploads');
+
+        $data_validated['gambar'] = $path;
+        $data_validated['guru_id'] = Auth::user()->id;
+        Event::create($data_validated);
+
+        // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
+        return back()->with('success_message', 'File berhasil diupload.');
     }
 
     /**
@@ -32,9 +79,81 @@ class Teacher extends Controller
     public function materi()
     {
         //
+        $data_materi = Blog::all();
         return view('teacher.materi', [
-            'materi' => true,
+            'data_materi' => $data_materi,
         ]);
+    }
+    public function writeMateri()
+    {
+        //
+        return view('teacher.write_materi');
+    }
+    public function createMateri(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'judul' => 'required|unique:blogs',
+            'isi' => '',
+            'gambar' => 'required|mimes:jpeg,jpg,png',
+        ]);
+
+        // Simpan file yang diupload ke direktori 'public/assets/upload'
+        $path = $request->file('gambar')->store('upload', 'public_uploads');
+
+        $data_validated['gambar'] = $path;
+        $data_validated['guru_id'] = Auth::user()->id;
+        Blog::create($data_validated);
+
+        // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
+        return back()->with('success_message', 'File berhasil diupload.');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pekerjaanRumah()
+    {
+        //
+        return view('teacher.pekerjaan_rumah', [
+        ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function profile()
+    {
+        //
+        return view('teacher.profile');
+    }
+    public function ubahFotoProfile(Request $request)
+    {
+        //
+        $data = TeacherModel::find(Auth::user()->id);
+        $data->fill($request->all());
+        $data->save();
+        return back()->with('success_message', 'Avatar berhasi diganti');
+    }
+    /**
+     * Logout user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 
     /**

@@ -10,13 +10,15 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
             $table->text('isi');
             $table->string('gambar')->nullable();
-            $table->date('create_at');
-            $table->date('updated_at')->nullable();
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
+            $table->date('tanggal_acara');
+            $table->integer('durasi_hari');
             $table->integer('guru_id');
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('events');
     }
 };

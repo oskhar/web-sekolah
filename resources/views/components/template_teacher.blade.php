@@ -36,28 +36,29 @@
           <!-- Toggle Dropdown -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <!-- User Name -->
-            <span class="hidden-xs">John Doe</span>
+            <span class="hidden-xs">{{ Auth::user()->nama_panggilan }}</span>
             <!-- User Image -->
-            <img src="{{ asset('adminLTE/dist/img/user2-160x160.jpg') }}" class="user-image elevation-2" alt="User Image">
+            <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
           </a>
           <!-- Dropdown Menu -->
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu dropdown-menu-right">
             <!-- User Image -->
             <li class="user-header">
-              <img src="{{ asset('adminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+              <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="img-circle" alt="User Image">
               <p>
-                John Doe
-                <small>Member since Jan. 2023</small>
+                <b class="">{{ Auth::user()->nama_panggilan }}</b>
+                <small class="text-gray">{{ Auth::user()->nama_lengkap }}</small>
               </p>
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Profile</a>
               </div>
-              <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
-              </div>
+              <form method="POST" class="pull-right mt-2" action="{{ route('teacher.logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-danger btn-flat">Log out</button>
+              </form>
             </li>
           </ul>
         </li>      
@@ -66,7 +67,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: #2b2a33;">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('assets/images/logo_paud.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
@@ -75,21 +76,11 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Nama Guru</a>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
+      <nav class="mt-4">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{{ url('/teacher/') }}" class="nav-link @isset($dashboard) active @endisset">
+            <a href="{{ url('/teacher') }}" class="nav-link @if(request()->is('teacher')) active @endif">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Main Dashboard
@@ -97,7 +88,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/teacher/materi/') }}" class="nav-link @isset($materi) active @endisset">
+            <a href="{{ url('/teacher/materi/') }}" class="nav-link @if(request()->is('teacher/materi')) active @endif">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Blog Materi
@@ -105,7 +96,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url('/teacher/pekerjaan-rumah') }}" class="nav-link @if(request()->is('teacher/pekerjaan-rumah')) active @endif">
+              <i class="nav-icon fas fa-tasks"></i>
+              <p>
+                Pekerjaan Rumah
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
               <i class="nav-icon fas fa-database"></i>
               <p>
                 Kelola Data
@@ -114,48 +113,43 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{ url('/teacher/murid') }}" class="nav-link @if(request()->is('teacher/murid')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Murid Terdaftar</p>
+                  <p>Murid</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{ url('/teacher/galeri') }}" class="nav-link @if(request()->is('teacher/galeri')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Pekerjaan Rumah</p>
+                  <p>Galeri</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{{ url('/teacher/profile') }}" class="nav-link @if(request()->is('teacher/profile')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Galeri Paud</p>
+                  <p>Profile</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ url('/teacher/berita') }}" class="nav-link @if(request()->is('teacher/berita')) active @endif">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 Berita & Acara
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                Kelola Profile
-              </p>
-            </a>
-          </li>
           <li class="nav-item mt-5">
-            <a href="pages/widgets.html" class="nav-link bg-danger">
+            <form action="{{ route('teacher.logout') }}" method="POST">
+              @csrf
+            <button type="submit" class="nav-link bg-danger btn">
               <i class="nav-icon fas fa-arrow-right"></i>
               <p>
-                Keluar
+                Log out
               </p>
-            </a>
+            </button>
+            </form>
           </li>
         </ul>
       </nav>
@@ -179,6 +173,7 @@
 
   <!-- /.control-sidebar -->
 </div>
+@include('components.sweetalert')
 <!-- ./wrapper -->
 </body>
 </html>
