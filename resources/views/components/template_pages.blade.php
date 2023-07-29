@@ -18,8 +18,11 @@
 
 {{-- Bagian Header --}}
 <aside class="header">
-    <div class="logo">Logo Perusahaan</div>
     
+    <a href="index3.html" class="brand-link">
+        <img src="{{ asset('assets/images/logo_paud.jpg') }}" alt="paud Logo" class="brand-image img-circle elevation-3">
+        <span class="brand-text font-weight-bold text-dark">Paud Kasih Bunda</span>
+      </a>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Dropdown User Menu -->
@@ -63,7 +66,7 @@
                     </form>
                 @else
                     <div class="pull-right">
-                        <button type="submit" class="btn btn-primary btn-flat">Log in</button>
+                        <a href="{{ route('login') }}" class="btn btn-primary btn-flat">Log in</a>
                     </div>
                 @endauth
             </li>

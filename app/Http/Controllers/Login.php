@@ -23,6 +23,40 @@ class Login extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function login()
+    {
+        return view('pages.login');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function murid()
+    {
+        return view('pages.login_guru');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function verifikasiMurid(Request $request)
+    {
+        $credential = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        if (Auth::guard('teacher')->attempt($credential)) {
+            // Login berhasil, redirect ke halaman dashboard guru
+            return redirect()->route('teacher');
+        } else {
+            // Login gagal, tampilkan pesan error
+            return back()->with(['error_message' => 'Email atau Password salah! Pastikan anda menggunakan Email dan Password Yang sesuai']);
+        }
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function guru()
     {
         return view('pages.login_guru');
@@ -32,6 +66,32 @@ class Login extends Controller
      * Display a listing of the resource.
      */
     public function verifikasiGuru(Request $request)
+    {
+        $credential = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        if (Auth::guard('teacher')->attempt($credential)) {
+            // Login berhasil, redirect ke halaman dashboard guru
+            return redirect()->route('teacher');
+        } else {
+            // Login gagal, tampilkan pesan error
+            return back()->with(['error_message' => 'Email atau Password salah! Pastikan anda menggunakan Email dan Password Yang sesuai']);
+        }
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function admin()
+    {
+        return view('pages.login_guru');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function verifikasiAdmin(Request $request)
     {
         $credential = $request->validate([
             'email' => 'required',
