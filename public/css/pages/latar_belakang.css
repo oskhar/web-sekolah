@@ -1,0 +1,45 @@
+/* Bagian container */
+    .container-fluid{
+        width: 930px;
+    }
+
+/* Bagian Foto Dan Teks*/
+    .text-overlay{
+        color: #355389;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+/* Bagian Sejarah */
+    .sejarah h2{
+        margin-top: 100px;
+        color: #355389;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+/* Bagian 3 Kotak */
+    .data-sekolah{
+        color: #355389;
+        margin-top: 200px;
+    }
+
+/* Bagian Table */
+    .table-kegiatan{
+        margin-bottom: 200px;
+    }
+
+    .table-kegiatan h1{
+        color: #355389;
+        margin-top: 200px;
+        text-align: center;
+    }
+
+    .kolom-satu{
+        background-color: #C2D8F2;
+    }
+
+    .kolom-satu tr td{
+        border-radius: 10px;
+    }

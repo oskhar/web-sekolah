@@ -16,17 +16,9 @@
 </head>
 <body>
 
-        {{-- Bagian Header --}}
+    {{-- Bagian Header --}}
     <div class="header">
         <div class="logo">Logo Perusahaan</div>
-        <div class="social-icons">
-
-            {{-- Bagian 4 Tombol Sosial Media --}}
-            <a href=""><button class="btn"><i class="fab fa-facebook-f"></i></button></a>
-            <a href=""><button class="btn"><i class="fab fa-twitter"></i></button></a>
-            <a href=""><button class="btn"><i class="fab fa-instagram"></i></button></a>
-            <a href=""><button class="btn"><i class="fab fa-linkedin-in"></i></button></a>
-        </div>
     </div>
 
 {{-- Bagian Toggle --}}
@@ -49,15 +41,15 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="text-light dropdown-item text-dark" href="{{url('/tentang')}}">Tentang</a>
-                    <a class="text-light dropdown-item text-dark" href="{{url('/latar_belakang')}}">Latar Belakang</a>
-                    <a class="text-light dropdown-item text-dark" href="{{url('/visi_misi')}}">Visi Misi</a>
+                    <a class="text-light dropdown-item text-dark" href="{{url('/latar-belakang')}}">Latar Belakang</a>
+                    <a class="text-light dropdown-item text-dark" href="{{url('/visi-misi')}}">Visi Misi</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="text-light nav-link" href="{{url('/')}}">Galeri</a>
+                <a class="text-light nav-link" href="{{url('/galeri')}}">Galeri</a>
             </li>
             <li class="nav-item">
-                <a class="text-light nav-link" href="{{url('/berita_acara')}}">Berita & Acara</a>
+                <a class="text-light nav-link" href="{{url('/berita-acara')}}">Berita & Acara</a>
             </li>
             <li class="nav-item">
                 <a class="text-light nav-link" href="{{url('/contact')}}">Contact</a>
@@ -75,8 +67,8 @@
     </div>
 </nav>
 
-
-    <main style="height: 200vh;">
+{{-- Bagian Main --}}
+    <main style="height: 100vh;">
         @yield('mainContainer')
 
         {{-- Bagian Footer --}}
@@ -93,9 +85,16 @@
                         <p><i class="fas fa-globe"></i> Lokasi: jalan, kecamatan, kelurahan, no, Kota, Negara</p>
                         <p><i class="fas fa-phone"></i> Hubungi : + 62 98788759002</p>
                     </div>
-                    <div class="col-md-6 text-md-left" style="font-size: 15px">
-                        <!-- Copy right -->
-                        <p>&copy; 2023 Perusahaan. All rights reserved.</p>
+                </div>
+                <div class="row col-md-12 justify-content-between" style="font-size: 15px; width: 700%;">
+                    <!-- Copy right -->
+                    <p class="text-md-left">&copy; 2023 Perusahaan. All rights reserved.</p>
+                    {{-- Bagian 4 Tombol Sosial Media --}}
+                    <div class="social-icons justify-content-end">
+                        <a href=""><button class="btn"><i class="fab fa-facebook-f"></i></button></a>
+                        <a href=""><button class="btn"><i class="fab fa-twitter"></i></button></a>
+                        <a href=""><button class="btn"><i class="fab fa-instagram"></i></button></a>
+                        <a href=""><button class="btn"><i class="fab fa-linkedin-in"></i></button></a>
                     </div>
                 </div>
             </div>

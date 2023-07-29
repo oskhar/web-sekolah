@@ -1,0 +1,35 @@
+/* Bagian container */
+    .container-fluid{
+        width: 900px;
+    }
+
+    .text-overlay h2{
+        color: #355389;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+/* Bagian Berita Dan Acara */
+    .berita-acara{
+        margin-bottom: 200px;
+    }
+
+    .card-utama{
+        width: 1130px; 
+        margin: 0px auto;
+    }
+
+    .card mb-3{
+        max-width: 940px; 
+        border: none;
+    }
+
+    .col-md-4 img{
+        width: 300px; 
+        height: 180px;
+    }
+
+    .card-body .card-text-dua{
+        width: 500px;
+    }

@@ -73,6 +73,30 @@ class Pages extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function kebijakanPrivasi()
+    {
+        return view('pages.kebijakan_privasi');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function lowonganKerja()
+    {
+        return view('pages.lowongan_kerja');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function loginGuru()
+    {
+        return view('pages.materi');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function lowonganKerja()
     {
         return view('pages.lowongan_kerja');
