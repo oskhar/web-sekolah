@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-use App\Models\Teacher;
+use App\Models\TeacherModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,7 +16,7 @@ class Admin extends Controller
     public function index()
     {
         //
-        $data_guru = Teacher::all();
+        $data_guru = TeacherModel::all();
 
         return view('admin.dashboard', [
             'data_guru' => $data_guru,
@@ -56,7 +56,7 @@ class Admin extends Controller
 
         $data_validated['password'] = Hash::make($data_validated['password']);
 
-        Teacher::create($data_validated);
+        TeacherModel::create($data_validated);
 
         return back()->with('success_message', 'Akun guru berhasil ditambahkan.');
     }

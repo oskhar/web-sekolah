@@ -6,7 +6,7 @@
  **/
 
 /* global moment:false, Chart:false, Sparkline:false */
-$(function () {
+function inisialisasiKalender() {
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
       defaultView: 'dayGridMonth', // Tampilkan dalam tampilan bulanan secara default
@@ -22,4 +22,4 @@ $(function () {
       eventTextColor: 'white' // Warna teks pada event
   });
   calendar.render();
-});
+};

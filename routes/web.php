@@ -55,6 +55,7 @@ Route::group(['middleware' => 'auth:teacher'], function () {
 
     // Halaman kelola profile
     Route::get('/teacher/profile', [Teacher::class, 'profile']);
+    Route::post('/teacher/ubah-foto-profile', [Teacher::class, 'ubahFotoProfile'])->name('teacher.ubah_foto_profile');
 
     // Aksi logout
     Route::post('/teacher/logout', [Teacher::class, 'logout'])->name('teacher.logout');

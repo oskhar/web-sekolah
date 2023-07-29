@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HomeWork;
+use App\Models\TeacherModel;
 use App\Models\Blog;
 use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
@@ -129,6 +130,14 @@ class Teacher extends Controller
     {
         //
         return view('teacher.profile');
+    }
+    public function ubahFotoProfile(Request $request)
+    {
+        //
+        $data = TeacherModel::find(Auth::user()->id);
+        $data->fill($request->all());
+        $data->save();
+        return back()->with('success_message', 'Avatar berhasi diganti');
     }
     /**
      * Logout user.

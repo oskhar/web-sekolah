@@ -103,7 +103,7 @@
           <!-- right col -->
           <section class="col-lg-2 connectedSortable">
             <div class="card card-primary">
-              <div class="card-body p-3 row">
+              <div class="card-body p-3 row" id="bungkus_list_event">
                 @foreach ($data_berita as $data)
                 <a class="btn bg-info col-sm-12 m-1">
                   <i class="fas fa-star"></i>
@@ -133,6 +133,39 @@
       },
       @endforeach
     ];
+      // Kirim data ke controller menggunakan AJAX
+      $.ajax({
+        url: 'https://api-harilibur.vercel.app/api',
+        method: 'get',
+        dataType: 'json',
+        success: function(response) {
+          for (let i = 0; i < response.length; i++) {
+            if (response[i].is_national_holiday) {
+              let data_tmp = {
+                title          : response[i].holiday_name,
+                start          : response[i].holiday_date,
+                allDay         : false,
+                backgroundColor: 'var(--danger)', //Blue
+                borderColor    : 'var(--danger)' //Blue
+              };
+              console.log(data_tmp);
+              listAcaraPaud.push(data_tmp);
+
+              $('#bungkus_list_event').append(`
+                <a class="btn bg-danger col-sm-12 m-1">
+                  <i class="fas fa-star"></i>
+                  <strong>`+ response[i].holiday_name +`</strong>
+                </a>
+              `);
+            }
+          };
+          inisialisasiKalender();
+        },
+        error: function(xhr, status, error) {
+          alert("Gagal mengakses tanggal merah: ");
+          inisialisasiKalender();
+        }
+      });
   </script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard-teacher.js"></script>

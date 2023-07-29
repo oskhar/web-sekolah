@@ -34,7 +34,7 @@ class Login extends Controller
     public function verifikasiGuru(Request $request)
     {
         $credential = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required',
             'password' => 'required',
         ]);
         if (Auth::guard('teacher')->attempt($credential)) {

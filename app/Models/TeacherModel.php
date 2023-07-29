@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Teacher extends Authenticatable
+class TeacherModel extends Authenticatable
 {
     use HasFactory;
+    protected $table = 'teachers';
 
     /**
      * The attributes that are mass assignable.
