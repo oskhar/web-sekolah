@@ -25,7 +25,7 @@
                     </ul>
                     <!-- /.card-body -->
                     
-                    <div class="container-jam-kerja mt-3">
+                    <div class="container-jam-kerja mt-3 col-sm-12 text-center">
                         <h4 class="text-muted">
                           <i class="far fa-clock text-muted"></i> 
                           <span class="transparan">JAM KERJA</span> 10.00 - 20.00
@@ -48,7 +48,7 @@
             <!-- Form untuk mengajukan pertanyaan -->
             <form>
               <div class="form-group-ajukan">
-                <label for="pertanyaan border-0">Pertanyaan Anda</label>
+                <label for="pertanyaan" class=""><i class="fas fa-edit text-primary"></i> Pertanyaan Anda</label>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, tempora perferendis. Minus maxime dignissimos ea quisquam necessitatibus tempore nesciunt placeat?</p>
                 <textarea class="form-control" id="pertanyaan" rows="5" required></textarea>
                 <br>

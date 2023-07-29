@@ -16,10 +16,61 @@
 </head>
 <body>
 
-    {{-- Bagian Header --}}
-    <div class="header">
-        <div class="logo">Logo Perusahaan</div>
-    </div>
+{{-- Bagian Header --}}
+<aside class="header">
+    <div class="logo">Logo Perusahaan</div>
+    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Dropdown User Menu -->
+        <li class="dropdown user user-menu">
+          <!-- Toggle Dropdown -->
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <!-- User Name -->
+            @auth
+                <span class="hidden-xs">{{ Auth::user()->nama_panggilan }}</span>
+                <!-- User Image -->
+                <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
+            @else
+                <span class="hidden-xs">Click Untuk Login</span>
+                <!-- User Image -->
+                <img src="{{ asset('assets/avatar/profile_kosong.jpg') }}" class="user-image thumbnail" alt="User Image">
+            @endauth
+          </a>
+          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-right">
+            <!-- User Image -->
+            <li class="user-header">
+                @auth
+                    <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="img-circle" alt="User Image">
+                    <p>
+                        <b class="">{{ Auth::user()->nama_panggilan }}</b>
+                        <small class="text-gray">{{ Auth::user()->nama_lengkap }}</small>
+                    </p>
+                @else
+                    <p class="text-muted p-3">Anda Belum login! silahkan login untuk akses fitur lanjutan</p>
+                @endauth
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+                @auth
+                    <div class="pull-left">
+                        <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <form method="POST" class="pull-right mt-2" action="{{ route('teacher.logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-flat">Log out</button>
+                    </form>
+                @else
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary btn-flat">Log in</button>
+                    </div>
+                @endauth
+            </li>
+          </ul>
+        </li>      
+    </ul>
+</aside>
 
 {{-- Bagian Toggle --}}
 <nav class="navbar navbar-expand-lg">
