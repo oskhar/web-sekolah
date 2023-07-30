@@ -1,7 +1,7 @@
 /* Bagian Kebijakan Privasi */
 .container-kp{
     width: 80%;
-    margin: 80px auto;
+    margin:80px auto;
     align-items: center;
     font-family: sans-serif;
 }
@@ -9,4 +9,8 @@
 .container-kp h3{
     font-weight: bold;
     color: #355389;
+}
+
+.daftar-prestasi{
+    padding-left: 0px;
 }

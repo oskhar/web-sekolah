@@ -95,6 +95,14 @@ class Pages extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     */
+    public function selBeritaAcara()
+    {
+        return view('pages.sel_Berita_Acara');
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()

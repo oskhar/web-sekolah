@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
                             <h5 class="card-title">INFO - INFO</h5>
-                            <a href=""><button>Selengkapnya</button></a>
+                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
                         </div>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                     <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
@@ -42,7 +42,7 @@
                     <div class="card-body">
                         <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
                             <h5 class="card-title">INFO - INFO</h5>
-                            <a href=""><button>Selengkapnya</button></a>
+                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
                         </div>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                     <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
@@ -61,7 +61,7 @@
                     <div class="card-body">
                         <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
                             <h5 class="card-title">INFO - INFO</h5>
-                            <a href=""><button>Selengkapnya</button></a>
+                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
                         </div>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                     <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
@@ -80,7 +80,7 @@
                     <div class="card-body">
                         <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
                             <h5 class="card-title">INFO - INFO</h5>
-                            <a href=""><button>Selengkapnya</button></a>
+                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
                         </div>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                     <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
@@ -99,7 +99,7 @@
                     <div class="card-body">
                         <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
                             <h5 class="card-title">INFO - INFO</h5>
-                            <a href=""><button>Selengkapnya</button></a>
+                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
                         </div>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                     <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
