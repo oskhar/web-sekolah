@@ -28,6 +28,7 @@ Route::get('/contact/', [Pages::class, 'contact']);
 Route::get('/materi/', [Pages::class, 'materi']);
 Route::get('/kebijakan-privasi/', [Pages::class, 'kebijakanPrivasi']);
 Route::get('/lowongan-kerja/', [Pages::class, 'lowonganKerja']);
+Route::get('/sel-berita-acara/', [Pages::class, 'selBeritaAcara']);
 
 // Login views
 Route::group(['middleware' => 'guest'], function () {

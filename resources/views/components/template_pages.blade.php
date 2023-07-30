@@ -19,9 +19,9 @@
 {{-- Bagian Header --}}
 <aside class="header">
     
-    <a href="index3.html" class="brand-link">
+    <a href="{{url('/')}}" class="brand-link">
         <img src="{{ asset('assets/images/logo_paud.jpg') }}" alt="paud Logo" class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-bold text-dark">Paud Kasih Bunda</span>
+        <span class="brand-text font-weight-bold text-dark">Paud KB Kenanga Bangsa</span>
       </a>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -35,7 +35,7 @@
                 <!-- User Image -->
                 <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
             @else
-                <span class="hidden-xs">Click Untuk Login</span>
+                <span class="hidden-xs"><b>Login</b></span>
                 <!-- User Image -->
                 <img src="{{ asset('assets/avatar/profile_kosong.jpg') }}" class="user-image thumbnail" alt="User Image">
             @endauth
@@ -144,11 +144,19 @@
                     <!-- Copy right -->
                     <p class="text-md-left">&copy; 2023 Perusahaan. All rights reserved.</p>
                     {{-- Bagian 4 Tombol Sosial Media --}}
-                    <div class="social-icons justify-content-end">
-                        <a href=""><button class="btn"><i class="fab fa-facebook-f"></i></button></a>
-                        <a href=""><button class="btn"><i class="fab fa-twitter"></i></button></a>
-                        <a href=""><button class="btn"><i class="fab fa-instagram"></i></button></a>
-                        <a href=""><button class="btn"><i class="fab fa-linkedin-in"></i></button></a>
+                    <div class="social-icons icon-sosmed justify-content-end">
+                        <a class="btn" href="https://www.youtube.com/channel/namachannel" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a class="btn" href="https://www.instagram.com/namaakun/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="btn" href="https://www.facebook.com/namaakun" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a class="btn" href="https://www.tiktok.com/@namaakun" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
                     </div>
                 </div>
             </div>
