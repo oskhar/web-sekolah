@@ -1,0 +1,45 @@
+
+.avatar-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-container:hover .avatar-img {
+    filter: brightness(50%);
+  }
+
+  .avatar-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .avatar-list li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .avatar-list li:last-child {
+    margin-right: 0;
+  }
+
+  .edit-avatar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  .avatar-container:hover .edit-avatar {
+    display: block;
+  }
+
+  .edit-avatar .btn {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    padding: 3rem;
+    font-size: 2rem;
+    border: none;
+  }

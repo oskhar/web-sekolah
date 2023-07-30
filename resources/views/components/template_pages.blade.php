@@ -30,7 +30,7 @@
           <!-- Toggle Dropdown -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <!-- User Name -->
-            @auth
+            @auth('teacher')
                 <span class="hidden-xs">{{ Auth::user()->nama_panggilan }}</span>
                 <!-- User Image -->
                 <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
