@@ -8,7 +8,7 @@
 <div class="container-fluid mt-5">
     <!-- Teks yang ditampilkan paling atas -->
     <div class="text-overlay">
-        <h2>BERITA & ACARA PAUD</h2>
+        <h2>MATERI - MATERI</h2>
     </div>
 
     <div class="row row-cols-1 row-cols-md-2 g-4 mt-5">
