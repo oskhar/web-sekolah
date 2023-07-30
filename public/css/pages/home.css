@@ -6,7 +6,7 @@
     #container-2 {
         position: relative;
         background-color: #c2d8f2;
-        margin-top: 150px;
+        margin-top: 200px;
         height: 300px;
     }
     #container-2 svg {
@@ -33,48 +33,6 @@
         top: -200px;
         color: #355389;
     }    
-
-/* Bagian Pengumuman */
-    .pengumuman{
-        /* margin-top: 300px; */
-    }
-
-    .display-pengumuman{
-        width: 1130px;
-        margin: 0px auto;
-    }
-
-    .pengumuman h3{
-        font-family: serif;
-        font-weight: bold;
-    }
-
-    .pengumuman p{
-        font-family: serif;
-    }
-
-    .pengumuman button{
-        float: right;
-        font-family: sans-serif;
-        border: 1px solid grey;
-        background-color: var(--putih);
-    }
-
-    .card-utama{
-        width: 1130px; 
-        margin: 0px auto;
-    }
-
-    .card mb-3{
-        max-width: 940px; 
-        border: none;
-    }
-
-    .col-md-4 img{
-        width: 300px; 
-        height: 180px;
-    }
-
 
 /* Bagian Prestasi */
     .daftar-prestasi{

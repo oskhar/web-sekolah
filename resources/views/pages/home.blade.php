@@ -59,43 +59,48 @@
     </div>
 
     {{-- Bagian Pengumuman --}}
-    <div class="pengumuman">
-        <div class="display-pengumuman">
-            <button>Selengkapnya</button>
-            <h3>Pengumuman</h3>
-            <p>Informasi terkait Paud Kasih Bunda Kenanga Bangsa diupload disini</p>
-        </div>
-    </div>
 
-    {{-- Card Pengumuman --}}
-    <div class="card-utama">
-        <div class="mb-3">
-            <div class="row g-0">
-            <div class="col-md-4">
-                <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    <section class="content">
+        <div class="container-fluid row justify-content-center">
+        <div class="card col-lg-10">
+            <div class="pengumuman card-header">
+                <div class="display-pengumuman">
+                    <button class="btn float-right border">Selengkapnya</button>
+                    <h3>Pengumuman</h3>
+                    <p class="text-muted">Informasi terkait Paud Kasih Bunda Kenanga Bangsa diupload disini</p>
                 </div>
             </div>
+
+            {{-- Card Pengumuman --}}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/assets/images/foto_bareng_tk.jpg" class="img-fluid" alt="..." >
+                    </div>
+                    <div class="col-md-8">
+                        <div class="">
+                            <h3 class="card-title">Card title</h3>
+                            <p class="card-text"><sup class="text-secondary">Last updated 3 mins ago</sup></p>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        </div>
+    </section>
 
     <!-- Bagian Slide Kotak -->
     <div id="myCarousel" class="carousel slide mt-5" data-ride="carousel" style=" padding-top: 150px;">
         <!-- Wrapper untuk konten Carousel -->
-        <div class="carousel-inner bg-cyan pt-5">
-            <p style="text-align: center; font-weight: bold; font-size: 40px;">KUMPULAN MATERI</p>
-          <div class="carousel-item active bg-cyan">
+        <div class="carousel-inner bg-skyblue py-5">
+        <h1 class="text-center text-darkblue mt-5">KUMPULAN MATERI</h1>
+          <div class="carousel-item active bg-skyblue">
             <!-- Konten Pertama -->
             <div class="row align-items-center justify-content-center">
               <div class="col-sm-3 p-5">
                 <div class="card">
-                    <div class="p-4 bg-green rounded">
+                    <div class="p-4 bg-green text-darkblue rounded">
                         <h2>Ini Judul</h2>
                     </div>
                     <div class="p-4 bg-white">
@@ -128,7 +133,7 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item bg-cyan">
+          <div class="carousel-item bg-skyblue">
             <!-- Konten Kedua -->
             <div class="row align-items-center justify-content-center">
                 <div class="col-sm-3 p-5">
