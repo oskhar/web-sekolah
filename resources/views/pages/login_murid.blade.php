@@ -8,7 +8,7 @@
     <base href="{{ asset('adminLTE') }}/">
     @include('components.adminlte_dependency')
     <title>Login sebagai Guru</title>
-    <link rel="stylesheet" href="{{ asset('css/pages/login_guru.css')}} ">
+    <link rel="stylesheet" href="{{ asset('css/pages/login_murid.css')}} ">
 </head>
 <body>
     <div class="container">
@@ -20,12 +20,12 @@
             </div>
             <div class="login-guru col-md-8">
                 <div class="card">
-                    <div class="card-header text-primary text-center"><i class="fas fa-chalkboard-teacher mr-2"></i> Login sebagai Guru</div>
+                    <div class="card-header text-primary text-center"><i class="fas fa-chalkboard-teacher mr-2"></i> Login sebagai Murid</div>
     
                     <div class="container mt-5">
                         <div class="row justify-content-between">
                             <div class="gambar">
-                                <img src="/assets/images/imgLogin/guru-guru.png" class="img" alt="..." width=300" >
+                                <img src="/assets/images/imgLogin/anak-anak.png" class="img" alt="..." width=300" >
                               </div>
                           <div class="col-md-6">
                               <div class="card-body">

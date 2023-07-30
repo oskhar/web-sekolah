@@ -33,7 +33,7 @@ class Login extends Controller
      */
     public function murid()
     {
-        return view('pages.login_guru');
+        return view('pages.login_murid');
     }
 
     /**
@@ -85,7 +85,7 @@ class Login extends Controller
      */
     public function admin()
     {
-        return view('pages.login_guru');
+        return view('pages.login_admin');
     }
 
     /**

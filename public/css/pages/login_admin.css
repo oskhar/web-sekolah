@@ -1,0 +1,15 @@
+.login-guru .card{
+    background-color: #EBF5FE;
+}
+
+.login-logo a{
+    color: #355389;
+    font-family: sans-serif;
+    font-weight:500;
+}
+
+.card-body .silahkan-login{
+    color: #355389;
+    font-family: sans-serif;
+    font-weight: 600;
+}
