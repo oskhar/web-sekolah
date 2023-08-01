@@ -22,7 +22,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis ea beatae quaerat incidunt. Sint omnis vel odio ex reprehenderit eaque! Nisi rerum nobis quas placeat, cupiditate, veritatis ea ullam consectetur accusantium numquam magnam consequuntur adipisci at ratione maiores vitae enim dolor! Quam asperiores assumenda perspiciatis! Beatae rem laboriosam deserunt.</p>
             </div>
         </div>
-        <div class="sejarah">
+        <div class="sejarah mt-5">
             <div class="visi">
                 <h2>MISI</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis ea beatae quaerat incidunt. Sint omnis vel odio ex reprehenderit eaque! Nisi rerum nobis quas placeat, cupiditate, veritatis ea ullam consectetur accusantium numquam magnam consequuntur adipisci at ratione maiores vitae enim dolor! Quam asperiores assumenda perspiciatis! Beatae rem laboriosam deserunt.</p>

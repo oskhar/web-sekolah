@@ -20,23 +20,6 @@ body{
   font-weight: bold;
 }
 
-.social-icons {
-  display: flex;
-}
-
-.social-icons .btn {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-left: 5px;
-  background-color: var(--warning);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-}
-
 
 /* Bagian Navbar */
 .navbar{
@@ -81,4 +64,30 @@ main{
 
 body .text-darkblue {
   color: #355389;
+}
+
+.fab {
+  color: white;
+  cursor: pointer;
+}
+
+.fab:hover {
+  color: yellow;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons .btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.social-icons .btn fab:hover{
+  background-color: var(--warning);
 }

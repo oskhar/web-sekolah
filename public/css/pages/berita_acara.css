@@ -25,6 +25,10 @@
         border: none;
     }
 
+    .info-selengkapnya button{
+        border: 1px solid black;
+    }
+
     .col-md-4 img{
         width: 300px; 
         height: 180px;
