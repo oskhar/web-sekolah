@@ -38,8 +38,8 @@
               </div>
               <div class="card-body">
                   <div class="row">
-                    <a href="{{ url('/teacher/write-berita') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
-                      Tambah Berita atau Acara
+                    <a href="{{ url('/teacher/write-murid') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
+                      Tambah Murid
                     </a>
                   </div>
                   <table id="example1" class="table table-bordered table-striped">
@@ -55,7 +55,7 @@
                           </tr>
                       </thead>
                       <tbody>
-                        @foreach ($data_berita as $data)
+                        @foreach ($data_murid as $data)
                           <tr>
                               <td>{{ $loop->iteration }}</td>
                               <td><img src="{{ asset('/assets/'.$data->gambar) }}" class="img-fluid" alt="Ini Gambar" style="height: 5rem"></td>
