@@ -2,52 +2,7 @@
 
 @section('title', "Profile")
 @section('mainContainer')
-<style>
-    .avatar-container {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .avatar-container:hover .avatar-img {
-      filter: brightness(50%);
-    }
-
-    .avatar-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .avatar-list li {
-      display: inline-block;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .avatar-list li:last-child {
-      margin-right: 0;
-    }
-
-    .edit-avatar {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: none;
-    }
-
-    .avatar-container:hover .edit-avatar {
-      display: block;
-    }
-
-    .edit-avatar .btn {
-      background-color: transparent;
-      color: #fff;
-      border-radius: 20px;
-      padding: 3rem;
-      font-size: 2rem;
-      border: none;
-    }
-  </style>
+<link rel="stylesheet" href="{{ asset('css/teacher/profile.css') }}">
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -118,41 +73,63 @@
     <!-- Avatar Modal -->
     <div class="modal fade" id="avatarModal">
         <div class="modal-dialog">
-          <div class="modal-content">
+          <form class="modal-content" method="POST" action="{{ route('teacher.ubah_foto_profile') }}" enctype="multipart/form-data">
+            @csrf
             <div class="modal-header">
               <h4 class="modal-title">Pilih Avatar</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-              <form class="avatar-list" method="POST" action="{{ route('teacher.ubah_foto_profile') }}">
-                @csrf
+              <div class="avatar-list">
                 @for ($i = 1; $i <= 5; $i++)
                     <button type="submit" value="{{ 'avatar/guru-'.$i.'.jpg' }}" name="foto_profile" class="bg-white" style="border:none;">
                         <img class="img-circle img-fluid" src="{{ asset('assets/avatar/guru-'.$i.'.jpg') }}" alt="Avatar 1" style="height: 7rem">
                     </button>
                 @endfor
                 <!-- ... (tambahkan avatar lainnya sesuai kebutuhan) ... -->
-              </form>
+              </div>
               <hr>
               <!-- Fitur Unggah Foto -->
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
+                <input type="file" class="custom-file-input" id="inputFoto" accept="image/*" name="foto_profile">
                 <label class="custom-file-label" for="customFile">Pilih foto</label>
+              </div>
+              <div id="imagePreview" style="display: none;">
+                <img src="#" alt="Foto Profil Guru" class="img-thumbnail">
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Simpan</button>
+              <button type="submit" class="btn btn-primary" name="upload" value="ada">Simpan</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
 </section><!-- /.content -->
 <script>
-    function munculkanTombolUbahProfile () {
-        let tombol = document.createElement('button');
-        tombol.id = 'tombol_ganti_avatar';
-        $('foto_profile').add(tombol);
+  function munculkanTombolUbahProfile () {
+      let tombol = document.createElement('button');
+      tombol.id = 'tombol_ganti_avatar';
+      $('foto_profile').add(tombol);
+  }
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      $('#icon-upload-foto').remove();
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        $('#imagePreview img').attr('src', e.target.result);
+        $('#imagePreview').show();
+      }
+
+      reader.readAsDataURL(input.files[0]);
     }
+  }
+
+  // Ketika input file dipilih, panggil fungsi readURL
+  $('#inputFoto').change(function() {
+    readURL(this);
+  });
 </script>
 @endsection

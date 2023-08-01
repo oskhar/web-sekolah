@@ -58,6 +58,14 @@ main{
   margin: 0;
 }
 
+.bg-skyblue {
+  background: #c2d8f2;
+}
+
+body .text-darkblue {
+  color: #355389;
+}
+
 .fab {
   color: white;
   cursor: pointer;

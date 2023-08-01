@@ -8,14 +8,10 @@ use App\Models\TeacherModel;
 use App\Models\Blog;
 use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
+use Image;
 
 class Teacher extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
@@ -31,11 +27,6 @@ class Teacher extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function berita()
     {
         //
@@ -70,12 +61,6 @@ class Teacher extends Controller
         // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
         return back()->with('success_message', 'File berhasil diupload.');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function materi()
     {
         //
@@ -109,11 +94,39 @@ class Teacher extends Controller
         return back()->with('success_message', 'File berhasil diupload.');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function murid()
+    {
+        //
+        $data_murid = Blog::all();
+        return view('teacher.murid', [
+            'data_murid' => $data_murid,
+        ]);
+    }
+    public function writeMurid()
+    {
+        //
+        return view('teacher.write_murid');
+    }
+    public function createMurid(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'judul' => 'required|unique:blogs',
+            'isi' => '',
+            'gambar' => 'required|mimes:jpeg,jpg,png',
+        ]);
+
+        // Simpan file yang diupload ke direktori 'public/assets/upload'
+        $path = $request->file('gambar')->store('upload', 'public_uploads');
+
+        $data_validated['gambar'] = $path;
+        $data_validated['guru_id'] = Auth::user()->id;
+        Blog::create($data_validated);
+
+        // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
+        return back()->with('success_message', 'File berhasil diupload.');
+    }
+
     public function pekerjaanRumah()
     {
         //
@@ -121,11 +134,6 @@ class Teacher extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function profile()
     {
         //
@@ -134,8 +142,27 @@ class Teacher extends Controller
     public function ubahFotoProfile(Request $request)
     {
         //
+        $all_data = $request->all();
+        if (!empty($all_data['upload'])) {
+
+            // Simpan file yang diupload ke direktori 'public/assets/upload'
+            $destinationPath = public_path('assets/upload');
+            $image = $request->file('foto_profile');
+            $img = Image::make($image->getRealPath());
+
+            // Nama file baru
+            $filename = time() . '_' . $image->getClientOriginalName();
+
+            // Auto crop 1:1
+            $img->fit(300, 300); // Ubah ukuran sesuai kebutuhan Anda
+
+            // Simpan gambar ke direktori tujuan
+            $img->save($destinationPath . '/' . $filename);
+            $all_data['foto_profile'] = 'upload/' . $filename;
+        }
+
         $data = TeacherModel::find(Auth::user()->id);
-        $data->fill($request->all());
+        $data->fill($all_data);
         $data->save();
         return back()->with('success_message', 'Avatar berhasi diganti');
     }
@@ -143,7 +170,7 @@ class Teacher extends Controller
      * Logout user.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * 
      */
     public function logout(Request $request)
     {
@@ -154,61 +181,5 @@ class Teacher extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

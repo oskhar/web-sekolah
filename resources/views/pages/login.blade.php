@@ -15,11 +15,11 @@
         <div class="container-fluid">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-sm-6 d-flex justify-content-center mt-5">
-                    <div class="row mt-5">
-                        <a href="{{route('login.murid')}}" class="row col-sm-12 mt-2 py-4 btn bg-primary">Login Murid</a>
-                        <a href="{{route('login.guru')}}" class="row col-sm-12 mt-2 py-4 btn bg-primary">Login Guru</a>
-                        <a href="{{route('login.admin')}}" class="row col-sm-12 mt-2 py-4 btn bg-primary">Login Admin</a>
-                        <a href="{{url('/')}}" class="row col-sm-12 mt-2 py-4 btn bg-secondary"><i class="fas fa-arrow-left"></i> Kembali</a>
+                    <div class="row mt-5 shadow">
+                        <a href="{{ route('login.murid') }}" class="row col-sm-12 mt-2 py-4 btn bg-primary">Login Murid</a>
+                        <a href="{{ route('login.guru') }}" class="row col-sm-12 mt-2 py-4 btn bg-primary">Login Guru</a>
+                        <a href="{{ route('login.admin') }}" class="row col-sm-12 mt-2 py-4 btn bg-primary">Login Admin</a>
+                        <a href="{{ url('/') }}" class="row col-sm-12 mt-2 py-4 btn bg-secondary"><i class="fas fa-arrow-left"></i> Kembali</a>
                     </div>
                 </div>
             </div>  
