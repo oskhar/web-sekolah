@@ -94,6 +94,39 @@ class Teacher extends Controller
         return back()->with('success_message', 'File berhasil diupload.');
     }
 
+    public function murid()
+    {
+        //
+        $data_murid = Blog::all();
+        return view('teacher.murid', [
+            'data_murid' => $data_murid,
+        ]);
+    }
+    public function writeMurid()
+    {
+        //
+        return view('teacher.write_murid');
+    }
+    public function createMurid(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'judul' => 'required|unique:blogs',
+            'isi' => '',
+            'gambar' => 'required|mimes:jpeg,jpg,png',
+        ]);
+
+        // Simpan file yang diupload ke direktori 'public/assets/upload'
+        $path = $request->file('gambar')->store('upload', 'public_uploads');
+
+        $data_validated['gambar'] = $path;
+        $data_validated['guru_id'] = Auth::user()->id;
+        Blog::create($data_validated);
+
+        // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
+        return back()->with('success_message', 'File berhasil diupload.');
+    }
+
     public function pekerjaanRumah()
     {
         //

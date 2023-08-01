@@ -31,25 +31,24 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <!-- User Name -->
             @auth('teacher')
-                <span class="hidden-xs">{{ Auth::user()->nama_panggilan }}</span>
+                <span class="hidden-xs">{{ auth('teacher')->user()->nama_panggilan }}</span>
                 <!-- User Image -->
-                <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
-            @endauth
-            @guest
+                <img src="{{ asset('assets/'.auth('teacher')->user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
+            @else
                 <span class="hidden-xs">Click Untuk Login</span>
                 <!-- User Image -->
                 <img src="{{ asset('assets/avatar/profile_kosong.jpg') }}" class="user-image thumbnail" alt="User Image">
-            @endguest
+            @endauth
           </a>
           <!-- Dropdown Menu -->
           <ul class="dropdown-menu dropdown-menu-right">
             <!-- User Image -->
             <li class="user-header">
-                @auth
-                    <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="img-circle" alt="User Image">
+                @auth('teacher')
+                    <img src="{{ asset('assets/'.auth('teacher')->user()->foto_profile) }}" class="img-circle" alt="User Image">
                     <p>
-                        <b class="">{{ Auth::user()->nama_panggilan }}</b>
-                        <small class="text-gray">{{ Auth::user()->nama_lengkap }}</small>
+                        <b class="">{{ auth('teacher')->user()->nama_panggilan }}</b>
+                        <small class="text-gray">{{ auth('teacher')->user()->nama_lengkap }}</small>
                     </p>
                 @else
                     <p class="text-muted p-3">Anda Belum login! silahkan login untuk akses fitur lanjutan</p>
@@ -57,7 +56,7 @@
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
-                @auth
+                @auth('teacher')
                     <div class="pull-left">
                         <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Profile</a>
                     </div>
