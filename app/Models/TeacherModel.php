@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class TeacherModel extends Authenticatable
 {
     use HasFactory;
+    protected $guard = 'teacher';
     protected $table = 'teachers';
 
     /**

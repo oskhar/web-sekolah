@@ -18,16 +18,18 @@ use App\Http\Controllers\Login;
 */
 
 // Pages views
-Route::get('/', [Pages::class, 'home']);
-Route::get('/tentang/', [Pages::class, 'tentang']);
-Route::get('/visi-misi/', [Pages::class, 'visiMisi']);
-Route::get('/latar-belakang/', [Pages::class, 'latarBelakang']);
-Route::get('/galeri/', [Pages::class, 'galeri']);
-Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
-Route::get('/contact/', [Pages::class, 'contact']);
-Route::get('/materi/', [Pages::class, 'materi']);
-Route::get('/kebijakan-privasi/', [Pages::class, 'kebijakanPrivasi']);
-Route::get('/lowongan-kerja/', [Pages::class, 'lowonganKerja']);
+Route::group(['middleware' => ['guest', 'auth:teacher']], function () {
+    Route::get('/', [Pages::class, 'home'])->name('home');
+    Route::get('/tentang/', [Pages::class, 'tentang']);
+    Route::get('/visi-misi/', [Pages::class, 'visiMisi']);
+    Route::get('/latar-belakang/', [Pages::class, 'latarBelakang']);
+    Route::get('/galeri/', [Pages::class, 'galeri']);
+    Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
+    Route::get('/contact/', [Pages::class, 'contact']);
+    Route::get('/materi/', [Pages::class, 'materi']);
+    Route::get('/kebijakan-privasi/', [Pages::class, 'kebijakanPrivasi']);
+    Route::get('/lowongan-kerja/', [Pages::class, 'lowonganKerja']);
+});
 
 // Login views
 Route::group(['middleware' => 'guest'], function () {
@@ -74,17 +76,6 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     // Aksi logout
     Route::post('/teacher/logout', [Teacher::class, 'logout'])->name('teacher.logout');
 
-    // Pages views
-    Route::get('/', [Pages::class, 'home']);
-    Route::get('/tentang/', [Pages::class, 'tentang']);
-    Route::get('/visi-misi/', [Pages::class, 'visiMisi']);
-    Route::get('/latar-belakang/', [Pages::class, 'latarBelakang']);
-    Route::get('/galeri/', [Pages::class, 'galeri']);
-    Route::get('/berita-acara/', [Pages::class, 'beritaAcara']);
-    Route::get('/contact/', [Pages::class, 'contact']);
-    Route::get('/materi/', [Pages::class, 'materi']);
-    Route::get('/kebijakan-privasi/', [Pages::class, 'kebijakanPrivasi']);
-    Route::get('/lowongan-kerja/', [Pages::class, 'lowonganKerja']);
 });
 
 // Admin views

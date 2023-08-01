@@ -113,7 +113,7 @@ class Teacher extends Controller
         if (!empty($all_data['upload'])) {
 
             // Simpan file yang diupload ke direktori 'public/assets/upload'
-            $destinationPath = public_path('uploads');
+            $destinationPath = public_path('assets/upload');
             $image = $request->file('foto_profile');
             $img = Image::make($image->getRealPath());
 
@@ -125,7 +125,7 @@ class Teacher extends Controller
 
             // Simpan gambar ke direktori tujuan
             $img->save($destinationPath . '/' . $filename);
-            $all_data['foto_profile'] = $filename;
+            $all_data['foto_profile'] = 'upload/' . $filename;
         }
 
         $data = TeacherModel::find(Auth::user()->id);

@@ -140,6 +140,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('/teacher/pesan') }}" class="nav-link @if(request()->is('teacher/pesan')) active @endif">
+              <i class="nav-icon fas fa-sms"></i>
+              <p>
+                Lihat Pesan
+              </p>
+            </a>
+          </li>
           <li class="nav-item mt-5">
             <form action="{{ route('teacher.logout') }}" method="POST">
               @csrf

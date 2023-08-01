@@ -34,11 +34,12 @@
                 <span class="hidden-xs">{{ Auth::user()->nama_panggilan }}</span>
                 <!-- User Image -->
                 <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
-            @else
+            @endauth
+            @guest
                 <span class="hidden-xs">Click Untuk Login</span>
                 <!-- User Image -->
                 <img src="{{ asset('assets/avatar/profile_kosong.jpg') }}" class="user-image thumbnail" alt="User Image">
-            @endauth
+            @endguest
           </a>
           <!-- Dropdown Menu -->
           <ul class="dropdown-menu dropdown-menu-right">

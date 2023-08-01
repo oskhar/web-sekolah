@@ -121,6 +121,7 @@
   <script src="plugins/moment/moment.min.js"></script>
   <script src="plugins/fullcalendar/main.js"></script>
   <script>
+    var currentDate = new Date();
     var listAcaraPaud = [
       @foreach ($data_berita as $data)
       {
@@ -133,7 +134,7 @@
       },
       @endforeach
     ];
-      // Kirim data ke controller menggunakan AJAX
+      // Ambil data API menggunakan AJAX
       $.ajax({
         url: 'https://api-harilibur.vercel.app/api',
         method: 'get',
@@ -148,9 +149,25 @@
                 backgroundColor: 'var(--danger)', //Blue
                 borderColor    : 'var(--danger)' //Blue
               };
-              console.log(data_tmp);
               listAcaraPaud.push(data_tmp);
-
+            }
+          };
+          inisialisasiKalender();
+        },
+        error: function(xhr, status, error) {
+          alert("Gagal mengakses tanggal merah: ");
+          inisialisasiKalender();
+        }
+      });
+      // Ambil data API menggunakan AJAX
+      $.ajax({
+        url: 'https://api-harilibur.vercel.app/api?month=' + (currentDate.getMonth()+1),
+        method: 'get',
+        dataType: 'json',
+        success: function(response) {
+          console.log(response);
+          for (let i = 0; i < response.length; i++) {
+            if (response[i].is_national_holiday) {
               $('#bungkus_list_event').append(`
                 <a class="btn bg-danger col-sm-12 m-1">
                   <i class="fas fa-star"></i>
@@ -159,11 +176,8 @@
               `);
             }
           };
-          inisialisasiKalender();
         },
         error: function(xhr, status, error) {
-          alert("Gagal mengakses tanggal merah: ");
-          inisialisasiKalender();
         }
       });
   </script>
