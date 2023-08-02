@@ -73,6 +73,9 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     // Halaman kelola pekerjaan rumah
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
 
+    // Halaman kelola galeri
+    Route::get('/teacher/galeri', [Teacher::class, 'galeri']);
+
     // Halaman kelola profile
     Route::get('/teacher/profile', [Teacher::class, 'profile']);
     Route::post('/teacher/ubah-foto-profile', [Teacher::class, 'ubahFotoProfile'])->name('teacher.ubah_foto_profile');

@@ -166,6 +166,13 @@ class Teacher extends Controller
         $data->save();
         return back()->with('success_message', 'Avatar berhasi diganti');
     }
+
+    public function galeri()
+    {
+        //
+        return view('teacher.galeri');
+    }
+
     /**
      * Logout user.
      *

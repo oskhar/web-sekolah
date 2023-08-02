@@ -47,7 +47,7 @@
             <!-- Detail Profile -->
             <div class="card">
                 <div class="card-body">
-                  <button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit</button>
+                  <button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit Informasi</button>
                 <h4 class="mb-4 mt-4">Informasi Pribadi</h4>
                 <div class="row">
                   <div class="col-md-6">
@@ -86,9 +86,9 @@
             </div>
             <div class="modal-body">
               <div class="avatar-list">
-                @for ($i = 1; $i <= 5; $i++)
+                @for ($i = 1; $i <= 8; $i++)
                     <button type="submit" value="{{ 'avatar/guru-'.$i.'.jpg' }}" name="foto_profile" class="bg-white" style="border:none;">
-                        <img class="img-circle img-fluid" src="{{ asset('assets/avatar/guru-'.$i.'.jpg') }}" alt="Avatar 1" style="height: 7rem">
+                        <img class="img-circle img-fluid" src="{{ asset('assets/avatar/guru-'.$i.'.jpg') }}" alt="Avatar 1" style="height: 6.5rem">
                     </button>
                 @endfor
                 <!-- ... (tambahkan avatar lainnya sesuai kebutuhan) ... -->

@@ -1,17 +1,17 @@
 @extends('components.template_teacher')
 
-@section('title', "Materi")
+@section('title', "Berita & Event")
 @section('mainContainer')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Materi</h1>
+            <h1>Berita & Event</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Materi</li>
+                <li class="breadcrumb-item active">Berita & Event</li>
             </ol>
         </div>
         </div>
@@ -24,7 +24,7 @@
     <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST" action="{{ route('teacher.write-berita') }}">
       @csrf
       <div class="card-header">
-        <h3 class="card-title">Compose New Message</h3>
+        <h3 class="card-title">Daftar Berita dan Event</h3>
       </div>
         <!-- /.card-header -->
         <div class="card-body">

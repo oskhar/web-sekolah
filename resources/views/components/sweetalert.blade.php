@@ -3,7 +3,7 @@
 <script>
     Swal.fire({
         toast: true,
-        position: 'top-right',
+        position: 'bottom-right',
         iconColor: 'white',
         color: 'white',
         background: 'var(--success)',

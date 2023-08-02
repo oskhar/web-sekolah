@@ -24,7 +24,7 @@
     <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST" action="{{ route('teacher.write-materi') }}">
       @csrf
       <div class="card-header">
-        <h3 class="card-title">Compose New Message</h3>
+        <h3 class="card-title">Membuat Materi atau Blog</h3>
       </div>
         <!-- /.card-header -->
         <div class="card-body">
