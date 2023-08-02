@@ -38,7 +38,7 @@ class Admin extends Controller
         $data_validated = $request->validate([
             'nama_lengkap' => '',
             'nama_panggilan' => '',
-            'nomor_telepon' => '|unique:teachers',
+            'nomor_telepon' => '',
             'email' => 'required|unique:teachers',
             'password' => 'required',
             'pengalaman_mengajar' => '',
@@ -72,6 +72,23 @@ class Admin extends Controller
         TeacherModel::create($data_validated);
 
         return back()->with('success_message', 'Akun guru berhasil ditambahkan.');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function deleteTeacher(Request $request)
+    {
+        $id = $request->input('id');
+        $data_teacher = TeacherModel::find($id);
+        if ($data_teacher) {
+            $data_teacher->delete();
+            // Menambahkan response json
+            $response = [
+                'success_message' => 'Data berhasil dihapus',
+            ];
+            return response()->json($response);
+        }
     }
 
     /**

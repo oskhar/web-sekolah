@@ -10,6 +10,8 @@
     float: right;
   }
 </style>
+<!-- Tambahkan CSRF token untuk keamanan -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -118,11 +120,11 @@
                             <div class="form-group">
                                 <label>Pengalaman Mengajar</label>
                                 <select class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="pengalaman_mengajar" id="pengalaman_mengajar">
-                                    <option value="< 1 Tahun" selected="selected">< 1 Tahun</option>
+                                    <option value="Kurang dari 1 Tahun" selected="selected">Kurang dari 1 Tahun</option>
                                     <option value="1 Tahun - 3 Tahun">1 Tahun - 3 Tahun</option>
                                     <option value="3 Tahun - 5 Tahun">3 Tahun - 5 Tahun</option>
                                     <option value="5 Tahun - 10 Tahun">5 Tahun - 10 Tahun</option>
-                                    <option value="> 10 Tahun">> 10 Tahun</option>
+                                    <option value="Lebih dari 10 Tahun">Lebih dari 10 Tahun</option>
                                 </select>
                             </div>
                         </div>
@@ -206,10 +208,10 @@
                                             <td>{{ $data->nama_lengkap }}</td>
                                             <td>{{ $data->email }}</td>
                                             <td>
-                                            <a href="{{ url('/dashboard/update') }}/{{ 'nis' }}" class="btn bg-primary btn-sm">
+                                            <a href="{{ url('/dashboard/update') }}/{{ $data->id }}" class="btn bg-primary btn-sm">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
-                                            <a onclick="" class="btn bg-danger btn-sm">
+                                            <a onclick="deleteData({{ $data->id }}, '{{ $data->email }}')" class="btn bg-danger btn-sm">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                             </td>
@@ -236,4 +238,37 @@
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard-admin.js"></script>
+<script>
+    function deleteData(id, email) {
+        Swal.fire({
+            title: 'Hapus akun '+ email +'?',
+            showConfirmButton: false,
+            showDenyButton: true,
+            showCancelButton: true,
+            denyButtonText: `Hapus`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isDenied) {
+                let data = {id: id};
+                $.ajax({
+                    url: '{{ route("delete.teacher") }}',
+                    type: 'post',
+                    data: data,
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Ambil token CSRF dari meta tag
+                    },
+                    success: function(response) {
+                        window.location.href = '{{ url('/admin') }}';
+                    }, error: function(xhr, status, error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: "Data gagal dihapus: " + xhr.status + "\n" + xhr.responseText + "\n" + error,
+                        });
+                    }
+                });
+            }
+        });
+    }
+</script>
 @endsection

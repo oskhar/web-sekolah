@@ -28,7 +28,7 @@
             <!-- Profile Card -->
             <div class="card-body row">
                 <div class="col-sm-12 d-flex justify-content-center avatar-container" id="bungkus_foto">
-                    <img class="img-circle avatar-img img-fluid" src="{{ asset('assets/'.Auth::user()->foto_profile) }}" alt="Foto Profil" id="foto_profile" style="height: 12rem">
+                    <img class="img-circle avatar-img img-fluid" src="{{ asset('assets/'.Auth::user()->foto_profile ?? 'Kosong...') }}" alt="Foto Profil" id="foto_profile" style="height: 12rem">
                     
                     <!-- Tombol Ubah Avatar -->
                     <div class="edit-avatar">
@@ -36,10 +36,10 @@
                     </div>
                 </div>
                 <div class="col-sm-12 d-flex justify-content-center mt-4">
-                    <h3 class="font-weight-light">{{ Auth::user()->nama_lengkap }}</h3>
+                    <h3 class="font-weight-light">{{ Auth::user()->nama_lengkap ?? 'Kosong...' }}</h3>
                 </div>
                 <div class="col-sm-12 d-flex justify-content-center">
-                    <h5 class="text-muted">{{ Auth::user()->jabatan }}</h5>
+                    <h5 class="text-muted">{{ Auth::user()->jabatan ?? 'Kosong...' }}</h5>
                 </div>
             </div>
             </div>
@@ -47,22 +47,27 @@
             <!-- Detail Profile -->
             <div class="card">
                 <div class="card-body">
-                <h4 class="mb-4">Informasi Pribadi</h4>
+                  <button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit</button>
+                <h4 class="mb-4 mt-4">Informasi Pribadi</h4>
                 <div class="row">
-                    <div class="col-md-6">
+                  <div class="col-md-6">
                     <strong>Nama Panggilan</strong>
-                    <p>{{ Auth::user()->pengalaman_mengajar }}</p>
+                    <p>{{ Auth::user()->nama_panggilan ?? 'Kosong...' }}</p>
                     <hr>
                     <strong>Nomor Telepon</strong>
-                    <p>{{ Auth::user()->nomor_telepon }}</p>
-                    </div>
-                    <div class="col-md-6">
+                    <p>{{ Auth::user()->nomor_telepon ?? 'Kosong...' }}</p>
+                    <hr>
+                    <strong>Pengalaman Mengajar</strong>
+                    <p>{{ Auth::user()->pengalaman_mengajar ?? 'Kosong...' }}</p>
+                  </div>
+                  <div class="col-md-6">
                     <strong>Email</strong>
-                    <p>{{ Auth::user()->email }}</p>
+                    <p>{{ Auth::user()->email ?? 'Kosong...' }}</p>
                     <hr>
                     <strong>Gender</strong>
                     <p>{{ ['Wanita', 'Pria'][Auth::user()->gender] }}</p>
-                    </div>
+                    <hr>
+                  </div>
                 </div>
                 </div>
             </div>

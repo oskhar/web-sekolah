@@ -2,11 +2,16 @@
 @if(Session::has('success_message'))
 <script>
     Swal.fire({
-        position: 'top-end',
+        toast: true,
+        position: 'top-right',
+        iconColor: 'white',
+        color: 'white',
+        background: 'var(--success)',
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
         icon: 'success',
         title: '{{ Session::get('success_message') }}',
-        showConfirmButton: false,
-        timer: 1300,
     });
 </script>
 @endif
@@ -28,7 +33,7 @@
 @if(Session::has('warning_message'))
 <script>
     // Menampilkan pesan warning AJAX
-    Swal.fire({
+    Toast.fire({
         title: 'Login gagal!',
         text: "{{ Session::get('warning_message') }}",
         icon: 'info',

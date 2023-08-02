@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('foto_profile')->nullable();
             $table->string('pengalaman_mengajar')->nullable();
             $table->string('jabatan')->nullable();
-            $table->string('nomor_telepon')->unique()->nullable();
+            $table->string('nomor_telepon')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('gender')->nullable();

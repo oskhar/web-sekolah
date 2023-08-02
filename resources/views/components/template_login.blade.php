@@ -22,7 +22,7 @@
                 <div class="card">
                     <div class="card-header text-primary text-center"><i class="fas fa-chalkboard-teacher mr-2"></i>@yield('role')</div>
                     <div class="container mt-5">
-                        <div class="row justify-content-between">
+                        <div class="row justify-content-between p-3">
                           <div class="col-md-6">
                             <img src="@yield('image')" class="img-fluid" alt="..." width=300" >
                           </div>
@@ -44,18 +44,9 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div class="form-group">
-                                  <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="remember">
-                                    <label class="custom-control-label" for="remember">Remember me</label>
-                                  </div>
-                                </div>
-                                <div class="text-center">
+                                <div class="form-group mt-3">
+                                  <button type="submit" class="btn btn-primary btn-block px-4">Login</button>
                                   <a href="#">Forgot password?</a>
-                                </div>
-                                <div class="text-center mt-3">
-                                  <button type="submit" class="btn btn-primary">Login</button>
-                                  <button type="reset" class="btn btn-secondary">Reset</button>
                                 </div>
                               </form>
                           </div>

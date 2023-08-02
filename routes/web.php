@@ -84,6 +84,7 @@ Route::group(['middleware' => 'auth:teacher'], function () {
 // Admin views
 Route::get('/admin/', [Admin::class, 'index']);
 Route::post('/admin/', [Admin::class, 'createTeacher']);
+Route::post('/admin/teacher/delete', [Admin::class, 'deleteTeacher'])->name('delete.teacher');
 
 // Testing purpose
 Route::get('/testing/', function () {
