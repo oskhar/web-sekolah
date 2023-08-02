@@ -12,17 +12,18 @@ return new class extends Migration {
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_lengkap');
-            $table->string('nama_panggilan');
+            $table->string('nama_lengkap')->nullable();
+            $table->string('nama_panggilan')->nullable();
             $table->string('foto_profile')->nullable();
-            $table->string('pengalaman_mengajar');
-            $table->string('jabatan');
-            $table->string('nomor_telepon')->unique();
+            $table->string('pengalaman_mengajar')->nullable();
+            $table->string('jabatan')->nullable();
+            $table->string('nomor_telepon')->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->boolean('gender');
+            $table->boolean('gender')->nullable();
             $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('massages', function (Blueprint $table) {
             $table->id();
             $table->text('isi');
-            $table->integer('murid_id')->nullable();
+            $table->string('pengirim')->nullable();
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
         });

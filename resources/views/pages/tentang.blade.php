@@ -32,9 +32,9 @@
   {{-- Bagian fasilitas dan sarana --}}
   <div id="myCarousel" class="carousel slide mt-5" data-ride="carousel" style=" padding-top: 150px;">
     <!-- Wrapper untuk konten Carousel -->
-    <div class="carousel-inner pt-5 bg-cyan">
-        <p style="text-align: center; font-weight: bold; font-size: 40px;">FASILITAS DAN SARANA</p>
-      <div class="carousel-item active bg-cyan">
+    <div class="carousel-inner pt-5 bg-skyblue">
+        <h1 class="text-darkblue text-center">FASILITAS DAN SARANA</h1>
+      <div class="carousel-item active bg-skyblue">
         <!-- Konten Pertama -->
         <div class="row align-items-center justify-content-center">
           <div class="col-sm-3 p-5">
@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item bg-cyan">
+      <div class="carousel-item bg-skyblue">
         <!-- Konten Kedua -->
         <div class="row align-items-center justify-content-center">
             <div class="col-sm-3 p-5">
