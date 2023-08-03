@@ -7,7 +7,7 @@
 
     <base href="{{ asset('adminLTE') }}/">
     @include('components.adminlte_dependency')
-    <title>Login sebagai Guru</title>
+    <title>Login sebagai Murid</title>
     <link rel="stylesheet" href="{{ asset('css/pages/login_murid.css')}} ">
 </head>
 <body>
