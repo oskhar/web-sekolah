@@ -75,10 +75,14 @@ Route::group(['middleware' => 'auth:teacher'], function () {
 
     // Halaman kelola galeri
     Route::get('/teacher/galeri', [Teacher::class, 'galeri']);
+    Route::get('/teacher/galeri/upload', [Teacher::class, 'galeriUpload']);
 
     // Halaman kelola profile
     Route::get('/teacher/profile', [Teacher::class, 'profile']);
     Route::post('/teacher/ubah-foto-profile', [Teacher::class, 'ubahFotoProfile'])->name('teacher.ubah_foto_profile');
+
+    // Halaman kelola pesan
+    Route::get('/teacher/pesan', [Teacher::class, 'pesan']);
 
     // Aksi logout
     Route::post('/teacher/logout', [Teacher::class, 'logout'])->name('teacher.logout');

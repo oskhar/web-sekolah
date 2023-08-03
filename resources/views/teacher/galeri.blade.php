@@ -4,7 +4,7 @@
 @section('mainContainer')
 <style>
     #list-gambar {
-        height:14rem;
+        height:30rem;
         width:100%;
         object-fit:cover;
     }
@@ -30,16 +30,22 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-                <h3>Galeri Foto</h3>
+                <a href="{{ url('/teacher/galeri/upload') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">Tambah Foto</a>
             </div>
             <div class="row no-gutters card-body">
-
-                <!-- Baris 1 -->
                 <div class="col-sm-3">
-                    <img src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1" id="list-gambar">
+                    <img src="{{ asset('assets/images/profile3.jpg')}}" onclick="lihatGambar('{{ asset('assets/images/profile3.jpg')}}')" class="img-fluid" alt="Gambar 1" id="list-gambar">
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+    function lihatGambar(image) {
+        Swal.fire({
+            imageUrl: image,
+            imageAlt: 'Ini gambar'
+        })
+    }
+</script>
 @endsection

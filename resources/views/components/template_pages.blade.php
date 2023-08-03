@@ -35,7 +35,7 @@
                 <!-- User Image -->
                 <img src="{{ asset('assets/'.auth('teacher')->user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
             @else
-                <span class="hidden-xs"><b>Login</b></span>
+                <span class="hidden-xs"><b>Click untuk Login</b></span>
                 <!-- User Image -->
                 <img src="{{ asset('assets/avatar/profile_kosong.jpg') }}" class="user-image thumbnail" alt="User Image">
             @endauth

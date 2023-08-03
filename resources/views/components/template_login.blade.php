@@ -35,14 +35,7 @@
                                 </div>
                                 <div class="form-group">
                                   <label for="password"><i class="fas fa-lock"></i> Password</label>
-                                  <div class="input-group">
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
-                                    <div class="input-group-append">
-                                      <span class="input-group-text">
-                                        <i class="fas fa-eye" id="togglePassword"></i>
-                                      </span>
-                                    </div>
-                                  </div>
+                                  <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
                                 </div>
                                 <div class="form-group mt-3">
                                   <button type="submit" class="btn btn-primary btn-block px-4">Login</button>
