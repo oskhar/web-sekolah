@@ -4,7 +4,7 @@
 @section('mainContainer')
 
 <link rel="stylesheet" href="{{ asset('css/pages/berita_acara.css')}} ">
-
+<section class="content">
 <div class="container-fluid mt-5">
     <!-- Teks yang ditampilkan paling atas -->
     <div class="text-overlay">
@@ -12,104 +12,79 @@
     </div>
 
     {{--  Bagian Berita Dan Acara  --}}
-    <div class="berita-acara">
-        <div class="card-utama mt-5">
-            <div class="mb-3">
-                <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
+    <div class="berita-acara row justify-content-center">
+        
+        <div class="card col-lg-10">
+            <div class="pengumuman card-header">
+                <div class="display-pengumuman">
+                    <button class="btn float-right border">Selengkapnya</button>
+                    <h3 class="mb-0">Pengumuman</h3>
+                    <p class="text-muted">17 Agustus 2023</p>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
-                            <h5 class="card-title">INFO - INFO</h5>
-                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
-                        </div>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                    <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
+            </div>
+
+            {{-- Card Pengumuman --}}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/assets/images/logo_paud.jpg" class="img-fluid" alt="..." >
                     </div>
-                </div>
+                    <div class="col-md-8">
+                        <div class="">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card-utama mt-5">
-            <div class="mb-3">
-                <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
+        <div class="card col-lg-10">
+            <div class="pengumuman card-header">
+                <div class="display-pengumuman">
+                    <button class="btn float-right border">Selengkapnya</button>
+                    <h3 class="mb-0">Pengumuman</h3>
+                    <p class="text-muted">17 Agustus 2023</p>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
-                            <h5 class="card-title">INFO - INFO</h5>
-                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
-                        </div>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                    <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
+            </div>
+
+            {{-- Card Pengumuman --}}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/assets/images/foto_bareng_tk.jpg" class="img-fluid" alt="..." >
                     </div>
-                </div>
+                    <div class="col-md-8">
+                        <div class="">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card-utama mt-5">
-            <div class="mb-3">
-                <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
-                            <h5 class="card-title">INFO - INFO</h5>
-                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
-                        </div>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                    <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
-                    </div>
-                </div>
+        <div class="card col-lg-10">
+            <div class="pengumuman card-header">
+                <div class="display-pengumuman">
+                    <button class="btn float-right border">Selengkapnya</button>
+                    <h3 class="mb-0">Pengumuman</h3>
+                    <p class="text-muted">17 Agustus 2023</p>
                 </div>
             </div>
-        </div>
-        <div class="card-utama mt-5">
-            <div class="mb-3">
-                <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
-                            <h5 class="card-title">INFO - INFO</h5>
-                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
-                        </div>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                    <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
+
+            {{-- Card Pengumuman --}}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/assets/images/foto_bareng_tk.jpg" class="img-fluid" alt="..." >
                     </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="card-utama mt-5">
-            <div class="mb-3">
-                <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <div class="info-selengkapnya d-flex justify-content-between" style="width: 600px;">
-                            <h5 class="card-title">INFO - INFO</h5>
-                            <a href="{{url('/sel-berita-acara')}}"><button>Selengkapnya</button></a>
+                    <div class="col-md-8">
+                        <div class="">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                    <p class="card-text-dua">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to</p>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+</section>
 
 @endsection

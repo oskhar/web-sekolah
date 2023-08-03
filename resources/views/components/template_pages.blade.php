@@ -35,7 +35,7 @@
                 <!-- User Image -->
                 <img src="{{ asset('assets/'.auth('teacher')->user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
             @else
-                <span class="hidden-xs"><b>Login</b></span>
+                <span class="hidden-xs"><b>Click untuk Login</b></span>
                 <!-- User Image -->
                 <img src="{{ asset('assets/avatar/profile_kosong.jpg') }}" class="user-image thumbnail" alt="User Image">
             @endauth
@@ -118,9 +118,20 @@
         </ul>
 
         {{-- Bagian Search --}}
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0 navbar-search-block">
+            <form class="form-inline">
+                <div class="input-group input-group-sm">
+                  <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                  <div class="input-group-append">
+                    <button class="btn btn-navbar bg-white" type="submit">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
         </form>
     </div>
 </nav>

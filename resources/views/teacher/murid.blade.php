@@ -1,6 +1,6 @@
 @extends('components.template_teacher')
 
-@section('title', "Dashboard")
+@section('title', "Materi")
 @section('mainContainer')
 <style>
     .dataTables_filter {
