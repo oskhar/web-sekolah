@@ -1,5 +1,4 @@
 @extends('components.template_login')
-
 @section('title', "Login Guru")
 @section('route_action')
     {{ route('login.murid') }}
