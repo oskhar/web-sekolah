@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pages;
 use App\Http\Controllers\Teacher;
+use App\Http\Controllers\Student;
 use App\Http\Controllers\Login;
 
 /*
@@ -42,7 +43,7 @@ Route::group(['middleware' => ['guest']], function () {
 
     // Route login murid
     Route::get('/login/murid', [Login::class, 'murid'])->name('login.murid');
-    Route::post('/login/murid', [Login::class, 'verifikasiAdmin'])->name('login.murid');
+    Route::post('/login/murid', [Login::class, 'verifikasiMurid'])->name('login.murid');
 
     // Route login admin
     Route::get('/login/admin', [Login::class, 'admin'])->name('login.admin');
@@ -54,6 +55,8 @@ Route::group(['middleware' => ['guest']], function () {
 Route::group(['middleware' => 'auth:student'], function () {
     // Main dashboard
     Route::get('/student/', [Student::class, 'index'])->name('student');
+    Route::get('/student/profile', [Student::class, 'profile'])->name('profile');
+    Route::get('/student/pesan', [Student::class, 'pesan'])->name('pesan');
 });
 
 // Teacher views

@@ -1,6 +1,6 @@
 @extends('components.template_login')
 
-@section('title', "Login Guru")
+@section('title', "Login Murid")
 @section('route_action')
     {{ route('login.murid') }}
 @endsection
@@ -8,7 +8,7 @@
   {{ asset('/assets/images/imgLogin/anak-anak.png') }}
 @endsection
 
-@section('role', 'Login sebagai Guru')
+@section('role', 'Login sebagai Murid')
 
 @section('up_label')
   <i class="fas fa-shield-alt"></i> Token

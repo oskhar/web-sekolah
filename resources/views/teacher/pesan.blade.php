@@ -28,20 +28,39 @@
                     <span class="info-box-icon"><i class="fas fa-info"></i></span>
         
                     <div class="info-box-content">
-                        <h2>Belum Dibaca</h2>
+                        <h2>Pesan Terbaru</h2>
                     </div>
                 </div>
             </div>
+            @if ($banyak_pesan_terbaru > 0)
+                @foreach ($pesan_terbaru as $data)
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <strong>{{ $data->user->name }}</strong>
+                            <p>{{ $data->message }}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            @else
+            <div class="col-md-12">
+                <div class="info-box mb-3 bg-white row justify-content-center py-4">
+                    <h5 class="text-center text-muted">Tidak ada pesan baru !</h5>
+                </div>
+            </div>
+            @endif
             <div class="col-md-12">
                 <div class="info-box mb-3 bg-success">
                     <span class="info-box-icon"><i class="fas fa-check"></i></span>
-        
                     <div class="info-box-content">
-                        <h2>Sudah Dibaca</h2>
+                        <h2>Pesan Lama</h2>
                     </div>
                 </div>
             </div>
-            @foreach ($data_pesan as $data)
+        </div>
+        @if ($banyak_pesan_lama > 0)
+            @foreach ($pesan_lama as $data)
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -51,7 +70,13 @@
                 </div>
             </div>
             @endforeach
-        </div>
+        @else
+            <div class="col-md-12">
+                <div class="info-box mb-3 bg-white row justify-content-center py-4">
+                    <h5 class="text-center text-muted">Tidak ada pesan !</h5>
+                </div>
+            </div>
+        @endif
     </div>
 </section>
 @endsection

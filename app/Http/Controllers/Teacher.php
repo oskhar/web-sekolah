@@ -12,6 +12,7 @@ use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
+use Carbon\Carbon;
 
 class Teacher extends Controller
 {
@@ -204,8 +205,19 @@ class Teacher extends Controller
     {
         //
         $data_pesan = Message::all();
+        $pesan_terbaru = $data_pesan->filter(function ($item) {
+            return Carbon::parse($item->created_at)->diffInDays(Carbon::now()) < 2;
+        });
+        $banyak_pesan_terbaru = $pesan_terbaru->count();
+        $pesan_lama = $data_pesan->filter(function ($item) {
+            return Carbon::parse($item->created_at)->diffInDays(Carbon::now()) >= 2;
+        });
+        $banyak_pesan_lama = $pesan_lama->count();
         return view('teacher.pesan', [
-            'data_pesan' => $data_pesan,
+            'pesan_terbaru' => $pesan_terbaru,
+            'banyak_pesan_terbaru' => $banyak_pesan_terbaru,
+            'pesan_lama' => $pesan_lama,
+            'banyak_pesan_lama' => $banyak_pesan_lama,
         ]);
     }
 
@@ -218,9 +230,7 @@ class Teacher extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         return redirect('/');

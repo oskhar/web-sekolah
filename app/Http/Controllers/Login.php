@@ -41,16 +41,20 @@ class Login extends Controller
      */
     public function verifikasiMurid(Request $request)
     {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
         $credential = $request->validate([
-            'email' => 'required',
+            'token' => 'required',
             'password' => 'required',
         ]);
-        if (Auth::guard('teacher')->attempt($credential)) {
+        if (Auth::guard('student')->attempt($credential)) {
             // Login berhasil, redirect ke halaman dashboard guru
-            return redirect()->route('teacher');
+            return redirect()->route('student');
         } else {
             // Login gagal, tampilkan pesan error
-            return back()->with(['error_message' => 'Email atau Password salah! Pastikan anda menggunakan Email dan Password Yang sesuai']);
+            return back()->with(['error_message' => 'Token atau Password salah! Pastikan anda menggunakan Token dan Password Yang sesuai']);
         }
     }
 
@@ -67,6 +71,10 @@ class Login extends Controller
      */
     public function verifikasiGuru(Request $request)
     {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
         $credential = $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -93,6 +101,9 @@ class Login extends Controller
      */
     public function verifikasiAdmin(Request $request)
     {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         $credential = $request->validate([
             'email' => 'required',
             'password' => 'required',

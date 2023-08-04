@@ -23,7 +23,7 @@ class Authenticate extends Middleware
                 return route('login.guru');
             }
             // Cek url yang dilindungi otentikasi
-            if (Str::startsWith($url, url('/murid'))) {
+            if (Str::startsWith($url, url('/student'))) {
                 return route('login.murid');
             }
         }
