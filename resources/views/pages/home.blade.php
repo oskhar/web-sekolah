@@ -6,7 +6,6 @@
     {{-- Bagian Slide Home 1 --}}
     {{-- Kalimat Pembukaan --}}
     <link rel="stylesheet" href="{{ asset('css/pages/home.css')}} ">
-    <link rel="stylesheet" href="{{ asset('css/pages/swiper-bundle.min.css')}}">
     <div class="display">
         <div id="container-1" class="row">
             <div class="col-sm-7 jarak" >
@@ -29,34 +28,38 @@
 
     {{-- Bagian Slide Home 2 --}}
     {{-- 3 Kotak --}}
-    <div class="data-sekolah">
-        <div class="judul-data-sekolah text-center">
-            <h1>DATA - DATA SEKOLAH</h1>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="data-sekolah row justify-content-center">
+                <div class="judul-data-sekolah text-center">
+                    <h1>DATA - DATA SEKOLAH</h1>
+                </div>
+        
+                <div class="row col-lg-11">
+                    <div class="col-lg-4 p-3">
+                        <div class="bg-cyan small-box p-5 rounded shadow">
+                            <h1>Banyak Siswa</h1>
+                            <p>100%</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-4 p-3">
+                        <div class="bg-green small-box p-5 rounded shadow">
+                            <h1>Banyak Guru</h1>
+                            <p>7 Guru</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-4 p-3">
+                        <div class="bg-red small-box p-5 rounded shadow">
+                            <h1>Banyak Kelas</h1>
+                            <p>4 Kelas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="kotak row">
-            <div class="kotak-satu col-sm-4 p-5">
-                <div class="text-kotak-satu bg-cyan rounded shadow p-5">
-                    <h1>Banyak Siswa</h1>
-                    <p>100%</p>
-                </div>
-            </div>
-
-            <div class="kotak-dua col-sm-4 p-5">
-                <div class="text-kotak-dua bg-green rounded shadow p-5">
-                    <h1>Banyak Guru</h1>
-                    <p>7 Guru</p>
-                </div>
-            </div>
-
-            <div class="kotak-tiga col-sm-4 p-5">
-                <div class="text-kotak-dua bg-red rounded shadow p-5">
-                    <h1>Banyak Kelas</h1>
-                    <p>4 Kelas</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 
     {{-- Bagian Pengumuman --}}
 

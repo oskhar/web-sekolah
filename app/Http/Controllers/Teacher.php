@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\HomeWork;
 use App\Models\TeacherModel;
 use App\Models\Blog;
+use App\Models\Message;
 use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 use Image;
@@ -166,6 +167,27 @@ class Teacher extends Controller
         $data->save();
         return back()->with('success_message', 'Avatar berhasi diganti');
     }
+
+    public function galeri()
+    {
+        //
+        return view('teacher.galeri');
+    }
+    public function galeriUpload()
+    {
+        //
+        return view('teacher.galeri-upload');
+    }
+
+    public function pesan()
+    {
+        //
+        $data_pesan = Message::all();
+        return view('teacher.pesan', [
+            'data_pesan' => $data_pesan,
+        ]);
+    }
+
     /**
      * Logout user.
      *

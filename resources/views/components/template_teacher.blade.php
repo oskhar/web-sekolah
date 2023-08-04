@@ -103,7 +103,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item @if(request()->is('teacher/murid') || request()->is('teacher/galeri') || request()->is('teacher/profile')) menu-open @endif">
             <a class="nav-link">
               <i class="nav-icon fas fa-database"></i>
               <p>
