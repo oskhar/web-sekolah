@@ -47,10 +47,11 @@
           <div class="card-body-ajukan">
             <!-- Form untuk mengajukan pertanyaan -->
             <form>
+              <input type="hidden" name="pengirim" value="anonim">
               <div class="form-group-ajukan">
                 <label for="pertanyaan" class=""><i class="fas fa-edit text-primary"></i> Pertanyaan Anda</label>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, tempora perferendis. Minus maxime dignissimos ea quisquam necessitatibus tempore nesciunt placeat?</p>
-                <textarea class="form-control" id="pertanyaan" rows="5" required></textarea>
+                <textarea class="form-control" id="pertanyaan" rows="5" name="isi" required></textarea>
                 <br>
               </div>
               <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
