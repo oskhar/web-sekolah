@@ -100,31 +100,6 @@
                           </div>
                       </div>
                   </div>
-                  <!-- Input Gambar Profile Guru -->
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label for="inputFoto">
-                          Foto Profile:
-                      </label>
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="text-center">
-                            <div class="mt-2">
-                              <input type="file" class="custom-file-input" id="inputFoto" accept="image/*" name="foto_profile">
-                              <label class="custom-file-label" for="inputFoto">Upload Foto</label>
-                            </div>
-                            <label id="icon-upload-foto" for="inputFoto">
-                                <i class="text-primary fas fa-upload fa-3x"></i>
-                            </label>
-                              <div id="imagePreview" style="display: none;">
-                                  <img src="#" alt="Foto Profil Guru" class="img-thumbnail">
-                                </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Input Gambar Profile Guru -->
               </div>
               <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -135,30 +110,4 @@
       </form>
   </div>
 </section>
-@if(Session::has('success_message'))
-    <script>
-      Swal.fire({{ Session::get('success_message') }}, '', 'success');
-    </script>
-@endif
-<!-- Page specific script -->
-<script>
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      $('#icon-upload-foto').remove();
-      var reader = new FileReader();
-
-      reader.onload = function(e) {
-        $('#imagePreview img').attr('src', e.target.result);
-        $('#imagePreview').show();
-      }
-
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-
-  // Ketika input file dipilih, panggil fungsi readURL
-  $('#inputFoto').change(function() {
-    readURL(this);
-  });
-</script>
 @endsection

@@ -72,9 +72,10 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
 
     // Kelola murid
-    Route::get('/teacher/murid', [Teacher::class, 'murid']);
+    Route::get('/teacher/murid', [Teacher::class, 'murid'])->name('teacher.murid');
     Route::get('/teacher/write-murid', [Teacher::class, 'writeMurid'])->name('teacher.write-murid');
     Route::post('/teacher/write-murid', [Teacher::class, 'createMurid']);
+    Route::post('/teacher/delete-murid', [Teacher::class, 'deleteMurid'])->name('teacher.delete-murid');
 
     // Kelola pekerjaan rumah
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);

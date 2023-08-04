@@ -10,6 +10,7 @@ use App\Models\Blog;
 use App\Models\Message;
 use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Image;
 
 class Teacher extends Controller
@@ -99,7 +100,7 @@ class Teacher extends Controller
     public function murid()
     {
         //
-        $data_murid = Blog::all();
+        $data_murid = StudentModel::all();
         return view('teacher.murid', [
             'data_murid' => $data_murid,
         ]);
@@ -113,35 +114,22 @@ class Teacher extends Controller
     {
         //
         $data_validated = $request->validate([
+            'token' => 'required|unique:students',
+            'password' => 'required',
+            'nama_lengkap' => 'required',
+            'gedung' => '',
+            'email' => '',
         ]);
 
-        if (!empty($all_data['upload'])) {
-
-            // Simpan file yang diupload ke direktori 'public/assets/upload'
-            $destinationPath = public_path('assets/upload');
-            $image = $request->file('foto_profile');
-            $img = Image::make($image->getRealPath());
-
-            // Nama file baru
-            $filename = time() . '_' . $image->getClientOriginalName();
-
-            // Auto crop 1:1
-            $img->fit(300, 300); // Ubah ukuran sesuai kebutuhan Anda
-
-            // Simpan gambar ke direktori tujuan
-            $img->save($destinationPath . '/' . $filename);
-            $all_data['foto_profile'] = 'upload/' . $filename;
-        }
-
-        // Simpan file yang diupload ke direktori 'public/assets/upload'
-        $path = $request->file('gambar')->store('upload', 'public_uploads');
-
-        $data_validated['gambar'] = $path;
-        $data_validated['guru_id'] = Auth::user()->id;
+        $data_validated['foto_profile'] = 'avatar/';
+        $data_validated['password'] = Hash::make($data_validated['password']);
         StudentModel::create($data_validated);
 
-        // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
-        return back()->with('success_message', 'File berhasil diupload.');
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Murid berhasil ditambahkan.');
+
+        // Pindahkan ke halaman lain.
+        return redirect()->route('teacher.murid');
     }
 
     public function pekerjaanRumah()

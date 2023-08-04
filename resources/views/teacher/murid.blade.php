@@ -46,11 +46,10 @@
                       <thead>
                           <tr>
                               <td>No</td>
-                              <td>Gambar</td>
-                              <td>Judul</td>
-                              <td>Waktu Dibuat</td>
-                              <td>Mulai Acara</td>
-                              <td>Durasi</td>
+                              <td>Nama Lengkap</td>
+                              <td>Token</td>
+                              <td>Email</td>
+                              <td>Letak Gedung</td>
                               <td>Action</td>
                           </tr>
                       </thead>
@@ -58,11 +57,10 @@
                         @foreach ($data_murid as $data)
                           <tr>
                               <td>{{ $loop->iteration }}</td>
-                              <td><img src="{{ asset('/assets/'.$data->gambar) }}" class="img-fluid" alt="Ini Gambar" style="height: 5rem"></td>
-                              <td>{{ $data->judul }}</td>
-                              <td>{{ $data->created_at }}</td>
-                              <td>{{ $data->tanggal_acara }}</td>
-                              <td>{{ $data->durasi_hari }} Hari</td>
+                              <td>{{ $data->nama_lengkap }}</td>
+                              <td>{{ $data->token }}</td>
+                              <td>{{ $data->email }}</td>
+                              <td>{{ ['Gedung 1', 'Gedung 2'][$data->gedung] }} Hari</td>
                               <td>
                                 <a onmouseover="this.classList.add('btn-info');this.classList.remove('text-info')" onmouseout="this.classList.remove('btn-info');this.classList.add('text-info')" href="{{ url('/dashboard/detail') }}/{{ $data['nis'] }}" class="btn border-info text-info btn-sm">
                                   <i class="fas fa-eye"></i>
@@ -70,7 +68,7 @@
                                 <a onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')" href="{{ url('/dashboard/update') }}/{{ $data['nis'] }}" class="btn border-primary text-primary btn-sm">
                                   <i class="fas fa-pencil-alt"></i>
                                 </a>
-                                <a onmouseover="this.classList.add('btn-danger');this.classList.remove('text-danger')" onmouseout="this.classList.remove('btn-danger');this.classList.add('text-danger')" onclick="doSoftDelete(\'{{ $data['nis'] }}\')" class="btn border-danger text-danger btn-sm">
+                                <a onmouseover="this.classList.add('btn-danger');this.classList.remove('text-danger')" onmouseout="this.classList.remove('btn-danger');this.classList.add('text-danger')" class="btn border-danger text-danger btn-sm" onclick="deleteData({{ $data->id }}, '{{ $data->nama_lengkap }}')">
                                   <i class="fas fa-trash"></i>
                                 </a>
                               </td>
@@ -102,6 +100,38 @@
                   "info": ''
               }
           }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      })
+      });
+
+    function deleteData(id, nama_lengkap) {
+        Swal.fire({
+            title: 'Hapus akun '+ nama_lengkap +'?',
+            showConfirmButton: false,
+            showDenyButton: true,
+            showCancelButton: true,
+            denyButtonText: `Hapus`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isDenied) {
+                let data = {id: id};
+                $.ajax({
+                    url: '{{ route("teacher.delete-murid") }}',
+                    type: 'post',
+                    data: data,
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Ambil token CSRF dari meta tag
+                    },
+                    success: function(response) {
+                        window.location.href = '{{ route('teacher.murid') }}';
+                    }, error: function(xhr, status, error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: "Data gagal dihapus: " + xhr.status + "\n" + xhr.responseText + "\n" + error,
+                        });
+                    }
+                });
+            }
+        });
+    }
   </script>
 @endsection

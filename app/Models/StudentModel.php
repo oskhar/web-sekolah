@@ -9,8 +9,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class StudentModel extends Authenticatable
 {
     use HasFactory;
-    protected $guard = 'teacher';
-    protected $table = 'teachers';
+    public $timestamps = false;
+    protected $guard = 'student';
+    protected $table = 'students';
 
     /**
      * The attributes that are mass assignable.
@@ -23,6 +24,7 @@ class StudentModel extends Authenticatable
         'nama_lengkap',
         'gedung',
         'email',
+        'foto_profile',
     ];
 
     /**
