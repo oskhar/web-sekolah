@@ -32,29 +32,28 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: #2b2a33;">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{{ asset('assets/images/logo_paud.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+    <a href="{{ url('/') }}" class="brand-link">
+      <img src="{{ asset('assets/images/logo_paud.jpg') }}" alt="paud Logo" class="brand-image img-circle elevation-3">
       <span class="brand-text font-weight-light">Paud Kasih Bunda</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-
       <!-- Sidebar Menu -->
       <nav class="mt-4">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link active">
-              <i class="nav-icon fas fa-chalkboard-teacher"></i>
+            <a href="{{ url('/admin') }}" class="nav-link @if(request()->is('teacher')) active @endif">
+              <i class="nav-icon fas fa-home"></i>
               <p>
-                Akun Guru
+                Main Dashboard
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ url('/admin/materi/') }}" class="nav-link @if(request()->is('teacher/materi')) active @endif">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Blog Materi
@@ -62,7 +61,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url('/admin/pekerjaan-rumah') }}" class="nav-link @if(request()->is('teacher/pekerjaan-rumah')) active @endif">
+              <i class="nav-icon fas fa-tasks"></i>
+              <p>
+                Pekerjaan Rumah
+              </p>
+            </a>
+          </li>
+          <li class="nav-item @if(request()->is('teacher/murid') || request()->is('teacher/galeri') || request()->is('teacher/profile')) menu-open @endif">
+            <a class="nav-link">
               <i class="nav-icon fas fa-database"></i>
               <p>
                 Kelola Data
@@ -71,27 +78,27 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{ url('/admin/murid') }}" class="nav-link @if(request()->is('teacher/murid')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Murid Terdaftar</p>
+                  <p>Murid</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{ url('/admin/galeri') }}" class="nav-link @if(request()->is('teacher/galeri')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Pekerjaan Rumah</p>
+                  <p>Galeri</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{{ url('/admin/profile') }}" class="nav-link @if(request()->is('teacher/profile')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Galeri Paud</p>
+                  <p>Profile</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{ url('/admin/berita') }}" class="nav-link @if(request()->is('teacher/berita')) active @endif">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 Berita & Acara
@@ -99,20 +106,23 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+            <a href="{{ url('/admin/pesan') }}" class="nav-link @if(request()->is('teacher/pesan')) active @endif">
+              <i class="nav-icon fas fa-sms"></i>
               <p>
-                Kelola Profile
+                Lihat Pesan
               </p>
             </a>
           </li>
           <li class="nav-item mt-5">
-            <a href="pages/widgets.html" class="nav-link bg-danger">
+            <form action="{{ route('teacher.logout') }}" method="POST">
+              @csrf
+            <button type="submit" class="nav-link bg-danger btn">
               <i class="nav-icon fas fa-arrow-right"></i>
               <p>
-                Keluar
+                Log out
               </p>
-            </a>
+            </button>
+            </form>
           </li>
         </ul>
       </nav>

@@ -103,6 +103,12 @@ Route::get('/admin/', [Admin::class, 'index']);
 Route::post('/admin/', [Admin::class, 'createTeacher']);
 Route::post('/admin/teacher/delete', [Admin::class, 'deleteTeacher'])->name('delete.teacher');
 
+// Kelola murid
+Route::get('/admin/murid', [Admin::class, 'murid'])->name('admin.murid');
+Route::get('/admin/write-murid', [Admin::class, 'writeMurid'])->name('admin.write-murid');
+Route::post('/admin/write-murid', [Admin::class, 'createMurid']);
+Route::post('/admin/delete-murid', [Admin::class, 'deleteMurid'])->name('admin.delete-murid');
+
 // Testing purpose
 Route::get('/testing/', function () {
     return view('test');
