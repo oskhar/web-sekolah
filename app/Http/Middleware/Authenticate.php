@@ -27,5 +27,6 @@ class Authenticate extends Middleware
                 return route('login.murid');
             }
         }
+        return redirect()->route('home');
     }
 }

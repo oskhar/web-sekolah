@@ -21,7 +21,7 @@
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-    <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST" action="{{ route('teacher.write-berita') }}">
+    <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST">
       @csrf
       <div class="card-header">
         <h3 class="card-title">Daftar Berita dan Event</h3>

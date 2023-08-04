@@ -4,7 +4,7 @@
 @section('mainContainer')
 <style>
     #list-gambar {
-        height:30rem;
+        height:15rem;
         width:100%;
         object-fit:cover;
     }
@@ -33,9 +33,11 @@
                 <a href="{{ url('/teacher/galeri/upload') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">Tambah Foto</a>
             </div>
             <div class="row no-gutters card-body">
-                <div class="col-sm-3">
-                    <img src="{{ asset('assets/images/profile3.jpg')}}" onclick="lihatGambar('{{ asset('assets/images/profile3.jpg')}}')" class="img-fluid" alt="Gambar 1" id="list-gambar">
-                </div>
+                @foreach ($data_foto as $data)
+                    <div class="col-sm-3">
+                        <img src="{{ asset('assets/'.$data->gambar)}}" onclick="lihatGambar('{{ asset('assets/'.$data->gambar)}}')" class="img-fluid" alt="Gambar" id="list-gambar">
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

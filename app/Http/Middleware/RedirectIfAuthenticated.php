@@ -22,11 +22,9 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if ($guard == "teacher" && Auth::guard($guard)->check()) {
-                return redirect('teacher');
-            }
-
-            if (Auth::guard($guard)->check()) {
+            if ($guard == 'teacher' && Auth::guard($guard)->check()) {
+                return redirect()->route('teacher');
+            } elseif ($guard == 'web' && Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
         }

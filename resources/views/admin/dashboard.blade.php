@@ -30,7 +30,7 @@
 
 <section class="content">
     <div class="container-fluid row">
-        <form method="post" class="col-sm-7" action="{{ url('/admin/') }}">
+        <form method="post" class="col-sm-7">
             @csrf
             <!-- general form -->
             <div class="card card-primary card-outline">
