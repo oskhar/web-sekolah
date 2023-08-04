@@ -11,6 +11,8 @@
     }
   </style>
   
+<!-- Tambahkan CSRF token untuk keamanan -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Content Header (Page header) -->
   <section class="content-header">
       <div class="container-fluid">

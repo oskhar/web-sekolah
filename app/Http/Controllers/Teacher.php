@@ -132,6 +132,23 @@ class Teacher extends Controller
         return redirect()->route('teacher.murid');
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function deleteMurid(Request $request)
+    {
+        $id = $request->input('id');
+        $data_teacher = StudentModel::find($id);
+        if ($data_teacher) {
+            $data_teacher->delete();
+            // Menambahkan response json
+            $response = [
+                'success_message' => 'Data berhasil dihapus',
+            ];
+            return response()->json($response);
+        }
+    }
+
     public function pekerjaanRumah()
     {
         //
