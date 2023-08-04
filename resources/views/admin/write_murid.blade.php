@@ -1,4 +1,4 @@
-@extends('components.template_teacher')
+@extends('components.template_admin')
 
 @section('title', "Materi")
 @section('mainContainer')

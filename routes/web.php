@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pages;
 use App\Http\Controllers\Teacher;
+use App\Http\Controllers\Student;
 use App\Http\Controllers\Login;
 
 /*
@@ -42,7 +43,7 @@ Route::group(['middleware' => ['guest']], function () {
 
     // Route login murid
     Route::get('/login/murid', [Login::class, 'murid'])->name('login.murid');
-    Route::post('/login/murid', [Login::class, 'verifikasiAdmin'])->name('login.murid');
+    Route::post('/login/murid', [Login::class, 'verifikasiMurid'])->name('login.murid');
 
     // Route login admin
     Route::get('/login/admin', [Login::class, 'admin'])->name('login.admin');
@@ -50,38 +51,47 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 // Student views
+// Teacher views
+Route::group(['middleware' => 'auth:student'], function () {
+    // Main dashboard
+    Route::get('/student/', [Student::class, 'index'])->name('student');
+    Route::get('/student/profile', [Student::class, 'profile'])->name('profile');
+    Route::get('/student/pesan', [Student::class, 'pesan'])->name('pesan');
+});
 
 // Teacher views
 Route::group(['middleware' => 'auth:teacher'], function () {
+    // Main dashboard
     Route::get('/teacher/', [Teacher::class, 'index'])->name('teacher');
 
-    // Halaman kelola materi
+    // Kelola materi
     Route::get('/teacher/materi', [Teacher::class, 'materi']);
     Route::get('/teacher/write-materi', [Teacher::class, 'writeMateri'])->name('teacher.write-materi');
     Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
 
-    // Halaman kelola berita
+    // Kelola berita
     Route::get('/teacher/berita', [Teacher::class, 'berita']);
     Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
     Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
 
-    // Halaman kelola murid
-    Route::get('/teacher/murid', [Teacher::class, 'murid']);
+    // Kelola murid
+    Route::get('/teacher/murid', [Teacher::class, 'murid'])->name('teacher.murid');
     Route::get('/teacher/write-murid', [Teacher::class, 'writeMurid'])->name('teacher.write-murid');
     Route::post('/teacher/write-murid', [Teacher::class, 'createMurid']);
+    Route::post('/teacher/delete-murid', [Teacher::class, 'deleteMurid'])->name('teacher.delete-murid');
 
-    // Halaman kelola pekerjaan rumah
+    // Kelola pekerjaan rumah
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
 
-    // Halaman kelola galeri
+    // Kelola galeri
     Route::get('/teacher/galeri', [Teacher::class, 'galeri']);
     Route::get('/teacher/galeri/upload', [Teacher::class, 'galeriUpload']);
 
-    // Halaman kelola profile
+    // Kelola profile
     Route::get('/teacher/profile', [Teacher::class, 'profile']);
     Route::post('/teacher/ubah-foto-profile', [Teacher::class, 'ubahFotoProfile'])->name('teacher.ubah_foto_profile');
 
-    // Halaman kelola pesan
+    // Kelola pesan
     Route::get('/teacher/pesan', [Teacher::class, 'pesan']);
 
     // Aksi logout
@@ -92,6 +102,12 @@ Route::group(['middleware' => 'auth:teacher'], function () {
 Route::get('/admin/', [Admin::class, 'index']);
 Route::post('/admin/', [Admin::class, 'createTeacher']);
 Route::post('/admin/teacher/delete', [Admin::class, 'deleteTeacher'])->name('delete.teacher');
+
+// Kelola murid
+Route::get('/admin/murid', [Admin::class, 'murid'])->name('admin.murid');
+Route::get('/admin/write-murid', [Admin::class, 'writeMurid'])->name('admin.write-murid');
+Route::post('/admin/write-murid', [Admin::class, 'createMurid']);
+Route::post('/admin/delete-murid', [Admin::class, 'deleteMurid'])->name('admin.delete-murid');
 
 // Testing purpose
 Route::get('/testing/', function () {

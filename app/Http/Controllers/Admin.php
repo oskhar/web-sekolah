@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Student;
+use App\Models\StudentModel;
 use App\Models\TeacherModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -83,6 +83,58 @@ class Admin extends Controller
         $data_teacher = TeacherModel::find($id);
         if ($data_teacher) {
             $data_teacher->delete();
+            // Menambahkan response json
+            $response = [
+                'success_message' => 'Data berhasil dihapus',
+            ];
+            return response()->json($response);
+        }
+    }
+
+    public function murid()
+    {
+        //
+        $data_murid = StudentModel::all();
+        return view('admin.murid', [
+            'data_murid' => $data_murid,
+        ]);
+    }
+    public function writeMurid()
+    {
+        //
+        return view('admin.write_murid');
+    }
+    public function createMurid(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'token' => 'required|unique:students',
+            'password' => 'required',
+            'nama_lengkap' => 'required',
+            'gedung' => '',
+            'email' => '',
+        ]);
+
+        $data_validated['foto_profile'] = 'avatar/';
+        $data_validated['password'] = Hash::make($data_validated['password']);
+        StudentModel::create($data_validated);
+
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Murid berhasil ditambahkan.');
+
+        // Pindahkan ke halaman lain.
+        return redirect()->route('admin.murid');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function deleteMurid(Request $request)
+    {
+        $id = $request->input('id');
+        $data_student = StudentModel::find($id);
+        if ($data_student) {
+            $data_student->delete();
             // Menambahkan response json
             $response = [
                 'success_message' => 'Data berhasil dihapus',

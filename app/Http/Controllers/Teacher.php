@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HomeWork;
 use App\Models\TeacherModel;
+use App\Models\StudentModel;
 use App\Models\Blog;
 use App\Models\Message;
 use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Image;
+use Carbon\Carbon;
 
 class Teacher extends Controller
 {
@@ -98,7 +101,7 @@ class Teacher extends Controller
     public function murid()
     {
         //
-        $data_murid = Blog::all();
+        $data_murid = StudentModel::all();
         return view('teacher.murid', [
             'data_murid' => $data_murid,
         ]);
@@ -112,20 +115,39 @@ class Teacher extends Controller
     {
         //
         $data_validated = $request->validate([
-            'judul' => 'required|unique:blogs',
-            'isi' => '',
-            'gambar' => 'required|mimes:jpeg,jpg,png',
+            'token' => 'required|unique:students',
+            'password' => 'required',
+            'nama_lengkap' => 'required',
+            'gedung' => '',
+            'email' => '',
         ]);
 
-        // Simpan file yang diupload ke direktori 'public/assets/upload'
-        $path = $request->file('gambar')->store('upload', 'public_uploads');
+        $data_validated['foto_profile'] = 'avatar/';
+        $data_validated['password'] = Hash::make($data_validated['password']);
+        StudentModel::create($data_validated);
 
-        $data_validated['gambar'] = $path;
-        $data_validated['guru_id'] = Auth::user()->id;
-        Blog::create($data_validated);
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Murid berhasil ditambahkan.');
 
-        // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
-        return back()->with('success_message', 'File berhasil diupload.');
+        // Pindahkan ke halaman lain.
+        return redirect()->route('teacher.murid');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function deleteMurid(Request $request)
+    {
+        $id = $request->input('id');
+        $data_teacher = StudentModel::find($id);
+        if ($data_teacher) {
+            $data_teacher->delete();
+            // Menambahkan response json
+            $response = [
+                'success_message' => 'Data berhasil dihapus',
+            ];
+            return response()->json($response);
+        }
     }
 
     public function pekerjaanRumah()
@@ -183,8 +205,19 @@ class Teacher extends Controller
     {
         //
         $data_pesan = Message::all();
+        $pesan_terbaru = $data_pesan->filter(function ($item) {
+            return Carbon::parse($item->created_at)->diffInDays(Carbon::now()) < 2;
+        });
+        $banyak_pesan_terbaru = $pesan_terbaru->count();
+        $pesan_lama = $data_pesan->filter(function ($item) {
+            return Carbon::parse($item->created_at)->diffInDays(Carbon::now()) >= 2;
+        });
+        $banyak_pesan_lama = $pesan_lama->count();
         return view('teacher.pesan', [
-            'data_pesan' => $data_pesan,
+            'pesan_terbaru' => $pesan_terbaru,
+            'banyak_pesan_terbaru' => $banyak_pesan_terbaru,
+            'pesan_lama' => $pesan_lama,
+            'banyak_pesan_lama' => $banyak_pesan_lama,
         ]);
     }
 
@@ -197,9 +230,7 @@ class Teacher extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         return redirect('/');
