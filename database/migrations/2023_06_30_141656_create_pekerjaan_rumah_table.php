@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->text('gambar')->nullable();
             $table->text('deskripsi')->nullable();
             $table->date('tanggal_dikumpulkan');
-            $table->integer('gedung');
+            $table->integer('gedung')->nullable();
         });
     }
 

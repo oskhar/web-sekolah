@@ -21,6 +21,7 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('gender')->nullable();
+            $table->integer('gedung')->nullable();
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();

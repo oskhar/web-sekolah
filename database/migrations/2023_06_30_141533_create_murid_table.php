@@ -14,7 +14,9 @@ return new class extends Migration {
             $table->id();
             $table->string('token');
             $table->string('password');
+            $table->string('foto_profile')->nullable();
             $table->string('nama_lengkap');
+            $table->integer('gedung')->nullable();
             $table->string('email')->nullable();
         });
     }

@@ -20,69 +20,119 @@
 
 <!-- Main content -->
 <section class="content">
-  <div class="container-fluid">
-    <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST" action="{{ route('teacher.write-materi') }}">
-      @csrf
-      <div class="card-header">
-        <h3 class="card-title">Compose New Message</h3>
-      </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-            <!-- Input Gambar Profile Guru -->
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card @error('gambar') bg-danger @enderror">
-                  <div class="card-body">
-                    <div class="text-center">
-                      <div class="mt-2">
-                        <input type="file" class="custom-file-input" id="inputFoto" accept="image/*" name="gambar">
-                        <label class="custom-file-label" for="inputFoto">Upload Foto Materi (Jika Ada)</label>
-                        @error('gambar')
-                              <label class="custom-file-label text-danger" for="inputFoto">{{ $message }}</label>
-                        @enderror
+  <div class="container-fluid row">
+      <form method="post" class="col-sm-12" action="{{ route('teacher.write-murid') }}">
+          @csrf
+          <!-- general form -->
+          <div class="card card-primary card-outline">
+              <div class="card-header">
+                  <h3 class="card-title">Insert Data Guru</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                  <!-- input states -->
+                  <div class="form-group">
+                      <label class="col-form-label" for="nama_lengkap">Nama Lengkap:</label>
+                      <input type="text" class="form-control @error('nama_lengkap') is-invalid @enderror" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap..." value="{{ old('nama_lengkap') }}">
+                      @error('nama_lengkap')
+                          <div class="invalid-feedback">{{ $message }}</div>
+                      @enderror
+                  </div>
+                  <!-- inline input -->
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <!-- text input -->
+                          <div class="form-group">
+                              <label for="token">
+                                  Token:
+                              </label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="fas fa-shield-alt"></i></span>
+                                  </div>
+                                  <input type="text" class="form-control @error('token') is-invalid @enderror" placeholder="Token..." id="token" name="token" value="{{ old('token') }}" @error('token') title="{{ $message }}" @enderror>
+                              </div>
+                          </div>
                       </div>
-                      <label id="icon-upload-foto" for="inputFoto">
-                          <i class="@error('gambar') text-white @else text-primary @enderror fas fa-upload fa-3x"></i>
+                      <div class="col-sm-6">
+                          <!-- text input -->
+                          <div class="form-group">
+                              <label for="password">
+                                  Password:
+                              </label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                  </div>
+                                  <input type="text" class="form-control @error('password') is-invalid @enderror" placeholder="Password..." id="password" name="password" value="{{ old('password') }}">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <!-- text input -->
+                          <div class="form-group">
+                              <label for="no_telp">
+                                  Email:
+                              </label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                  </div>
+                                  <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email..." id="email" name="email" value="{{ old('email') }}" @error('email') title="{{ $message }}" @enderror>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- inline input -->
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <!-- radio -->
+                          <div class="form-group">
+                              <h5>Gedung</h5>
+                              <div class="form-check">
+                                  <input value="0" class="form-check-input" type="radio" name="gedung" id="gedung" checked>
+                                  <label class="form-check-label">Gedung 1</label>
+                              </div>
+                              <div class="form-check">
+                                  <input value="1" class="form-check-input" type="radio" name="gedung" id="gedung">
+                                  <label class="form-check-label">Gedung 2</label>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Input Gambar Profile Guru -->
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="inputFoto">
+                          Foto Profile:
                       </label>
-                      <div id="imagePreview" style="display: none;">
-                        <img src="#" alt="Foto Profil Guru" class="img-thumbnail">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="text-center">
+                            <div class="mt-2">
+                              <input type="file" class="custom-file-input" id="inputFoto" accept="image/*" name="foto_profile">
+                              <label class="custom-file-label" for="inputFoto">Upload Foto</label>
+                            </div>
+                            <label id="icon-upload-foto" for="inputFoto">
+                                <i class="text-primary fas fa-upload fa-3x"></i>
+                            </label>
+                              <div id="imagePreview" style="display: none;">
+                                  <img src="#" alt="Foto Profil Guru" class="img-thumbnail">
+                                </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                  <!-- End Input Gambar Profile Guru -->
               </div>
-            </div>
-            <!-- End Input Gambar Profile Guru -->
-            <div class="form-group">
-              <label for="judul">Judul Materi:</label>
-              <input class="form-control @error('judul') is-invalid @enderror" placeholder="Judul..." name="judul" value="{{ old('judul') }}">
-              @error('judul')
-                  <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                  </span>
-              @enderror
-            </div>
-            <div class="form-group">
-              <label for="judul">Text Penjelasan Materi:</label>
-                <textarea id="compose-textarea" class="form-control @error('isi') is-invalid @enderror" style="height: 300px" name="isi" placeholder="tesdoang">
-                  {{ old('isi') }}
-                </textarea>
-                @error('isi')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
+              <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              <!-- /.card-body -->
           </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            <div class="float-right">
-                <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
-            </div>
-        </div>
-        <!-- /.card-footer -->
-    </form>
-    <!-- /.card -->
+              <!-- /.card-body -->
+      </form>
   </div>
 </section>
 @if(Session::has('success_message'))
@@ -92,24 +142,6 @@
 @endif
 <!-- Page specific script -->
 <script>
-  $(function () {
-    // Tambahkan teks editor
-    $('#compose-textarea').summernote();
-
-    // Tambahkan placeholder secara manual ketika editor pertama kali diinisialisasi
-    $('#compose-textarea').siblings('.note-editor').find('.note-placeholder').text('Tulis teks disini...');
-
-    // Tambahkan placeholder ketika konten editor kosong
-    $('#compose-textarea').on('summernote.change', function () {
-      var content = $(this).summernote('getText').trim();
-      if (content === '') {
-        $(this).siblings('.note-editor').find('.note-placeholder').text('Tulis teks disini...');
-      } else {
-        $(this).siblings('.note-editor').find('.note-placeholder').text('');
-      }
-    });
-  });
-
   function readURL(input) {
     if (input.files && input.files[0]) {
       $('#icon-upload-foto').remove();

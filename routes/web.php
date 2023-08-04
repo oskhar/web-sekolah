@@ -50,38 +50,44 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 // Student views
+// Teacher views
+Route::group(['middleware' => 'auth:student'], function () {
+    // Main dashboard
+    Route::get('/student/', [Student::class, 'index'])->name('student');
+});
 
 // Teacher views
 Route::group(['middleware' => 'auth:teacher'], function () {
+    // Main dashboard
     Route::get('/teacher/', [Teacher::class, 'index'])->name('teacher');
 
-    // Halaman kelola materi
+    // Kelola materi
     Route::get('/teacher/materi', [Teacher::class, 'materi']);
     Route::get('/teacher/write-materi', [Teacher::class, 'writeMateri'])->name('teacher.write-materi');
     Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
 
-    // Halaman kelola berita
+    // Kelola berita
     Route::get('/teacher/berita', [Teacher::class, 'berita']);
     Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
     Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
 
-    // Halaman kelola murid
+    // Kelola murid
     Route::get('/teacher/murid', [Teacher::class, 'murid']);
     Route::get('/teacher/write-murid', [Teacher::class, 'writeMurid'])->name('teacher.write-murid');
     Route::post('/teacher/write-murid', [Teacher::class, 'createMurid']);
 
-    // Halaman kelola pekerjaan rumah
+    // Kelola pekerjaan rumah
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
 
-    // Halaman kelola galeri
+    // Kelola galeri
     Route::get('/teacher/galeri', [Teacher::class, 'galeri']);
     Route::get('/teacher/galeri/upload', [Teacher::class, 'galeriUpload']);
 
-    // Halaman kelola profile
+    // Kelola profile
     Route::get('/teacher/profile', [Teacher::class, 'profile']);
     Route::post('/teacher/ubah-foto-profile', [Teacher::class, 'ubahFotoProfile'])->name('teacher.ubah_foto_profile');
 
-    // Halaman kelola pesan
+    // Kelola pesan
     Route::get('/teacher/pesan', [Teacher::class, 'pesan']);
 
     // Aksi logout

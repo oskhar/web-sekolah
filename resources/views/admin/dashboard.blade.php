@@ -153,7 +153,7 @@
                           <div class="card-body">
                             <div class="text-center">
                               <div class="mt-2">
-                                <input type="file" class="custom-file-input" id="inputFoto" accept="image/*">
+                                <input type="file" class="custom-file-input" id="inputFoto" accept="image/*" name="foto_profile">
                                 <label class="custom-file-label" for="inputFoto">Upload Foto</label>
                               </div>
                               <label id="icon-upload-foto" for="inputFoto">

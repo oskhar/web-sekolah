@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HomeWork;
 use App\Models\TeacherModel;
+use App\Models\StudentModel;
 use App\Models\Blog;
 use App\Models\Message;
 use App\Models\Event;
@@ -112,17 +113,32 @@ class Teacher extends Controller
     {
         //
         $data_validated = $request->validate([
-            'judul' => 'required|unique:blogs',
-            'isi' => '',
-            'gambar' => 'required|mimes:jpeg,jpg,png',
         ]);
+
+        if (!empty($all_data['upload'])) {
+
+            // Simpan file yang diupload ke direktori 'public/assets/upload'
+            $destinationPath = public_path('assets/upload');
+            $image = $request->file('foto_profile');
+            $img = Image::make($image->getRealPath());
+
+            // Nama file baru
+            $filename = time() . '_' . $image->getClientOriginalName();
+
+            // Auto crop 1:1
+            $img->fit(300, 300); // Ubah ukuran sesuai kebutuhan Anda
+
+            // Simpan gambar ke direktori tujuan
+            $img->save($destinationPath . '/' . $filename);
+            $all_data['foto_profile'] = 'upload/' . $filename;
+        }
 
         // Simpan file yang diupload ke direktori 'public/assets/upload'
         $path = $request->file('gambar')->store('upload', 'public_uploads');
 
         $data_validated['gambar'] = $path;
         $data_validated['guru_id'] = Auth::user()->id;
-        Blog::create($data_validated);
+        StudentModel::create($data_validated);
 
         // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
         return back()->with('success_message', 'File berhasil diupload.');
