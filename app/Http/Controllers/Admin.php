@@ -43,6 +43,7 @@ class Admin extends Controller
             'pengalaman_mengajar' => '',
             'jabatan' => '',
             'gender' => '',
+            'gedung' => 'required',
             'foto_profile' => '',
         ]);
         if (!empty($data_validated['foto_profile'])) {

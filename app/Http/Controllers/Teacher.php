@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
 use Carbon\Carbon;
+use Illuminate\Validation\Rule;
 
 class Teacher extends Controller
 {
@@ -66,6 +67,21 @@ class Teacher extends Controller
         // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
         return back()->with('success_message', 'File berhasil diupload.');
     }
+    public function deleteBerita(Request $request)
+    {
+        $id = $request->input('id');
+        $data_teacher = Event::find($id);
+        if ($data_teacher) {
+            $data_teacher->delete();
+            // Menambahkan response json
+            $response = [
+                'success_message' => 'Data berhasil dihapus',
+            ];
+            return response()->json($response);
+        }
+    }
+
+
     public function materi()
     {
         //
@@ -189,6 +205,40 @@ class Teacher extends Controller
         $data->fill($all_data);
         $data->save();
         return back()->with('success_message', 'Avatar berhasi diganti');
+    }
+
+    public function editProfile()
+    {
+        //
+        return view('teacher.edit-profile');
+    }
+
+    public function pushProfile(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'nama_lengkap' => '',
+            'nama_panggilan' => '',
+            'nomor_telepon' => '',
+            'email' => [
+                'required',
+                Rule::unique('teachers')->ignore(Auth::user()->id, 'id'),
+            ],
+            'pengalaman_mengajar' => '',
+            'jabatan' => '',
+            'gender' => '',
+            'gedung' => 'required',
+        ]);
+
+        $data = TeacherModel::find(Auth::user()->id);
+        $data->fill($data_validated);
+        $data->save();
+
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Foto berhasil diupload.');
+
+        // Pindahkan ke halaman lain.
+        return redirect()->route('profile');
     }
 
     public function galeri()

@@ -36,7 +36,7 @@
                     <div class="text-center">
                       <div class="mt-2">
                         <input type="file" class="custom-file-input" id="inputFoto" accept="image/*" name="gambar">
-                        <label class="custom-file-label" for="inputFoto">Upload Foto Materi (Jika Ada)</label>
+                        <label class="custom-file-label" for="inputFoto">Upload Foto Berita (Jika Ada)</label>
                         @error('gambar')
                               <label class="custom-file-label text-danger" for="inputFoto">{{ $message }}</label>
                         @enderror
@@ -54,7 +54,7 @@
             </div>
             <!-- End Input Gambar Profile Guru -->
             <div class="form-group">
-              <label for="judul">Judul Materi:</label>
+              <label for="judul">Judul Berita:</label>
               <input class="form-control @error('judul') is-invalid @enderror" placeholder="Judul..." name="judul" value="{{ old('judul') }}">
               @error('judul')
                   <span class="invalid-feedback" role="alert">
@@ -63,7 +63,7 @@
               @enderror
             </div>
             <div class="form-group">
-              <label for="judul">Text Penjelasan Materi:</label>
+              <label for="judul">Text Penjelasan Berita:</label>
                 <textarea id="compose-textarea" class="form-control @error('isi') is-invalid @enderror" style="height: 300px" name="isi" placeholder="tesdoang">
                   {{ old('isi') }}
                 </textarea>
@@ -94,7 +94,7 @@
         <!-- /.card-body -->
         <div class="card-footer">
             <div class="float-right">
-                <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
         <!-- /.card-footer -->

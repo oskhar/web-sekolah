@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\ImageModel;
 
 class Pages extends Controller
 {
@@ -44,7 +45,11 @@ class Pages extends Controller
      */
     public function galeri()
     {
-        return view('pages.galeri');
+        // Mendapatkan semua data foto
+        $data_foto = ImageModel::all();
+        return view('pages.galeri', [
+            'data_foto' => $data_foto,
+        ]);
     }
 
     /**
