@@ -46,7 +46,8 @@
         <div class="card-ajukan">
           <div class="card-body-ajukan">
             <!-- Form untuk mengajukan pertanyaan -->
-            <form>
+            <form method="POST">
+              @csrf
               <input type="hidden" name="pengirim" value="anonim">
               <div class="form-group-ajukan">
                 <label for="pertanyaan" class=""><i class="fas fa-edit text-primary"></i> Pertanyaan Anda</label>

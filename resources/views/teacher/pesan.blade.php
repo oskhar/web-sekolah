@@ -37,8 +37,9 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <strong>{{ $data->user->name }}</strong>
-                            <p>{{ $data->message }}</p>
+                            <strong>Pesan {{ $loop->iteration }}:</strong>
+                            <strong class="text-muted">{{ $data->pengirim }}</strong>
+                            <p>{{ $data->isi }}</p>
                         </div>
                     </div>
                 </div>
@@ -64,8 +65,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <strong>{{ $data->user->name }}</strong>
-                        <p>{{ $data->message }}</p>
+                        <strong>{{ $data->pengirim }}</strong>
+                        <p>{{ $data->isi }}</p>
                     </div>
                 </div>
             </div>

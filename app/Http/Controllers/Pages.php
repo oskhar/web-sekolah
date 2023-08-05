@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Message;
 
 class Pages extends Controller
 {
@@ -101,52 +102,15 @@ class Pages extends Controller
     {
         return view('pages.sel_Berita_Acara');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function kirimPesan(Request $request)
     {
-        //
+        $data_validated = $request->validate([
+            'isi' => '',
+            'pengirim' => '',
+        ]);
+
+        Message::create($data_validated);
+        return back()->with('success_message', 'Berhasil mengirim pesan');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

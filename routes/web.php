@@ -31,6 +31,8 @@ Route::get('/kebijakan-privasi/', [Pages::class, 'kebijakanPrivasi']);
 Route::get('/lowongan-kerja/', [Pages::class, 'lowonganKerja']);
 Route::get('/sel-berita-acara/', [Pages::class, 'selBeritaAcara']);
 
+Route::post('/contact/', [Pages::class, 'kirimPesan']);
+
 // Login views
 
 // Route menu login
