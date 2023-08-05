@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class ImageModel extends Model
 {
     use HasFactory;
+    protected $table = 'images';
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +16,9 @@ class Message extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'judul',
         'isi',
-        'pengirim',
+        'gambar',
+        'guru_id',
     ];
 }

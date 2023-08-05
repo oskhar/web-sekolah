@@ -34,7 +34,6 @@ class Admin extends Controller
             'avatar/guru.jpg',
             'avatar/guru-2.jpg',
         ];
-
         $data_validated = $request->validate([
             'nama_lengkap' => '',
             'nama_panggilan' => '',
@@ -46,7 +45,6 @@ class Admin extends Controller
             'gender' => '',
             'foto_profile' => '',
         ]);
-
         if (!empty($data_validated['foto_profile'])) {
 
             // Simpan file yang diupload ke direktori 'public/assets/upload'

@@ -31,24 +31,24 @@ Route::get('/kebijakan-privasi/', [Pages::class, 'kebijakanPrivasi']);
 Route::get('/lowongan-kerja/', [Pages::class, 'lowonganKerja']);
 Route::get('/sel-berita-acara/', [Pages::class, 'selBeritaAcara']);
 
+Route::post('/contact/', [Pages::class, 'kirimPesan']);
+
 // Login views
-Route::group(['middleware' => ['guest']], function () {
 
-    // Route menu login
-    Route::get('/login', [Login::class, 'login'])->name('login');
+// Route menu login
+Route::get('/login', [Login::class, 'login'])->name('login')->middleware('guest');
 
-    // Route login guru
-    Route::get('/login/guru', [Login::class, 'guru'])->name('login.guru');
-    Route::post('/login/guru', [Login::class, 'verifikasiGuru'])->name('login.guru');
+// Route login guru
+Route::get('/login/guru', [Login::class, 'guru'])->name('login.guru')->middleware('guest:teacher');
+Route::post('/login/guru', [Login::class, 'verifikasiGuru'])->name('login.guru');
 
-    // Route login murid
-    Route::get('/login/murid', [Login::class, 'murid'])->name('login.murid');
-    Route::post('/login/murid', [Login::class, 'verifikasiMurid'])->name('login.murid');
+// Route login murid
+Route::get('/login/murid', [Login::class, 'murid'])->name('login.murid')->middleware('guest:student');
+Route::post('/login/murid', [Login::class, 'verifikasiMurid'])->name('login.murid');
 
-    // Route login admin
-    Route::get('/login/admin', [Login::class, 'admin'])->name('login.admin');
-    Route::post('/login/admin', [Login::class, 'verifikasiGuru'])->name('login.admin');
-});
+// Route login admin
+Route::get('/login/admin', [Login::class, 'admin'])->name('login.admin');
+Route::post('/login/admin', [Login::class, 'verifikasiGuru'])->name('login.admin');
 
 // Student views
 // Teacher views
@@ -84,8 +84,9 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
 
     // Kelola galeri
-    Route::get('/teacher/galeri', [Teacher::class, 'galeri']);
+    Route::get('/teacher/galeri', [Teacher::class, 'galeri'])->name('galeri');
     Route::get('/teacher/galeri/upload', [Teacher::class, 'galeriUpload']);
+    Route::post('/teacher/galeri/upload', [Teacher::class, 'galeriPush']);
 
     // Kelola profile
     Route::get('/teacher/profile', [Teacher::class, 'profile']);

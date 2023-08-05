@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('gambar');
             $table->integer('guru_id');
             $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

@@ -21,13 +21,23 @@
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-    <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST" action="{{ route('teacher.write-berita') }}">
+    <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST">
       @csrf
       <div class="card-header">
         <h3 class="card-title">Daftar Berita dan Event</h3>
       </div>
         <!-- /.card-header -->
         <div class="card-body">
+          <!-- End Input Gambar Profile Guru -->
+          <div class="form-group">
+            <label for="judul">Judul Materi:</label>
+            <input class="form-control @error('judul') is-invalid @enderror" placeholder="Judul..." name="judul" value="{{ old('judul') }}">
+            @error('judul')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+          </div>
             <!-- Input Gambar Profile Guru -->
             <div class="row">
               <div class="col-md-12">
@@ -52,45 +62,6 @@
                 </div>
               </div>
             </div>
-            <!-- End Input Gambar Profile Guru -->
-            <div class="form-group">
-              <label for="judul">Judul Materi:</label>
-              <input class="form-control @error('judul') is-invalid @enderror" placeholder="Judul..." name="judul" value="{{ old('judul') }}">
-              @error('judul')
-                  <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                  </span>
-              @enderror
-            </div>
-            <div class="form-group">
-              <label for="judul">Text Penjelasan Materi:</label>
-                <textarea id="compose-textarea" class="form-control @error('isi') is-invalid @enderror" style="height: 300px" name="isi" placeholder="tesdoang">
-                  {{ old('isi') }}
-                </textarea>
-                @error('isi')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-            <!-- inline input -->
-            <div class="row">
-              <div class="col-sm-6">
-                  <div class="form-group">
-                      <label class="col-form-label">Tanggal Acara dimulai:</label>
-                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                          <input type="date" class="form-control" id="tanggal_acara" name="tanggal_acara">
-                      </div>
-                  </div>
-              </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class="col-form-label" for="tempat_lahir">Durasi Acara (hari):</label>
-                        <input type="number" class="form-control" id="durasi_hari" name="durasi_hari" placeholder="Enter ...">
-                    </div>
-                </div>
-            </div>
-          </div>
         <!-- /.card-body -->
         <div class="card-footer">
             <div class="float-right">

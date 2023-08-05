@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\HomeWork;
 use App\Models\TeacherModel;
 use App\Models\StudentModel;
+use App\Models\ImageModel;
 use App\Models\Blog;
 use App\Models\Message;
 use App\Models\Event;
@@ -193,12 +194,36 @@ class Teacher extends Controller
     public function galeri()
     {
         //
-        return view('teacher.galeri');
+        $data_foto = ImageModel::all();
+        return view('teacher.galeri', [
+            'data_foto' => $data_foto,
+        ]);
     }
     public function galeriUpload()
     {
         //
         return view('teacher.galeri-upload');
+    }
+    public function galeriPush(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'judul' => '',
+            'gambar' => 'required|mimes:jpeg,jpg,png',
+        ]);
+
+        // Simpan file yang diupload ke direktori 'public/assets/upload'
+        $path = $request->file('gambar')->store('upload', 'public_uploads');
+
+        $data_validated['gambar'] = $path;
+        $data_validated['guru_id'] = Auth::user()->id;
+        ImageModel::create($data_validated);
+
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Foto berhasil diupload.');
+
+        // Pindahkan ke halaman lain.
+        return redirect()->route('galeri');
     }
 
     public function pesan()
