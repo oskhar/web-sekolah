@@ -160,16 +160,16 @@
                     <p class="text-md-left">&copy; 2023 Perusahaan. All rights reserved.</p>
                     {{-- Bagian 4 Tombol Sosial Media --}}
                     <div class="social-icons icon-sosmed justify-content-end">
-                        <a class="btn" href="https://www.youtube.com/channel/namachannel" target="_blank">
+                        <a class="btn" href="https://www.youtube.com/@KasihBundaKenangaBangsa" target="_blank">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a class="btn" href="https://www.instagram.com/namaakun/" target="_blank">
+                        <a class="btn" href="https://instagram.com/kenangabangsa?igshid=MzNlNGNkZWQ4Mg" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a class="btn" href="https://www.facebook.com/namaakun" target="_blank">
+                        <a class="btn" href="https://www.facebook.com/profile.php?id=100095021275418&mibextid=ZbWKwL" target="_blank">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a class="btn" href="https://www.tiktok.com/@namaakun" target="_blank">
+                        <a class="btn" href="https://vm.tiktok.com/ZM2Wg8rwJ/" target="_blank">
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
