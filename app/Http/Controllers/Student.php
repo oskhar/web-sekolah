@@ -29,4 +29,8 @@ class Student extends Controller
     {
         return view('student.dashboard');
     }
+    public function pesan()
+    {
+        return view('student.pesan');
+    }
 }

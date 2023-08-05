@@ -35,28 +35,22 @@
                 <!-- User Image -->
                 <img src="{{ asset('assets/'.auth('teacher')->user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
             @else
-                <span class="hidden-xs"><b>Click untuk Login</b></span>
-                <!-- User Image -->
-                <img src="{{ asset('assets/avatar/profile_kosong.jpg') }}" class="user-image thumbnail" alt="User Image">
+                <a href="{{ route('login') }}" class=""><b>Click untuk Login</b></a>
             @endauth
           </a>
           <!-- Dropdown Menu -->
+          @auth('teacher')
           <ul class="dropdown-menu dropdown-menu-right">
             <!-- User Image -->
             <li class="user-header">
-                @auth('teacher')
                     <img src="{{ asset('assets/'.auth('teacher')->user()->foto_profile) }}" class="img-circle" alt="User Image">
                     <p>
                         <b class="">{{ auth('teacher')->user()->nama_panggilan }}</b>
                         <small class="text-gray">{{ auth('teacher')->user()->nama_lengkap }}</small>
                     </p>
-                @else
-                    <p class="text-muted p-3">Anda Belum login! silahkan login untuk akses fitur lanjutan</p>
-                @endauth
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
-                @auth('teacher')
                     <div class="pull-left">
                         <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Profile</a>
                     </div>
@@ -64,13 +58,9 @@
                         @csrf
                         <button type="submit" class="btn btn-danger btn-flat">Log out</button>
                     </form>
-                @else
-                    <div class="pull-right">
-                        <a href="{{ route('login') }}" class="btn btn-primary btn-flat">Log in</a>
-                    </div>
-                @endauth
             </li>
           </ul>
+          @endauth
         </li>      
     </ul>
 </aside>
