@@ -7,7 +7,7 @@
   {{ asset('/assets/images/imgLogin/admin-admin.png') }}
 @endsection
 
-@section('role', 'Login sebagai Guru')
+@section('role', 'Login sebagai Admin')
 
 @section('up_label')
   <i class="fas fa-user"></i> Username

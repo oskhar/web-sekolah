@@ -2,4 +2,10 @@
 
 @section('title', "Dashboard")
 @section('mainContainer')
+
+
+
+
+
+
 @endsection
