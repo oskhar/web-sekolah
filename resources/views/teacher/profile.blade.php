@@ -47,7 +47,14 @@
             <!-- Detail Profile -->
             <div class="card">
                 <div class="card-body">
-                  <a href="{{ route('teacher.edit-profile') }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit Informasi</a>
+                  <a href="{{ route('teacher.edit-profile') }}" class="btn btn-primary">
+                    <i class="fas fa-pencil-alt"></i>
+                    Edit Informasi
+                  </a>
+                  <a href="{{ route('teacher.change-password') }}" class="btn btn-success ml-2">
+                    <i class="fas fa-lock"></i>
+                    Ganti Password
+                  </a>
                 <h4 class="mb-4 mt-4">Informasi Pribadi</h4>
                 <div class="row">
                   <div class="col-md-6">

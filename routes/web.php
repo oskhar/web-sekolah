@@ -94,6 +94,8 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::post('/teacher/ubah-foto-profile', [Teacher::class, 'ubahFotoProfile'])->name('teacher.ubah_foto_profile');
     Route::get('/teacher/edit-profile', [Teacher::class, 'editProfile'])->name('teacher.edit-profile');
     Route::post('/teacher/edit-profile', [Teacher::class, 'pushProfile'])->name('teacher.push-profile');
+    Route::get('/teacher/ubah-password', [Teacher::class, 'changePassword'])->name('teacher.change-password');
+    Route::post('/teacher/ubah-password', [Teacher::class, 'commitChangePassword']);
 
     // Kelola pesan
     Route::get('/teacher/pesan', [Teacher::class, 'pesan']);

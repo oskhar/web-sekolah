@@ -1,17 +1,17 @@
 @extends('components.template_teacher')
 
-@section('title', "Berita & Event")
+@section('title', "Ubah data profile")
 @section('mainContainer')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Berita & Event</h1>
+            <h1>Ubah data profile</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Berita & Event</li>
+                <li class="breadcrumb-item active">Ubah data profile</li>
             </ol>
         </div>
         </div>
@@ -145,48 +145,4 @@
     <!-- /.card -->
   </div>
 </section>
-@if(Session::has('success_message'))
-    <script>
-      Swal.fire({{ Session::get('success_message') }}, '', 'success');
-    </script>
-@endif
-<!-- Page specific script -->
-<script>
-  $(function () {
-    // Tambahkan teks editor
-    $('#compose-textarea').summernote();
-
-    // Tambahkan placeholder secara manual ketika editor pertama kali diinisialisasi
-    $('#compose-textarea').siblings('.note-editor').find('.note-placeholder').text('Tulis teks disini...');
-
-    // Tambahkan placeholder ketika konten editor kosong
-    $('#compose-textarea').on('summernote.change', function () {
-      var content = $(this).summernote('getText').trim();
-      if (content === '') {
-        $(this).siblings('.note-editor').find('.note-placeholder').text('Tulis teks disini...');
-      } else {
-        $(this).siblings('.note-editor').find('.note-placeholder').text('');
-      }
-    });
-  });
-
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      $('#icon-upload-foto').remove();
-      var reader = new FileReader();
-
-      reader.onload = function(e) {
-        $('#imagePreview img').attr('src', e.target.result);
-        $('#imagePreview').show();
-      }
-
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-
-  // Ketika input file dipilih, panggil fungsi readURL
-  $('#inputFoto').change(function() {
-    readURL(this);
-  });
-</script>
 @endsection

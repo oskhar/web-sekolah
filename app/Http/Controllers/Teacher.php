@@ -235,7 +235,41 @@ class Teacher extends Controller
         $data->save();
 
         // Simpan pesan flash ke session.
-        $request->session()->flash('success_message', 'Foto berhasil diupload.');
+        $request->session()->flash('success_message', 'Data berhasil diubah.');
+
+        // Pindahkan ke halaman lain.
+        return redirect()->route('profile');
+    }
+
+    public function changePassword()
+    {
+        return view('teacher.ubah-password');
+    }
+
+    public function commitChangePassword(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'old_password' => 'required',
+            'new_password_a' => 'required',
+            'new_password_b' => 'required',
+        ]);
+
+        if (!Hash::check($data_validated['old_password'], Auth::user()->password)) {
+            return back()->with('error_message', 'Password Lama salah!');
+        }
+        if ($data_validated['new_password_a'] != $data_validated['new_password_b']) {
+            return back()->with('error_message', 'Password Baru 1 dengan password Baru 2 tidak sama!');
+        }
+
+        $data = TeacherModel::find(Auth::user()->id);
+        $data->fill([
+            'password' => Hash::make($data_validated['new_password_a']),
+        ]);
+        $data->save();
+
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Password berhasil diubah.');
 
         // Pindahkan ke halaman lain.
         return redirect()->route('profile');
