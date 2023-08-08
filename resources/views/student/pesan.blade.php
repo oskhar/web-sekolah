@@ -26,23 +26,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="info-box mb-3 bg-info">
-                    <span class="info-box-icon"><i class="fas fa-info"></i></span>
+                    <span class="info-box-icon"><i class="fas fa-sms"></i></span>
         
                     <div class="info-box-content">
-                        <h2>Pesan Terbaru</h2>
+                        <h2>Buat Pesan Baru</h2>
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="info-box mb-3 bg-white row justify-content-center py-4">
-                    <h5 class="text-center text-muted">Tidak ada pesan baru !</h5>
-                </div>
+                <textarea class="form-control mb-3" id="pertanyaan" rows="5" name="isi" required placeholder="Masukkan Pesan Anda"></textarea>
+                <button type="submit" class="btn btn-primary mb-5">Kirim Pesan</button>
             </div>
+            
             <div class="col-md-12">
                 <div class="info-box mb-3 bg-success">
-                    <span class="info-box-icon"><i class="fas fa-check"></i></span>
+                    <span class="in fo-box-icon"><i class="fas fa-check"></i></span>
                     <div class="info-box-content">
-                        <h2>Pesan Lama</h2>
+                        <h2>Pesan Terkirim</h2>
                     </div>
                 </div>
             </div>
