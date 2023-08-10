@@ -95,6 +95,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('/student/pesan/') }}" class="nav-link @if(request()->is('teacher/materi')) active @endif">
+              <i class="nav-icon fas fa-sms"></i>
+              <p>
+                Pesan
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -35,28 +35,22 @@
                 <!-- User Image -->
                 <img src="{{ asset('assets/'.auth('teacher')->user()->foto_profile) }}" class="user-image thumbnail" alt="User Image">
             @else
-                <span class="hidden-xs"><b>Click untuk Login</b></span>
-                <!-- User Image -->
-                <img src="{{ asset('assets/avatar/profile_kosong.jpg') }}" class="user-image thumbnail" alt="User Image">
+                <a href="{{ route('login') }}" class=""><b>Click untuk Login</b></a>
             @endauth
           </a>
           <!-- Dropdown Menu -->
+          @auth('teacher')
           <ul class="dropdown-menu dropdown-menu-right">
             <!-- User Image -->
             <li class="user-header">
-                @auth('teacher')
                     <img src="{{ asset('assets/'.auth('teacher')->user()->foto_profile) }}" class="img-circle" alt="User Image">
                     <p>
                         <b class="">{{ auth('teacher')->user()->nama_panggilan }}</b>
                         <small class="text-gray">{{ auth('teacher')->user()->nama_lengkap }}</small>
                     </p>
-                @else
-                    <p class="text-muted p-3">Anda Belum login! silahkan login untuk akses fitur lanjutan</p>
-                @endauth
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
-                @auth('teacher')
                     <div class="pull-left">
                         <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Profile</a>
                     </div>
@@ -64,13 +58,9 @@
                         @csrf
                         <button type="submit" class="btn btn-danger btn-flat">Log out</button>
                     </form>
-                @else
-                    <div class="pull-right">
-                        <a href="{{ route('login') }}" class="btn btn-primary btn-flat">Log in</a>
-                    </div>
-                @endauth
             </li>
           </ul>
+          @endauth
         </li>      
     </ul>
 </aside>
@@ -160,16 +150,16 @@
                     <p class="text-md-left">&copy; 2023 Perusahaan. All rights reserved.</p>
                     {{-- Bagian 4 Tombol Sosial Media --}}
                     <div class="social-icons icon-sosmed justify-content-end">
-                        <a class="btn" href="https://www.youtube.com/channel/namachannel" target="_blank">
+                        <a class="btn" href="https://www.youtube.com/@KasihBundaKenangaBangsa" target="_blank">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a class="btn" href="https://www.instagram.com/namaakun/" target="_blank">
+                        <a class="btn" href="https://instagram.com/kenangabangsa?igshid=MzNlNGNkZWQ4Mg" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a class="btn" href="https://www.facebook.com/namaakun" target="_blank">
+                        <a class="btn" href="https://www.facebook.com/profile.php?id=100095021275418&mibextid=ZbWKwL" target="_blank">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a class="btn" href="https://www.tiktok.com/@namaakun" target="_blank">
+                        <a class="btn" href="https://vm.tiktok.com/ZM2Wg8rwJ/" target="_blank">
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
