@@ -70,9 +70,10 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
 
     // Kelola berita
-    Route::get('/teacher/berita', [Teacher::class, 'berita']);
+    Route::get('/teacher/berita', [Teacher::class, 'berita'])->name('teacher.berita');
     Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
     Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
+    Route::post('/teacher/delete-berita', [Teacher::class, 'deleteBerita'])->name('teacher.delete-berita');
 
     // Kelola murid
     Route::get('/teacher/murid', [Teacher::class, 'murid'])->name('teacher.murid');
@@ -89,8 +90,12 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::post('/teacher/galeri/upload', [Teacher::class, 'galeriPush']);
 
     // Kelola profile
-    Route::get('/teacher/profile', [Teacher::class, 'profile']);
+    Route::get('/teacher/profile', [Teacher::class, 'profile'])->name('profile');
     Route::post('/teacher/ubah-foto-profile', [Teacher::class, 'ubahFotoProfile'])->name('teacher.ubah_foto_profile');
+    Route::get('/teacher/edit-profile', [Teacher::class, 'editProfile'])->name('teacher.edit-profile');
+    Route::post('/teacher/edit-profile', [Teacher::class, 'pushProfile'])->name('teacher.push-profile');
+    Route::get('/teacher/ubah-password', [Teacher::class, 'changePassword'])->name('teacher.change-password');
+    Route::post('/teacher/ubah-password', [Teacher::class, 'commitChangePassword']);
 
     // Kelola pesan
     Route::get('/teacher/pesan', [Teacher::class, 'pesan']);

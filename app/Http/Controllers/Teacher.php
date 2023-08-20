@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
 use Carbon\Carbon;
+use Illuminate\Validation\Rule;
 
 class Teacher extends Controller
 {
@@ -66,6 +67,21 @@ class Teacher extends Controller
         // Tampilkan pesan sukses dan redirect kembali ke halaman sebelumnya
         return back()->with('success_message', 'File berhasil diupload.');
     }
+    public function deleteBerita(Request $request)
+    {
+        $id = $request->input('id');
+        $data_teacher = Event::find($id);
+        if ($data_teacher) {
+            $data_teacher->delete();
+            // Menambahkan response json
+            $response = [
+                'success_message' => 'Data berhasil dihapus',
+            ];
+            return response()->json($response);
+        }
+    }
+
+
     public function materi()
     {
         //
@@ -189,6 +205,74 @@ class Teacher extends Controller
         $data->fill($all_data);
         $data->save();
         return back()->with('success_message', 'Avatar berhasi diganti');
+    }
+
+    public function editProfile()
+    {
+        //
+        return view('teacher.edit-profile');
+    }
+
+    public function pushProfile(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'nama_lengkap' => '',
+            'nama_panggilan' => '',
+            'nomor_telepon' => '',
+            'email' => [
+                'required',
+                Rule::unique('teachers')->ignore(Auth::user()->id, 'id'),
+            ],
+            'pengalaman_mengajar' => '',
+            'jabatan' => '',
+            'gender' => '',
+            'gedung' => 'required',
+        ]);
+
+        $data = TeacherModel::find(Auth::user()->id);
+        $data->fill($data_validated);
+        $data->save();
+
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Data berhasil diubah.');
+
+        // Pindahkan ke halaman lain.
+        return redirect()->route('profile');
+    }
+
+    public function changePassword()
+    {
+        return view('teacher.ubah-password');
+    }
+
+    public function commitChangePassword(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'old_password' => 'required',
+            'new_password_a' => 'required',
+            'new_password_b' => 'required',
+        ]);
+
+        if (!Hash::check($data_validated['old_password'], Auth::user()->password)) {
+            return back()->with('error_message', 'Password Lama salah!');
+        }
+        if ($data_validated['new_password_a'] != $data_validated['new_password_b']) {
+            return back()->with('error_message', 'Password Baru 1 dengan password Baru 2 tidak sama!');
+        }
+
+        $data = TeacherModel::find(Auth::user()->id);
+        $data->fill([
+            'password' => Hash::make($data_validated['new_password_a']),
+        ]);
+        $data->save();
+
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Password berhasil diubah.');
+
+        // Pindahkan ke halaman lain.
+        return redirect()->route('profile');
     }
 
     public function galeri()

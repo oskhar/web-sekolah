@@ -1,17 +1,17 @@
 @extends('components.template_teacher')
 
-@section('title', "Materi")
+@section('title', "Menambah Data Murid")
 @section('mainContainer')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Materi</h1>
+            <h1>Menambah Data Murid</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Materi</li>
+                <li class="breadcrumb-item active">Menambah Data Murid</li>
             </ol>
         </div>
         </div>
@@ -26,7 +26,7 @@
           <!-- general form -->
           <div class="card card-primary card-outline">
               <div class="card-header">
-                  <h3 class="card-title">Insert Data Guru</h3>
+                  <h3 class="card-title">Insert Data Murid</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -78,7 +78,7 @@
                                   <div class="input-group-prepend">
                                   <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                   </div>
-                                  <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email..." id="email" name="email" value="{{ old('email') }}" @error('email') title="{{ $message }}" @enderror>
+                                  <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Boleh dikosongkan..." id="email" name="email" value="{{ old('email') }}" @error('email') title="{{ $message }}" @enderror>
                               </div>
                           </div>
                       </div>
@@ -91,11 +91,11 @@
                               <h5>Gedung</h5>
                               <div class="form-check">
                                   <input value="0" class="form-check-input" type="radio" name="gedung" id="gedung" checked>
-                                  <label class="form-check-label">Gedung 1</label>
+                                  <label class="form-check-label">Gedung 1 (Gondrong)</label>
                               </div>
                               <div class="form-check">
                                   <input value="1" class="form-check-input" type="radio" name="gedung" id="gedung">
-                                  <label class="form-check-label">Gedung 2</label>
+                                  <label class="form-check-label">Gedung 2 (Sipon)</label>
                               </div>
                           </div>
                       </div>

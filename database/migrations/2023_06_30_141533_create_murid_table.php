@@ -16,8 +16,10 @@ return new class extends Migration {
             $table->string('password');
             $table->string('foto_profile')->nullable();
             $table->string('nama_lengkap');
+            $table->date('tanggal_lahir')->nullable();
             $table->integer('gedung')->nullable();
             $table->string('email')->nullable();
+            $table->string('nomor_telepon')->nullable();
         });
     }
 
