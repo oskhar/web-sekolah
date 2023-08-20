@@ -9,7 +9,8 @@
     <div class="display">
         <div id="container-1" class="row">
             <div class="col-sm-7 jarak" >
-                <h2>SELAMAT DATANG</h2>
+                <h2>SELAMAT DATANG DI PAUD</h2>
+                <h2>KASIH BUNDA KENANGA BANGSA</h2>
                 <p>Generasi bangsa perlu kita didik sejak dini untuk membentuk kedasaran akan pentingnya pengetahuan dan membentuk kebiasaan yang baik serta memperdalam etika dan moral agar anak tumbuh menjadi sosok yang kita harapkan dan menjadi anak - anak yang mutitalenta untuk bangsa negara indonesia</p>
             </div>
 
@@ -82,9 +83,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="">
-                            <h3 class="card-title">Card title</h3>
-                            <p class="card-text"><sup class="text-secondary">Last updated 3 mins ago</sup></p>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h3 class="card-title">PENDAFTARAN MURID BARU</h3>
+                            <p class="card-text"><sup class="text-secondary">Di upload pukul 13.00</sup></p>
+                            <p class="card-text">Pendaftaran murid baru sudah mulai di buka. Waktu pendaftaran di mulai pada tanggal 17 juli 2024, Bagi ibu dan bapak yang ingin anaknya bersekolah di Paud Kasih Bunda Kenanga Bangsa silahkan klik Selengkapnya. </p>
                         </div>
                     </div>
                 </div>
