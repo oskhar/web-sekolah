@@ -68,7 +68,7 @@
         <div class="card col-lg-10">
             <div class="pengumuman card-header">
                 <div class="display-pengumuman">
-                    <button class="btn float-right border">Selengkapnya</button>
+                    <a href="{{url('/berita-acara')}}" class="btn float-right border">Selengkapnya</a>
                     <h3>Pengumuman</h3>
                     <p class="text-muted">Informasi terkait Paud Kasih Bunda Kenanga Bangsa diupload disini</p>
                 </div>
