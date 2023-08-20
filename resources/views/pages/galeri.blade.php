@@ -9,7 +9,8 @@
 <div class="container-kp">
     <h3>GALLERY</h3>
     <div class="teks-kp">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laudantium esse eos obcaecati nisi qui ipsum neque dolorem. Ea consectetur, sunt veritatis asperiores natus laboriosam quia doloribus. Cumque voluptatibus a at, aut sed libero deserunt quibusdam fugit numquam expedita minima beatae provident laudantium quaerat atque explicabo praesentium nesciunt iste hic?</p>
+        <p>Selamat datang di halaman galeri kami! Di sini, Anda akan menemukan kumpulan foto-foto yang mengabadikan berbagai momen dan kegiatan berharga di PAUD kami. Mari jelajahi gambar-gambar yang merefleksikan keceriaan dan pembelajaran anak-anak di PAUD Kasih Bunda Kenanga Bangsa.
+        </p>
     </div>
 
 

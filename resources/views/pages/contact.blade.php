@@ -14,13 +14,13 @@
                 <div class="row justify-content-center">
                     <ul class="list-group list-group-unbordered mb-3 col-sm-10 mt-3">
                         <li class="list-group-item">
-                        <b>Kepala Sekolah</b> <span class="float-right">+62 813-8638-0481</span>
+                        <b>Kepala Sekolah</b> <span class="float-right">+62 895-2360-3709</span>
                         </li>
                         <li class="list-group-item">
                         <b>Tata Usaha</b> <span class="float-right">+62 813-8638-0481</span>
                         </li>
                         <li class="list-group-item">
-                        <b>Penanggung Jawab IT</b> <span class="float-right">+62 813-8638-0481</span>
+                        <b>Penanggung Jawab IT</b> <span class="float-right">+62 895-3436-94488</span>
                         </li>
                     </ul>
                     <!-- /.card-body -->
@@ -59,7 +59,7 @@
                   </div>
                 </form>
           
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, tempora perferendis. Minus maxime dignissimos ea quisquam necessitatibus tempore nesciunt placeat?</p>
+                <p>Diharapkan Anda mengisi kolom pertanyaan di bawah ini dengan menyertakan alamat email Anda <b>(WAJIB)</b>. Jika ada pertanyaan atau hal yang ingin Anda sampaikan, harap cantumkan alamat email Anda dan isi kolom pertanyaan dengan sejelas mungkin. Tim kami akan dengan senang hati merespons setiap pertanyaan yang Anda ajukan melalui email. Kami sangat menghargai partisipasi Anda dalam berkomunikasi dengan kami.</p>
                 <textarea class="form-control" id="pertanyaan" rows="5" name="isi" required placeholder="Masukkan Pertanyaan Anda"></textarea>
                 <br>
               </div>

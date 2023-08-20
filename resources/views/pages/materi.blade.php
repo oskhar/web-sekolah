@@ -16,8 +16,8 @@
             <div class="card">
                 <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">Matematika</h5>
+                <p class="card-text">Pada kelas tanggal 17 September 2023 Mata pelajaran yang di sampaikan terkait dengan ..... Tetap belajar di rumah dan dikerjakan tugas yang di berikan oleh bunda</p>
                 </div>
             </div>
             </div>
@@ -25,8 +25,8 @@
             <div class="card">
                 <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">Seni</h5>
+                <p class="card-text">Pada kelas tanggal 17 September 2023 Mata pelajaran yang di sampaikan terkait dengan ..... Tetap belajar di rumah dan dikerjakan tugas yang di berikan oleh bunda</p>
                 </div>
             </div>
         </div>
@@ -37,8 +37,8 @@
             <div class="card">
                 <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">Olahraga</h5>
+                <p class="card-text">Pada kelas tanggal 17 September 2023 Mata pelajaran yang di sampaikan terkait dengan ..... Tetap belajar di rumah dan dikerjakan tugas yang di berikan oleh bunda</p>
                 </div>
             </div>
             </div>
@@ -46,8 +46,8 @@
             <div class="card">
                 <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">Vokalis</h5>
+                <p class="card-text">Pada kelas tanggal 17 September 2023 Mata pelajaran yang di sampaikan terkait dengan ..... Tetap belajar di rumah dan dikerjakan tugas yang di berikan oleh bunda</p>
                 </div>
             </div>
         </div>
