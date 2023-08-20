@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\Blog;
 
 class Pages extends Controller
 {
@@ -68,7 +69,10 @@ class Pages extends Controller
      */
     public function materi()
     {
-        return view('pages.materi');
+        $data_materi = Blog::all();
+        return view('pages.materi', [
+            "data_materi" => $data_materi,
+        ]);
     }
 
     /**
@@ -85,14 +89,6 @@ class Pages extends Controller
     public function lowonganKerja()
     {
         return view('pages.lowongan_kerja');
-    }
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function loginGuru()
-    {
-        return view('pages.materi');
     }
 
     /**
