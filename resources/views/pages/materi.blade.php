@@ -23,6 +23,7 @@
                         @if (strlen($data->isi) > 3 * 20)
                             <span class="read-more">... <a href="{{ url('sel-materi?id='.$data->id) }}" class="toggle-text">Selengkapnya</a></span>
                         @endif</p>
+                        <p class="text-muted text-right">By {{ $data->nama_lengkap }}</p>
                     </div>
                 </div>
             </div>

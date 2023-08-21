@@ -82,7 +82,10 @@ class Pages extends Controller
      */
     public function materi()
     {
-        $data_materi = Blog::all();
+        $data_materi = Blog::select('blogs.*', 'teachers.nama_lengkap AS nama_lengkap')
+            ->join('teachers', 'blogs.guru_id', '=', 'teachers.id')
+            ->get();
+
         return view('pages.materi', [
             "data_materi" => $data_materi,
         ]);
@@ -110,7 +113,10 @@ class Pages extends Controller
     public function selBeritaAcara(Request $request)
     {
         $id = $request->input('id');
-        $data = Event::find($id);
+        $data = Event::select('events.*', 'teachers.nama_lengkap AS nama_lengkap')
+            ->join('teachers', 'events.guru_id', '=', 'teachers.id')
+            ->where('events.id', '=', $id)
+            ->first();
         return view('pages.sel_berita_acara', [
             'data' => $data,
         ]);
@@ -118,11 +124,12 @@ class Pages extends Controller
     public function selMateri(Request $request)
     {
         $id = $request->input('id');
-        $data = Blog::find($id);
-        $Pembuat_materi = TeacherModel::find($data->guru_id)->nama_lengkap;
+        $data = Blog::select('blogs.*', 'teachers.nama_lengkap AS nama_lengkap')
+            ->join('teachers', 'blogs.guru_id', '=', 'teachers.id')
+            ->where('blogs.id', '=', $id)
+            ->first();
         return view('pages.sel_materi', [
             'data' => $data,
-            'Pembuat_materi' => $Pembuat_materi,
         ]);
     }
     public function kirimPesan(Request $request)

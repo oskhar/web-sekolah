@@ -18,7 +18,7 @@
         <div class="sejarah">
             <div class="visi">
                 {!! $data->isi !!}
-                <p>By {{ $pembuat_materi }}</p>
+                <p class="text-muted text-right">By {{ $data->nama_lengkap }}</p>
             </div>
         </div>
     </div>
