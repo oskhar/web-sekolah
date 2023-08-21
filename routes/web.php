@@ -83,7 +83,9 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::post('/teacher/delete-murid', [Teacher::class, 'deleteMurid'])->name('teacher.delete-murid');
 
     // Kelola pekerjaan rumah
-    Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah']);
+    Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah'])->name('teacher.pekerjaan-rumah');
+    Route::get('/teacher/write-pekerjaan-rumah', [Teacher::class, 'writePekerjaanRumah'])->name('teacher.write-pekerjaan-rumah');
+    Route::post('/teacher/write-pekerjaan-rumah', [Teacher::class, 'createPekerjaanRumah']);
 
     // Kelola galeri
     Route::get('/teacher/galeri', [Teacher::class, 'galeri'])->name('galeri');

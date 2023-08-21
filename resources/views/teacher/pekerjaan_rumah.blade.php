@@ -38,14 +38,8 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <a href="{{ url('dashboard/create') }}" class="btn bg-primary btn-sm col-sm-2 p-2 ml-2">
-                        Tambah Tugas
-                    </a>
-                    <a href="{{ url('dashboard/export_excel') }}" class="btn bg-primary btn-sm col-sm-2 p-2 ml-2">
-                        Export Tugas (Excel)
-                    </a>
-                    <a href="" class="btn bg-primary btn-sm col-sm-2 p-2 ml-2">
-                        Import Tugas (Excel)
+                    <a href="{{ url('/teacher/write-pekerjaan-rumah') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
+                      Tambah Pekerjaan Rumah
                     </a>
                 </div>
                 <table id="example1" class="table table-bordered table-striped">
@@ -59,20 +53,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($data_pekerjaan_rumah as $data)
                         <tr>
                             <td>1</td>
                             <td>Membuat gambar hewan menggunakan potongan kertas origami</td>
                             <td>10 September 2023</td>
                             <td><div class="badge bg-success">Aktif</div></td>
                             <td>
-                                <a href="{{ url('/dashboard/update') }}/{{ 'nis' }}" class="btn bg-primary btn-sm">
-                                <i class="fas fa-pencil-alt"></i>
+                                <a onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')" href="{{ url('/dashboard/update') }}" class="btn border-primary text-primary btn-sm">
+                                  <i class="fas fa-pencil-alt"></i>
                                 </a>
-                                <a onclick="doSoftDelete(\'{{ 'nis' }}\')" class="btn bg-danger btn-sm">
-                                <i class="fas fa-trash"></i>
+                                <a onmouseover="this.classList.add('btn-danger');this.classList.remove('text-danger')" onmouseout="this.classList.remove('btn-danger');this.classList.add('text-danger')" class="btn border-danger text-danger btn-sm" onclick="deleteData({{ $data->id }}, '{{ $data->judul }}')">
+                                  <i class="fas fa-trash"></i>
                                 </a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
