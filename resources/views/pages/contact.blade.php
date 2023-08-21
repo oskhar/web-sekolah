@@ -9,7 +9,7 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="text-center mt-5 text-darkblue">
-                    <h1>LIST CONTACT</h1>
+                    <h1>PERSON CONTACT</h1>
                 </div>
                 <div class="row justify-content-center">
                     <ul class="list-group list-group-unbordered mb-3 col-sm-10 mt-3">

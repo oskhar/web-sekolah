@@ -15,7 +15,7 @@
           <h3>KURIKULUM TAHUN 2023</h3>
           <p>Kepada Orang Tua/Wali Murid PAUD "Kasih Bunda Kenanga Bangsa" di Wilayah Jawa Barat, Kota Tangerang,
 
-            Kami ingin berbagi perubahan penting dalam kurikulum PAUD kami untuk tahun ajaran 2023, sesuai pedoman pendidikan usia dini yang ditetapkan pemerintah. Fokus kami adalah mengintegrasikan pendekatan holistik, pengembangan bahasa, pengenalan sains-matematika, seni, dan etika. Kami berharap kolaborasi yang kuat antara sekolah dan rumah dalam mendukung pendidikan yang holistik dan berkualitas bagi anak-anak tercinta kita.
+            Kami ingin berbagi perubahan penting dalam kurikulum PAUD kami untuk tahun ajaran 2023, sesuai pedoman pendidikan usia dini yang ditetapkan pemerintah. Fokus kami adalah mengintegrasikan pendekatan holistik, pengembangan bahasa, pengenalan sains-kognitif, seni, dan etika. Kami berharap kolaborasi yang kuat antara sekolah,lingkungan dan rumah dalam mendukung pendidikan yang holistik dan berkualitas bagi anak-anak tercinta kita.
             
             <P>Hormat kami,</P>
             <P>Wiwin Karmila, S.pd</P>
