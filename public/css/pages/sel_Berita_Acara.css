@@ -12,6 +12,7 @@
 
 .container-fluid img{
     margin-bottom: 50px;
+    object-fit:cover;
 }
 
 .container-fluid hr{

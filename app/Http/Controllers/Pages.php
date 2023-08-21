@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\Blog;
+use App\Models\Event;
 use App\Models\ImageModel;
 
 class Pages extends Controller
@@ -45,10 +47,11 @@ class Pages extends Controller
      */
     public function galeri()
     {
-        // Mendapatkan semua data foto
-        $data_foto = ImageModel::all();
+        $data_galeri = ImageModel::all();
+        $banyak_galeri = ImageModel::count();
         return view('pages.galeri', [
-            'data_foto' => $data_foto,
+            "data_galeri" => $data_galeri,
+            "banyak_galeri" => $banyak_galeri,
         ]);
     }
 
@@ -57,7 +60,12 @@ class Pages extends Controller
      */
     public function beritaAcara()
     {
-        return view('pages.berita_acara');
+        $data_berita = Event::all();
+        $banyak_berita = Event::count();
+        return view('pages.berita_acara', [
+            "data_berita" => $data_berita,
+            "banyak_berita" => $banyak_berita,
+        ]);
     }
 
     /**
@@ -73,7 +81,10 @@ class Pages extends Controller
      */
     public function materi()
     {
-        return view('pages.materi');
+        $data_materi = Blog::all();
+        return view('pages.materi', [
+            "data_materi" => $data_materi,
+        ]);
     }
 
     /**
@@ -95,17 +106,21 @@ class Pages extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function loginGuru()
+    public function selBeritaAcara(Request $request)
     {
-        return view('pages.materi');
+        $id = $request->input('id');
+        $data = Event::find($id);
+        return view('pages.sel_berita_acara', [
+            'data' => $data,
+        ]);
     }
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function selBeritaAcara()
+    public function selMateri(Request $request)
     {
-        return view('pages.sel_Berita_Acara');
+        $id = $request->input('id');
+        $data = Blog::find($id);
+        return view('pages.sel_materi', [
+            'data' => $data,
+        ]);
     }
     public function kirimPesan(Request $request)
     {

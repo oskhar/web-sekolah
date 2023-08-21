@@ -127,7 +127,7 @@
 </nav>
 
 {{-- Bagian Main --}}
-    <main style="height: 100vh;">
+    <main>
         @yield('mainContainer')
 
         <br>

@@ -1,8 +1,9 @@
-/* Bagian container */
-.container-fluid{
-    width: 1000px;
-}
 
+#list-gambar {
+    height:18rem;
+    width:100%;
+    object-fit:cover;
+}
 .text-overlay h2{
     color: #355389;
     font-family: sans-serif;
