@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Message;
 use App\Models\Blog;
+use App\Models\Event;
+use App\Models\ImageModel;
 
 class Pages extends Controller
 {
@@ -45,7 +47,12 @@ class Pages extends Controller
      */
     public function galeri()
     {
-        return view('pages.galeri');
+        $data_galeri = ImageModel::all();
+        $banyak_galeri = ImageModel::count();
+        return view('pages.galeri', [
+            "data_galeri" => $data_galeri,
+            "banyak_galeri" => $banyak_galeri,
+        ]);
     }
 
     /**
@@ -53,7 +60,12 @@ class Pages extends Controller
      */
     public function beritaAcara()
     {
-        return view('pages.berita_acara');
+        $data_berita = Event::all();
+        $banyak_berita = Event::count();
+        return view('pages.berita_acara', [
+            "data_berita" => $data_berita,
+            "banyak_berita" => $banyak_berita,
+        ]);
     }
 
     /**

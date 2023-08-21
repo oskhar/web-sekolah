@@ -20,7 +20,8 @@
                     <div class="card-body">
                     <h2 class="card-title"><strong>{{ $data->judul }}</strong></h2><br>
                     <sup>{{ $data->created_at->format('Y-m-d') }}</sup>
-                    <p class="card-text">{!! nl2br(substr($data->isi, 0, 3 * 20)) !!} <!-- Batasi ke tiga baris -->
+                    <p class="card-text">
+                        {!! nl2br(substr($data->isi, 0, 3 * 20)) !!} <!-- Batasi ke tiga baris -->
                         @if (strlen($data->isi) > 3 * 20)
                             <span class="read-more">... <a href="#" class="toggle-text">Read More</a></span>
                         @endif</p>

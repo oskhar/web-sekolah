@@ -13,76 +13,44 @@
 
     {{--  Bagian Berita Dan Acara  --}}
     <div class="berita-acara row justify-content-center">
-        
-        <div class="card col-lg-10">
-            <div class="pengumuman card-header">
-                <div class="display-pengumuman">
-                    <button class="btn float-right border">Selengkapnya</button>
-                    <h3 class="mb-0">Pengumuman</h3>
-                    <p class="text-muted">17 Agustus 2023</p>
-                </div>
-            </div>
-
-            {{-- Card Pengumuman --}}
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="/assets/images/logo_paud.jpg" class="img-fluid" alt="..." >
+        @if ( $banyak_berita > 0 )
+            @foreach ($data_berita as $data)
+            <div class="card col-lg-10">
+                <div class="pengumuman card-header">
+                    <div class="display-pengumuman">
+                        <button class="btn float-right border">Selengkapnya</button>
+                        <h3 class="mb-0">{{ $data->judul }}</h3>
+                        <p class="text-muted">{{ $data->created_at->format('Y-m-d') }}</p>
                     </div>
-                    <div class="col-md-8">
-                        <div class="">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+
+                {{-- Card Pengumuman --}}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/assets/{{ $data->gambar }}" class="img-fluid" alt="..." >
+                        </div>
+                        <div class="col-md-8">
+                            <div class="">
+                                <p class="card-text">
+                                    {!! nl2br(substr($data->isi, 0, 3 * 20)) !!} <!-- Batasi ke tiga baris -->
+                                    @if (strlen($data->isi) > 3 * 20)
+                                        <span class="read-more">... <a href="#" class="toggle-text">Read More</a></span>
+                                    @endif</p>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card col-lg-10">
-            <div class="pengumuman card-header">
-                <div class="display-pengumuman">
-                    <button class="btn float-right border">Selengkapnya</button>
-                    <h3 class="mb-0">Pengumuman</h3>
-                    <p class="text-muted">17 Agustus 2023</p>
+            @endforeach
+        @else
+            <div class="col-md-10 mt-5">
+                <div class="info-box mb-3 bg-white row justify-content-center py-4">
+                    <h5 class="text-center text-muted">Tidak ada berita saat ini !</h5>
                 </div>
             </div>
-
-            {{-- Card Pengumuman --}}
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="/assets/images/foto_bareng_tk.jpg" class="img-fluid" alt="..." >
-                    </div>
-                    <div class="col-md-8">
-                        <div class="">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card col-lg-10">
-            <div class="pengumuman card-header">
-                <div class="display-pengumuman">
-                    <button class="btn float-right border">Selengkapnya</button>
-                    <h3 class="mb-0">Pengumuman</h3>
-                    <p class="text-muted">17 Agustus 2023</p>
-                </div>
-            </div>
-
-            {{-- Card Pengumuman --}}
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="/assets/images/foto_bareng_tk.jpg" class="img-fluid" alt="..." >
-                    </div>
-                    <div class="col-md-8">
-                        <div class="">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endif
     </div>
 </div>
 </section>
