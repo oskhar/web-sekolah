@@ -170,8 +170,36 @@ class Teacher extends Controller
     public function pekerjaanRumah()
     {
         //
+        $data_pekerjaan_rumah = HomeWork::all();
         return view('teacher.pekerjaan_rumah', [
+            'data_pekerjaan_rumah' => $data_pekerjaan_rumah,
         ]);
+    }
+    public function writePekerjaanRumah()
+    {
+        //
+        return view('teacher.write_pekerjaan_rumah');
+    }
+    public function createPekerjaanRumah(Request $request)
+    {
+        //
+        $data_validated = $request->validate([
+            'token' => 'required|unique:students',
+            'password' => 'required',
+            'nama_lengkap' => 'required',
+            'gedung' => '',
+            'email' => '',
+        ]);
+
+        $data_validated['foto_profile'] = 'avatar/';
+        $data_validated['password'] = Hash::make($data_validated['password']);
+        StudentModel::create($data_validated);
+
+        // Simpan pesan flash ke session.
+        $request->session()->flash('success_message', 'Murid berhasil ditambahkan.');
+
+        // Pindahkan ke halaman lain.
+        return redirect()->route('teacher.pekerjaan-rumah');
     }
 
     public function profile()
