@@ -21,7 +21,7 @@
     
     <a href="{{url('/')}}" class="brand-link">
         <img src="{{ asset('assets/images/logo_paud.jpg') }}" alt="paud Logo" class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-bold text-dark">Paud KB Kenanga Bangsa</span>
+        <span class="brand-text font-weight-bold text-dark">Paud/Tk KB Kasih Bunda </span>
       </a>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -141,9 +141,10 @@
                     </div>
                     <div class="col-md-12 text-center footer-info">
                         <!-- Email, Alamat, dan Lokasi -->
-                        <p><i class="far fa-envelope"></i> Email: info@perusahaan.com</p>
-                        <p><i class="fas fa-globe"></i> Lokasi: jalan, kecamatan, kelurahan, no, Kota, Negara</p>
-                        <p><i class="fas fa-phone"></i> Hubungi : + 62 98788759002</p>
+                        <p><i class="far fa-envelope"></i> Email: kasihbundakenangabangsa@gmail.com</p>
+                        <p><i class="fas fa-globe"></i> Lokasi: Jalan Masjid Al Islah Blok Mandala Rt 001 Rw 03 No.79 Gondrong Cipondoh, RT.005/RW.002, Kenanga, </p>
+                        <p><i class=""></i>Kec. Tangerang, Kota Tangerang, Banten 15146</p>
+                        <p><i class="fas fa-phone"></i> Hubungi : +62895343694488</p>
                     </div>
                 </div>
                 <div class="row col-md-10 justify-content-between">

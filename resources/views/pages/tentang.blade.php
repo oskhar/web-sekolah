@@ -13,13 +13,20 @@
         <!-- Wilayah 1 (Lebar) -->
         <div class="col-md-8 p-4">
           <h3>KURIKULUM TAHUN 2023</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea eaque, consequatur reprehenderit minus harum et incidunt. Tenetur, illo illum adipisci, iste debitis aut consequatur alias repellat veritatis obcaecati veniam nostrum, quam odio consequuntur! Dolores provident nulla necessitatibus adipisci exercitationem dolorum ipsum perspiciatis quod atque quaerat voluptates quo aliquid, distinctio repellendus, nam voluptatem. Blanditiis velit unde exercitationem excepturi animi, dignissimos, expedita deleniti magni suscipit asperiores, totam placeat aliquid praesentium numquam qui harum? Officia fugit veritatis blanditiis, aliquam asperiores itaque sequi, hic totam expedita et magnam iusto facilis neque assumenda impedit rerum, ipsa beatae? Ea quae deleniti, beatae rerum nihil et aperiam!</p>
+          <p>Kepada Orang Tua/Wali Murid PAUD "Kasih Bunda Kenanga Bangsa" di Wilayah Jawa Barat, Kota Tangerang,
+
+            Kami ingin berbagi perubahan penting dalam kurikulum PAUD kami untuk tahun ajaran 2023, sesuai pedoman pendidikan usia dini yang ditetapkan pemerintah. Fokus kami adalah mengintegrasikan pendekatan holistik, pengembangan bahasa, pengenalan sains-kognitif, seni, dan etika. Kami berharap kolaborasi yang kuat antara sekolah,lingkungan dan rumah dalam mendukung pendidikan yang holistik dan berkualitas bagi anak-anak tercinta kita.
+            
+            <P>Hormat kami,</P>
+            <P>Wiwin Karmila, S.pd</P>
+            Kepala PAUD "Kasih Bunda Kenanga Bangsa"
+          </p>
         </div>
         <!-- Wilayah 2 (Kecil) -->
         <div class="col-md-4">
           <div class="card-body p-4">
-            <h1 class="card-title">INFO</h1>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut magnam consequatur numquam ut laborum enim commodi reiciendis, cumque beatae laudantium debitis aliquid perferendis. Dicta voluptas rem soluta, voluptate totam harum voluptates magnam sit libero .</p>
+            <h1 class="card-title"><b>INFO</b></h1>
+            <p class="card-text">Kami membuka peluang bagi individu yang berkomitmen untuk bergabung dalam tim kami di PAUD "Kasih Bunda Kenanga Bangsa." Jika Anda memiliki semangat dalam mendukung pendidikan usia dini dan ingin berkontribusi dalam lingkungan pembelajaran yang positif, kami mengundang Anda untuk melamar posisi yang tersedia.</p>
             <P>Informasi kegiatan silahkan klik <a href="{{url('/latar-belakang')}}" style="color: #355389; font-weight: bold;">disini</a></P>
             <a href="{{url('/lowongan-kerja')}}" class="btn btn-primary cek">Cek Lowongan Kerja</a>
           </div>
