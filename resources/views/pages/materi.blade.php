@@ -23,7 +23,7 @@
                     <p class="card-text">
                         {!! nl2br(substr($data->isi, 0, 3 * 20)) !!} <!-- Batasi ke tiga baris -->
                         @if (strlen($data->isi) > 3 * 20)
-                            <span class="read-more">... <a href="#" class="toggle-text">Read More</a></span>
+                            <span class="read-more">... <a href="{{ url('sel-materi?id='.$data->id) }}" class="toggle-text">Selengkapnya</a></span>
                         @endif</p>
                     </div>
                 </div>

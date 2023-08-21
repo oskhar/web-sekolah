@@ -106,9 +106,21 @@ class Pages extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function selBeritaAcara()
+    public function selBeritaAcara(Request $request)
     {
-        return view('pages.sel_Berita_Acara');
+        $id = $request->input('id');
+        $data = Event::find($id);
+        return view('pages.sel_berita_acara', [
+            'data' => $data,
+        ]);
+    }
+    public function selMateri(Request $request)
+    {
+        $id = $request->input('id');
+        $data = Blog::find($id);
+        return view('pages.sel_materi', [
+            'data' => $data,
+        ]);
     }
     public function kirimPesan(Request $request)
     {

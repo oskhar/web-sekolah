@@ -18,7 +18,7 @@
             <div class="card col-lg-10">
                 <div class="pengumuman card-header">
                     <div class="display-pengumuman">
-                        <button class="btn float-right border">Selengkapnya</button>
+                        <a href="{{ url('sel-berita-acara?id='.$data->id) }}" class="btn float-right border">Selengkapnya</a>
                         <h3 class="mb-0">{{ $data->judul }}</h3>
                         <p class="text-muted">{{ $data->created_at->format('Y-m-d') }}</p>
                     </div>
@@ -33,9 +33,9 @@
                         <div class="col-md-8">
                             <div class="">
                                 <p class="card-text">
-                                    {!! nl2br(substr($data->isi, 0, 3 * 20)) !!} <!-- Batasi ke tiga baris -->
-                                    @if (strlen($data->isi) > 3 * 20)
-                                        <span class="read-more">... <a href="#" class="toggle-text">Read More</a></span>
+                                    {!! nl2br(substr($data->isi, 0, 3 * 100)) !!} <!-- Batasi ke tiga baris -->
+                                    @if (strlen($data->isi) > 3 * 100)
+                                        <span class="read-more">... <a href="{{ url('sel-berita-acara?id='.$data->id) }}" class="toggle-text">Selengkapnya</a></span>
                                     @endif</p>
                                 </p>
                             </div>
