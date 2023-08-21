@@ -127,17 +127,17 @@
 </nav>
 
 {{-- Bagian Main --}}
-    <main style="height: 100vh;">
+    <main>
         @yield('mainContainer')
 
+        <br>
         {{-- Bagian Footer --}}
         <footer class="footer mt-5">
-            <div class="container">
+            <div class="row containe justify-content-center">
                 <div class="row align-items-center">
-                    <div class="col-md-12 text-center footer-logo p-2">
+                    <div class="col-md-12 text-center footer-logo p-5">
                         <!-- Logo Perusahaan -->
-                        <img src="{{ asset('assets/images/logo_paud.jpg') }}" alt="paud Logo" class="brand-image img-circle elevation-3" style="width:80px; height: 80px;">
-                        
+                        <img src="{{ asset('assets/images/logo_paud.jpg') }}" class="img-circle elevation-3" alt="Gambar 12" style="height: 7rem">
                     </div>
                     <div class="col-md-12 text-center footer-info">
                         <!-- Email, Alamat, dan Lokasi -->
@@ -147,11 +147,12 @@
                         <p><i class="fas fa-phone"></i> Hubungi : +62895343694488</p>
                     </div>
                 </div>
-                <div class="row col-md-12 justify-content-between" style="font-size: 15px; width: 700%;">
+                <div class="row col-md-10 justify-content-between">
                     <!-- Copy right -->
-                    <p class="text-md-left">&copy; 2023 Perusahaan. All rights reserved.</p>
+                    <p class="text-left float left">&copy; 2023 Perusahaan. All rights reserved.</p>
                     {{-- Bagian 4 Tombol Sosial Media --}}
-                    <div class="social-icons icon-sosmed justify-content-end">
+                    
+                    <div class="float-right justify-content-end">
                         <a class="btn" href="https://www.youtube.com/@KasihBundaKenangaBangsa" target="_blank">
                             <i class="fab fa-youtube"></i>
                         </a>

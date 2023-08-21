@@ -14,3 +14,9 @@
 .daftar-prestasi{
     padding-left: 0px;
 }
+
+#list-gambar {
+    height:15rem;
+    width:100%;
+    object-fit:cover;
+}

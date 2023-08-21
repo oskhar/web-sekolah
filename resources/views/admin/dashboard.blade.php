@@ -101,7 +101,7 @@
                     </div>
                     <!-- inline input -->
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <!-- radio -->
                             <div class="form-group">
                                 <h5>Gender</h5>
@@ -116,11 +116,26 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
+                            <!-- radio -->
+                            <div class="form-group">
+                                <h5>Gedung</h5>
+                                <div class="form-check">
+                                    <input value="0" class="form-check-input" type="radio" name="gedung" id="gedung" checked>
+                                    <label class="form-check-label">Gedung 1 (gondrong)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input value="1" class="form-check-input" type="radio" name="gedung" id="gedung">
+                                    <label class="form-check-label">Gedung 1 (sipon)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">
                                 <label>Pengalaman Mengajar</label>
                                 <select class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="pengalaman_mengajar" id="pengalaman_mengajar">
-                                    <option value="Kurang dari 1 Tahun" selected="selected">Kurang dari 1 Tahun</option>
+                                    <option value="" selected="selected">Kosong</option>
+                                    <option value="Kurang dari 1 Tahun">Kurang dari 1 Tahun</option>
                                     <option value="1 Tahun - 3 Tahun">1 Tahun - 3 Tahun</option>
                                     <option value="3 Tahun - 5 Tahun">3 Tahun - 5 Tahun</option>
                                     <option value="5 Tahun - 10 Tahun">5 Tahun - 10 Tahun</option>

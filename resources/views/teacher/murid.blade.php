@@ -104,36 +104,36 @@
           }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
       });
 
-    function deleteData(id, nama_lengkap) {
-        Swal.fire({
-            title: 'Hapus akun '+ nama_lengkap +'?',
-            showConfirmButton: false,
-            showDenyButton: true,
-            showCancelButton: true,
-            denyButtonText: `Hapus`,
-        }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isDenied) {
-                let data = {id: id};
-                $.ajax({
-                    url: '{{ route("teacher.delete-murid") }}',
-                    type: 'post',
-                    data: data,
-                    dataType: 'json',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Ambil token CSRF dari meta tag
-                    },
-                    success: function(response) {
-                        window.location.href = '{{ route('teacher.murid') }}';
-                    }, error: function(xhr, status, error) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: "Data gagal dihapus: " + xhr.status + "\n" + xhr.responseText + "\n" + error,
-                        });
-                    }
-                });
-            }
-        });
-    }
+      function deleteData(id, nama_lengkap) {
+          Swal.fire({
+              title: 'Hapus akun '+ nama_lengkap +'?',
+              showConfirmButton: false,
+              showDenyButton: true,
+              showCancelButton: true,
+              denyButtonText: `Hapus`,
+          }).then((result) => {
+              /* Read more about isConfirmed, isDenied below */
+              if (result.isDenied) {
+                  let data = {id: id};
+                  $.ajax({
+                      url: '{{ route("teacher.delete-murid") }}',
+                      type: 'post',
+                      data: data,
+                      dataType: 'json',
+                      headers: {
+                          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Ambil token CSRF dari meta tag
+                      },
+                      success: function(response) {
+                          window.location.href = '{{ route('teacher.murid') }}';
+                      }, error: function(xhr, status, error) {
+                          Swal.fire({
+                              icon: 'error',
+                              title: "Data gagal dihapus: " + xhr.status + "\n" + xhr.responseText + "\n" + error,
+                          });
+                      }
+                  });
+              }
+          });
+      }
   </script>
 @endsection

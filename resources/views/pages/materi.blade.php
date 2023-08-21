@@ -4,56 +4,32 @@
 @section('mainContainer')
 
 <link rel="stylesheet" href="{{ asset('css/pages/materi.css')}} ">
-
-<div class="container-fluid mt-5">
-    <!-- Teks yang ditampilkan paling atas -->
-    <div class="text-overlay">
-        <h2>MATERI - MATERI</h2>
-    </div>
-
-    <div class="row row-cols-1 row-cols-md-2 g-4 mt-5">
-        <div class="col">
-            <div class="card">
-                <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
-                <div class="card-body">
-                <h5 class="card-title">Matematika</h5>
-                <p class="card-text">Pada kelas tanggal 17 September 2023 Mata pelajaran yang di sampaikan terkait dengan ..... Tetap belajar di rumah dan dikerjakan tugas yang di berikan oleh bunda</p>
-                </div>
-            </div>
-            </div>
+<section class="content">
+    <div class="container-fluid mt-5 pl-5">
+        <!-- Teks yang ditampilkan paling atas -->
+        <div class="text-overlay">
+            <h2>MATERI - MATERI</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4 mt-5">
+            @foreach ($data_materi as $data)
             <div class="col">
-            <div class="card">
-                <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
-                <div class="card-body">
-                <h5 class="card-title">Seni</h5>
-                <p class="card-text">Pada kelas tanggal 17 September 2023 Mata pelajaran yang di sampaikan terkait dengan ..... Tetap belajar di rumah dan dikerjakan tugas yang di berikan oleh bunda</p>
+                <div class="card pl-5">
+                    <img src="/assets/{{ $data->gambar }}" id="list-gambar" class="img mt-3" alt="..." >
+                    <div class="card-body">
+                    <h2 class="card-title"><strong>{{ $data->judul }}</strong></h2><br>
+                    <sup>{{ $data->created_at->format('Y-m-d') }}</sup>
+                    <p class="card-text">
+                        {!! nl2br(substr($data->isi, 0, 3 * 20)) !!} <!-- Batasi ke tiga baris -->
+                        @if (strlen($data->isi) > 3 * 20)
+                            <span class="read-more">... <a href="{{ url('sel-materi?id='.$data->id) }}" class="toggle-text">Selengkapnya</a></span>
+                        @endif</p>
+                    </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
-
-    <div class="row row-cols-1 row-cols-md-2 g-4 mt-5">
-        <div class="col">
-            <div class="card">
-                <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
-                <div class="card-body">
-                <h5 class="card-title">Olahraga</h5>
-                <p class="card-text">Pada kelas tanggal 17 September 2023 Mata pelajaran yang di sampaikan terkait dengan ..... Tetap belajar di rumah dan dikerjakan tugas yang di berikan oleh bunda</p>
-                </div>
-            </div>
-            </div>
-            <div class="col">
-            <div class="card">
-                <img src="/assets/images/foto_bareng_tk.jpg" class="img" alt="..." >
-                <div class="card-body">
-                <h5 class="card-title">Vokalis</h5>
-                <p class="card-text">Pada kelas tanggal 17 September 2023 Mata pelajaran yang di sampaikan terkait dengan ..... Tetap belajar di rumah dan dikerjakan tugas yang di berikan oleh bunda</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
+</section>
 
 
 @endsection

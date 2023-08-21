@@ -40,7 +40,7 @@
           </div>
             <!-- Input Gambar Profile Guru -->
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-6">
                 <div class="card @error('gambar') bg-danger @enderror">
                   <div class="card-body">
                     <div class="text-center">
@@ -65,7 +65,7 @@
         <!-- /.card-body -->
         <div class="card-footer">
             <div class="float-right">
-                <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-upload"></i> Upload</button>
             </div>
         </div>
         <!-- /.card-footer -->

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TeacherModel;
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\Blog;
+use App\Models\Event;
+use App\Models\ImageModel;
 
 class Pages extends Controller
 {
@@ -44,7 +48,12 @@ class Pages extends Controller
      */
     public function galeri()
     {
-        return view('pages.galeri');
+        $data_galeri = ImageModel::all();
+        $banyak_galeri = ImageModel::count();
+        return view('pages.galeri', [
+            "data_galeri" => $data_galeri,
+            "banyak_galeri" => $banyak_galeri,
+        ]);
     }
 
     /**
@@ -52,7 +61,12 @@ class Pages extends Controller
      */
     public function beritaAcara()
     {
-        return view('pages.berita_acara');
+        $data_berita = Event::all();
+        $banyak_berita = Event::count();
+        return view('pages.berita_acara', [
+            "data_berita" => $data_berita,
+            "banyak_berita" => $banyak_berita,
+        ]);
     }
 
     /**
@@ -68,7 +82,10 @@ class Pages extends Controller
      */
     public function materi()
     {
-        return view('pages.materi');
+        $data_materi = Blog::all();
+        return view('pages.materi', [
+            "data_materi" => $data_materi,
+        ]);
     }
 
     /**
@@ -90,23 +107,29 @@ class Pages extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function loginGuru()
+    public function selBeritaAcara(Request $request)
     {
-        return view('pages.materi');
+        $id = $request->input('id');
+        $data = Event::find($id);
+        return view('pages.sel_berita_acara', [
+            'data' => $data,
+        ]);
     }
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function selBeritaAcara()
+    public function selMateri(Request $request)
     {
-        return view('pages.sel_Berita_Acara');
+        $id = $request->input('id');
+        $data = Blog::find($id);
+        $Pembuat_materi = TeacherModel::find($data->guru_id)->nama_lengkap;
+        return view('pages.sel_materi', [
+            'data' => $data,
+            'Pembuat_materi' => $Pembuat_materi,
+        ]);
     }
     public function kirimPesan(Request $request)
     {
         $data_validated = $request->validate([
-            'isi' => '',
-            'pengirim' => '',
+            'isi' => 'required',
+            'pengirim' => 'required',
         ]);
 
         Message::create($data_validated);

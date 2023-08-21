@@ -3,12 +3,12 @@
 <script>
     Swal.fire({
         toast: true,
-        position: 'bottom-right',
+        position: 'top-right',
         iconColor: 'white',
         color: 'white',
         background: 'var(--success)',
         showConfirmButton: false,
-        timer: 1500,
+        timer: 3000,
         timerProgressBar: true,
         icon: 'success',
         title: '{{ Session::get('success_message') }}',
@@ -21,10 +21,10 @@
 <script>
     // Menampilkan pesan error AJAX
     Swal.fire({
-        title: 'Login gagal!',
-        text: "{{ Session::get('error_message') }}",
+        title: "{{ Session::get('error_message') }}",
+        text: "",
         icon: 'error',
-        confirmButtonText: 'OK',
+        confirmButtonText: 'CONFIRM',
     });
 </script>
 @endif
@@ -34,10 +34,10 @@
 <script>
     // Menampilkan pesan warning AJAX
     Toast.fire({
-        title: 'Login gagal!',
+        title: 'PERINGATAN!',
         text: "{{ Session::get('warning_message') }}",
         icon: 'info',
-        confirmButtonText: 'OK',
+        confirmButtonText: 'CONFIRM',
         backdrop: false,
     });
 </script>

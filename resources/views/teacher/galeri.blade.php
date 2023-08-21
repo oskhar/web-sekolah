@@ -35,7 +35,7 @@
             <div class="row no-gutters card-body">
                 @foreach ($data_foto as $data)
                     <div class="col-sm-3">
-                        <img src="{{ asset('assets/'.$data->gambar)}}" onclick="lihatGambar('{{ asset('assets/'.$data->gambar)}}')" class="img-fluid" alt="Gambar" id="list-gambar">
+                        <img src="{{ asset('assets/'.$data->gambar)}}" onclick="lihatGambar('{{ asset('assets/'.$data->gambar)}}', '{{ $data->judul ?? 'Tidak memiliki judul...' }}')" class="img-fluid" alt="Gambar" id="list-gambar">
                     </div>
                 @endforeach
             </div>
@@ -43,10 +43,15 @@
     </div>
 </section>
 <script>
-    function lihatGambar(image) {
+    function lihatGambar(image, judul) {
         Swal.fire({
             imageUrl: image,
-            imageAlt: 'Ini gambar'
+            html: judul,
+            imageAlt: 'Ini gambar',
+            showConfirmButton: false,
+            showDenyButton: true,
+            showCancelButton: true,
+            denyButtonText: `Hapus`,
         })
     }
 </script>

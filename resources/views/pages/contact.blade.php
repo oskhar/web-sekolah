@@ -52,12 +52,10 @@
               <div class="form-group-ajukan">
                 <label for="pertanyaan" class=""><i class="fas fa-edit text-primary"></i> Pertanyaan Anda</label>
 
-                <form>
-                  <div class="form-group">
-                    <h3><label for="email">Alamat Email:</label></h3>
-                    <input type="email" class="form-control" id="email" placeholder="Masukkan alamat email">
-                  </div>
-                </form>
+                <div class="form-group">
+                  <label for="email">Alamat Email:</label>
+                  <input type="text" class="form-control @error('pengirim') is-invalid @enderror" id="email" placeholder=" @error('pengirim') Alamat email wajib dimasukan !! @else Masukkan alamat email @enderror" name="pengirim">
+                </div>
           
                 <p>Diharapkan Anda mengisi kolom pertanyaan di bawah ini dengan menyertakan alamat email Anda <b>(WAJIB)</b>. Jika ada pertanyaan atau hal yang ingin Anda sampaikan, harap cantumkan alamat email Anda dan isi kolom pertanyaan dengan sejelas mungkin. Tim kami akan dengan senang hati merespons setiap pertanyaan yang Anda ajukan melalui email. Kami sangat menghargai partisipasi Anda dalam berkomunikasi dengan kami.</p>
                 <textarea class="form-control" id="pertanyaan" rows="5" name="isi" required placeholder="Masukkan Pertanyaan Anda"></textarea>
