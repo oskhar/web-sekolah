@@ -24,7 +24,7 @@
             {{-- Bagian Foto Gallery --}}
             <div class="daftar-prestasi mt-5">
                 <div class="row no-gutters">
-                    @foreach ($data_foto as $data)
+                    @foreach ($data_galeri as $data)
                         <div class="col-sm-3">
                             <img src="{{ asset('assets/'.$data->gambar)}}" onclick="lihatGambar('{{ asset('assets/'.$data->gambar)}}')" class="img-fluid" alt="Gambar" id="list-gambar">
                         </div>

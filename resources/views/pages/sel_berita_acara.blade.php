@@ -18,6 +18,7 @@
         <div class="sejarah">
             <div class="visi">
                 {!! $data->isi !!}
+                <p>By {{ $pembuat_materi }}</p>
             </div>
         </div>
     </div>

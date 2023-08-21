@@ -54,7 +54,7 @@
 
                 <div class="form-group">
                   <label for="email">Alamat Email:</label>
-                  <input type="text" class="form-control" id="email" placeholder="Masukkan alamat email" name="pengirim" required>
+                  <input type="text" class="form-control @error('pengirim') is-invalid @enderror" id="email" placeholder=" @error('pengirim') Alamat email wajib dimasukan !! @else Masukkan alamat email @enderror" name="pengirim">
                 </div>
           
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, tempora perferendis. Minus maxime dignissimos ea quisquam necessitatibus tempore nesciunt placeat?</p>

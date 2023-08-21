@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TeacherModel;
 use Illuminate\Http\Request;
 use App\Models\Message;
 use App\Models\Blog;
@@ -118,15 +119,17 @@ class Pages extends Controller
     {
         $id = $request->input('id');
         $data = Blog::find($id);
+        $Pembuat_materi = TeacherModel::find($data->guru_id)->nama_lengkap;
         return view('pages.sel_materi', [
             'data' => $data,
+            'Pembuat_materi' => $Pembuat_materi,
         ]);
     }
     public function kirimPesan(Request $request)
     {
         $data_validated = $request->validate([
-            'isi' => '',
-            'pengirim' => '',
+            'isi' => 'required',
+            'pengirim' => 'required',
         ]);
 
         Message::create($data_validated);
