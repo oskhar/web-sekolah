@@ -20,7 +20,10 @@
                         <b>Tata Usaha</b> <span class="float-right">+62 813-8638-0481</span>
                         </li>
                         <li class="list-group-item">
-                        <b>Penanggung Jawab IT</b> <span class="float-right">+62 895-3436-94488</span>
+                        <b>Penanggung Jawab IT 1</b> <span class="float-right">+62 895-3436-94488</span>
+                        </li>
+                        <li class="list-group-item">
+                        <b>Penanggung Jawab IT 2</b> <span class="float-right">+62 813-8638-0481</span>
                         </li>
                     </ul>
                     <!-- /.card-body -->
@@ -28,7 +31,7 @@
                     <div class="container-jam-kerja mt-3 col-sm-12 text-center">
                         <h4 class="text-muted">
                           <i class="far fa-clock text-muted"></i> 
-                          <span class="transparan">JAM KERJA</span> 10.00 - 20.00
+                          <span class="transparan">JAM KERJA</span> 7.30 - 12.00
                         </h4>
                       </div>
                 </div>

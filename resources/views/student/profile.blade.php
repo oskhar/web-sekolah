@@ -1,8 +1,24 @@
 @extends('components.template_student')
 
-@section('title', "Dashboard")
+@section('title', "Profile")
 @section('mainContainer')
 <link rel="stylesheet" href="{{ asset('css/teacher/profile.css') }}">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1>Profile</h1>
+        </div>
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active">Dashboard</li>
+            <li class="breadcrumb-item active">Profile</li>
+            </ol>
+        </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
 
 <!-- Main content -->
 <section class="content">
@@ -23,7 +39,7 @@
                     <h3 class="font-weight-light">{{ Auth::user()->nama_lengkap ?? 'Kosong...' }}</h3>
                 </div>
                 <div class="col-sm-12 d-flex justify-content-center">
-                    <h5 class="text-muted">{{ Auth::user()->jabatan ?? 'Kosong...' }}</h5>
+                    <h5 class="text-muted">{{ Auth::user()->token ?? 'Kosong...' }}</h5>
                 </div>
             </div>
             </div>
@@ -31,26 +47,29 @@
             <!-- Detail Profile -->
             <div class="card">
                 <div class="card-body">
-                  <button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Edit Informasi</button>
+                  <a href="{{ route('teacher.edit-profile') }}" class="btn btn-primary">
+                    <i class="fas fa-pencil-alt"></i>
+                    Edit Informasi
+                  </a>
+                  <a href="{{ route('teacher.change-password') }}" class="btn btn-success ml-2">
+                    <i class="fas fa-lock"></i>
+                    Ganti Password
+                  </a>
                 <h4 class="mb-4 mt-4">Informasi Pribadi</h4>
                 <div class="row">
                   <div class="col-md-6">
-                    <strong>Nama Panggilan</strong>
+                    <strong>Tanggal Lahir</strong>
                     <p>{{ Auth::user()->nama_panggilan ?? 'Kosong...' }}</p>
                     <hr>
                     <strong>Nomor Telepon</strong>
                     <p>{{ Auth::user()->nomor_telepon ?? 'Kosong...' }}</p>
-                    <hr>
-                    <strong>Pengalaman Mengajar</strong>
-                    <p>{{ Auth::user()->pengalaman_mengajar ?? 'Kosong...' }}</p>
                   </div>
                   <div class="col-md-6">
                     <strong>Email</strong>
                     <p>{{ Auth::user()->email ?? 'Kosong...' }}</p>
                     <hr>
-                    <strong>Gender</strong>
-                    {{-- <p>{{ ['Wanita', 'Pria'][Auth::user()->gender] }}</p> --}}
-                    <hr>
+                    <strong>Gedung</strong>
+                    <p>{{ ['Gedung 1 (gondrong)', 'Gedung 2 (sipon)'][Auth::user()->gedung] }}</p>
                   </div>
                 </div>
                 </div>
@@ -62,7 +81,7 @@
     <!-- Avatar Modal -->
     <div class="modal fade" id="avatarModal">
         <div class="modal-dialog">
-          <form class="modal-content" method="POST" action="{{ route('teacher.ubah_foto_profile') }}" enctype="multipart/form-data">
+          <form class="modal-content" method="POST" action="{{ route('student.ubah_foto_profile') }}" enctype="multipart/form-data">
             @csrf
             <div class="modal-header">
               <h4 class="modal-title">Pilih Avatar</h4>
@@ -121,9 +140,4 @@
     readURL(this);
   });
 </script>
-
-
-
-
-
 @endsection

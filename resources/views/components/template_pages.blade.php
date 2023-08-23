@@ -21,7 +21,7 @@
     
     <a href="{{url('/')}}" class="brand-link">
         <img src="{{ asset('assets/images/logo_paud.jpg') }}" alt="paud Logo" class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-bold text-dark">Paud/Tk KB Kasih Bunda </span>
+        <span class="brand-text font-weight-bold text-dark">Paud/TK KB Kasih Bunda </span>
       </a>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
