@@ -7,8 +7,9 @@
 <section class="content">
     <div class="container-fluid mt-5 pl-5">
         <!-- Teks yang ditampilkan paling atas -->
-        <div class="text-overlay">
+        <div class="text-overlay container-fluid text-center row justify-content-center">
             <h2>MATERI - MATERI</h2>
+            <p>Jelajahi halaman Materi kami untuk mengakses sumber belajar yang bermanfaat. Dapatkan akses mudah ke berbagai konten pembelajaran yang dirancang khusus untuk mendukung perkembangan anak-anak di PAUD Kasih Bunda Kenanga Bangsa.</p>
         </div>
         <div class="row row-cols-1 row-cols-md-2 g-4 mt-5">
             @foreach ($data_materi as $data)

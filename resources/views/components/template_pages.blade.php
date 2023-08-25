@@ -52,7 +52,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
                     <div class="pull-left">
-                        <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Profile</a>
+                        <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Admin</a>
                     </div>
                     <form method="POST" class="pull-right mt-2" action="{{ route('teacher.logout') }}">
                         @csrf
@@ -145,11 +145,12 @@
                         <p><i class="fas fa-globe"></i> Lokasi: Jalan Masjid Al Islah Blok Mandala Rt 001 Rw 03 No.79 Gondrong Cipondoh, RT.005/RW.002, Kenanga, </p>
                         <p><i class=""></i>Kec. Tangerang, Kota Tangerang, Banten 15146</p>
                         <p><i class="fas fa-phone"></i> Hubungi : +62895343694488</p>
+                        <p class="kebijakan-privasi text-yellow"><i class="fas fa-shield-alt"></i><a href="{{url('/kebijakan-privasi')}}" class="text-yellow"> Kebijakan Privasi</a></p>
                     </div>
                 </div>
                 <div class="row col-md-10 justify-content-between">
                     <!-- Copy right -->
-                    <p class="text-left float left">&copy; 2023 Perusahaan. All rights reserved.</p>
+                    <p class="text-left float-left">&copy; 2023 Perusahaan. All rights reserved.</p>
                     {{-- Bagian 4 Tombol Sosial Media --}}
                     
                     <div class="float-right justify-content-end">

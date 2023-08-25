@@ -47,3 +47,4 @@
     $.widget.bridge('uibutton', $.ui.button);
 </script>
 <script src="{{ asset('sweetalert/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('js/components/template_teacher.js') }}"></script>

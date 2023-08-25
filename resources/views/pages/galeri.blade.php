@@ -18,7 +18,7 @@
         <div class="col-lg-10">
             <h3>GALLERY</h3>
             <div class="teks-kp">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laudantium esse eos obcaecati nisi qui ipsum neque dolorem. Ea consectetur, sunt veritatis asperiores natus laboriosam quia doloribus. Cumque voluptatibus a at, aut sed libero deserunt quibusdam fugit numquam expedita minima beatae provident laudantium quaerat atque explicabo praesentium nesciunt iste hic?</p>
+                <p>Selamat datang di Galeri Kami! Jelajahi momen-momen istimewa yang tertangkap dalam gambar-gambar, membawa Anda lebih dekat dengan keceriaan dan kegiatan seru di PAUD kami</p>
             </div>
             {{-- Bagian Foto Gallery --}}
             <div class="daftar-prestasi mt-5">
@@ -33,5 +33,15 @@
         </div>
     </div>
 </section>
+
+<script>
+    function lihatGambar(image, judul) {
+        Swal.fire({
+            imageUrl: image,
+            html: judul,
+            imageAlt: 'Ini gambar',
+        })
+    }
+</script>
 
 @endsection

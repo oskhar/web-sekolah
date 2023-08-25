@@ -18,12 +18,12 @@
       <div class="container-fluid">
           <div class="row mb-2">
           <div class="col-sm-6">
-              <h1>Berita dan Acara</h1>
+              <h1>Kumpulan Murid</h1>
           </div>
           <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item active">Dashboard</li>
-              <li class="breadcrumb-item active">Berita dan Acara</li>
+              <li class="breadcrumb-item active">Murid</li>
               </ol>
           </div>
           </div>
@@ -35,9 +35,6 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
           <div class="card">
-              <div class="card-header">
-                  <h3 class="card-title my-2">Kumpulan Berita dan Acara</h3>
-              </div>
               <div class="card-body">
                   <div class="row">
                     <a href="{{ url('/teacher/write-murid') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">

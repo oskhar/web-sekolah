@@ -43,17 +43,18 @@
           <!-- Dropdown Menu -->
           <ul class="dropdown-menu dropdown-menu-right">
             <!-- User Image -->
-            <li class="user-header">
+            <li class="user-header" onclick="pindahHalaman('{{url('/teacher/profile')}}')">
               <img src="{{ asset('assets/'.Auth::user()->foto_profile) }}" class="img-circle" alt="User Image">
               <p>
                 <b class="">{{ Auth::user()->nama_panggilan }}</b>
                 <small class="text-gray">{{ Auth::user()->nama_lengkap }}</small>
               </p>
             </li>
+          
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="{{ url('/teacher/profile') }}" class="btn btn-default btn-flat">Profile</a>
+                <a href="{{ url('/teacher') }}" class="btn btn-default btn-flat">Admin</a>
               </div>
               <form method="POST" class="pull-right mt-2" action="{{ route('teacher.logout') }}">
                 @csrf
@@ -172,7 +173,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2022 - {{ date('Y')}} <a href="https://adminlte.io">Kasih Bunda Kenanga Bangsa</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.2.0

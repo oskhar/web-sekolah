@@ -7,8 +7,11 @@
 <section class="content">
 <div class="container-fluid mt-5">
     <!-- Teks yang ditampilkan paling atas -->
-    <div class="text-overlay">
+    <div class="text-overlay container-fluid text-center row justify-content-center">
         <h2>BERITA & ACARA PAUD</h2>
+        <div class="text-judul col-lg-10">
+            <p>Temukan berita terbaru dan acara menarik di halaman Berita dan Acara kami. Tetap up-to-date dengan informasi terkini tentang kegiatan dan perkembangan di PAUD Kasih Bunda Kenanga Bangsa.</p>
+        </div>
     </div>
 
     {{--  Bagian Berita Dan Acara  --}}

@@ -75,6 +75,7 @@
             </div>
             <!-- inline input -->
             <div class="row">
+              {{-- start input tanggal acara --}}
               <div class="col-sm-6">
                   <div class="form-group">
                       <label class="col-form-label">Tanggal Acara dimulai:</label>
@@ -83,6 +84,9 @@
                       </div>
                   </div>
               </div>
+              {{-- end input tanggal acara --}}
+
+              {{-- start input durasi --}}
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label class="col-form-label" for="tempat_lahir">Durasi Acara (hari):</label>

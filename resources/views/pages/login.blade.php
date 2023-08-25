@@ -15,7 +15,7 @@
     <div class="container text-center mt-5">
         <h3>Login sebagai :</h3>
         <div class="image-container">
-            <a href="{{ route('login.murid') }}"><img src="/assets/images/imgLogin/img-murid.png" class="img" alt="..." ></a>
+            <a href="{{ route('login.murid') }}"><img src="/assets/images/imgLogin/img-murid.jpg" class="img" alt="..." ></a>
             <p>Murid</p>
         </div>
         <div class="image-container">
