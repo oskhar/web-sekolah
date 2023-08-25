@@ -21,13 +21,11 @@ class Teacher extends Controller
     public function index()
     {
         //
-        $banyak_pekerjaan_rumah = HomeWork::count();
         $banyak_berita = Event::count();
 
         $data_berita = Event::all();
 
         return view('teacher.dashboard', [
-            'banyak_pekerjaan_rumah' => $banyak_pekerjaan_rumah,
             'banyak_berita' => $banyak_berita,
             'data_berita' => $data_berita,
         ]);
@@ -184,16 +182,18 @@ class Teacher extends Controller
     {
         //
         $data_validated = $request->validate([
-            'token' => 'required|unique:students',
-            'password' => 'required',
-            'nama_lengkap' => 'required',
-            'gedung' => '',
-            'email' => '',
+            'tanggal_dikumpulkan' => 'required',
+            'gedung' => 'required',
+            'deskripsi' => '',
+            'gambar' => 'mimes:jpeg,jpg,png',
         ]);
+        // Simpan file yang diupload ke direktori 'public/assets/upload'
+        if (!empty($data_validated['gambar'])) {
+            $path = $request->file('gambar')->store('upload', 'public_uploads');
 
-        $data_validated['foto_profile'] = 'avatar/';
-        $data_validated['password'] = Hash::make($data_validated['password']);
-        StudentModel::create($data_validated);
+            $data_validated['gambar'] = $path;
+        }
+        HomeWork::create($data_validated);
 
         // Simpan pesan flash ke session.
         $request->session()->flash('success_message', 'Murid berhasil ditambahkan.');

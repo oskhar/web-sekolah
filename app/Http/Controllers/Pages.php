@@ -16,7 +16,10 @@ class Pages extends Controller
      */
     public function home()
     {
-        return view('pages.home');
+        $data_materi = Blog::all();
+        return view('pages.home', [
+            'data_materi' => $data_materi,
+        ]);
     }
 
     /**

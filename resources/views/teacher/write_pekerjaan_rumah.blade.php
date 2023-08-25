@@ -1,17 +1,17 @@
 @extends('components.template_teacher')
 
-@section('title', "Berita & Event")
+@section('title', "Tambah PR")
 @section('mainContainer')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Berita & Event</h1>
+            <h1>Tambah PR</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active">Berita & Event</li>
+                <li class="breadcrumb-item active">Tambah PR</li>
             </ol>
         </div>
         </div>
@@ -21,10 +21,10 @@
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-    <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST" action="{{ route('teacher.write-berita') }}">
+    <form class="card card-primary card-outline" enctype="multipart/form-data" method="POST" action="{{ route('teacher.write-pekerjaan-rumah') }}">
       @csrf
       <div class="card-header">
-        <h3 class="card-title">Daftar Berita dan Event</h3>
+        <h3 class="card-title text-muted">Menambahkan PR pada TK kasih bunda harapan bangsa</h3>
       </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -54,16 +54,7 @@
             </div>
             <!-- End Input Gambar Profile Guru -->
             <div class="form-group">
-              <label for="judul">Judul Berita:</label>
-              <input class="form-control @error('judul') is-invalid @enderror" placeholder="Judul..." name="judul" value="{{ old('judul') }}">
-              @error('judul')
-                  <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                  </span>
-              @enderror
-            </div>
-            <div class="form-group">
-              <label for="judul">Text Penjelasan Berita:</label>
+              <label for="judul">Deskripsi:</label>
                 <textarea id="compose-textarea" class="form-control @error('isi') is-invalid @enderror" style="height: 300px" name="isi" placeholder="tesdoang">
                   {{ old('isi') }}
                 </textarea>
@@ -76,19 +67,32 @@
             <!-- inline input -->
             <div class="row">
               <div class="col-sm-6">
-                  <div class="form-group">
-                      <label class="col-form-label">Tanggal Acara dimulai:</label>
-                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                          <input type="date" class="form-control" id="tanggal_acara" name="tanggal_acara">
-                      </div>
-                  </div>
-              </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class="col-form-label" for="tempat_lahir">Durasi Acara (hari):</label>
-                        <input type="number" class="form-control" id="durasi_hari" name="durasi_hari" placeholder="Enter ...">
+                <!-- radio -->
+                <div class="form-group">
+                    <h5>Gedung</h5>
+                    <div class="form-check">
+                        <input value="0" class="form-check-input" type="radio" name="gedung" id="gedung" checked>
+                        <label class="form-check-label">Gedung 1 (gondrong)</label>
+                    </div>
+                    <div class="form-check">
+                        <input value="1" class="form-check-input" type="radio" name="gedung" id="gedung">
+                        <label class="form-check-label">Gedung 1 (sipon)</label>
                     </div>
                 </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                      <label class="col-form-label">Tanggal dikumpulkan:</label>
+                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                          <input type="date" class="form-control @error('tanggal_dikumpulkan') is-invalid @enderror" id="tanggal_dikumpulkan" name="tanggal_dikumpulkan">
+                      </div>
+                      @error('tanggal_dikumpulkan')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+              </div>
             </div>
           </div>
         <!-- /.card-body -->
