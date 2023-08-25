@@ -3,7 +3,10 @@
 @section('title', "Halaman Tentang")
 @section('mainContainer')
 
+{{-- Link Css --}}
 <link rel="stylesheet" href="{{ asset('css/pages/tentang.css')}} ">
+
+{{-- MAIN --}}
 
   {{-- Bagian Kurikulum --}}
   <!-- Card -->

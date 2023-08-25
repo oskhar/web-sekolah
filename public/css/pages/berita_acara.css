@@ -1,4 +1,4 @@
-/* Bagian container */
+/* Bagian Judul - style berita & acara */
 .text-overlay h2 {
     color: #355389;
     font-family: sans-serif;
@@ -6,6 +6,7 @@
     text-align: center;
 }
 
+/* gambar card berita & acara */
 img {
     max-height: 20rem;
 }

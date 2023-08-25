@@ -3,11 +3,15 @@
 @section('title', "Halaman Contact")
 @section('mainContainer')
 
+{{-- Link Css --}}
 <link rel="stylesheet" href="{{ asset('css/pages/contact.css')}} ">
 
-{{-- Bagian List contact --}}
+{{-- MAIN --}}
+  
         <section class="content">
             <div class="container-fluid">
+
+              {{-- Bagian List contact --}}
                 <div class="text-center mt-5 text-darkblue">
                     <h1>PERSON CONTACT</h1>
                 </div>
@@ -72,6 +76,7 @@
     </div>
   </div>
 
+  {{-- Google Maps - lokasi paud --}}
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5419754841055!2d106.69103507449742!3d-6.191983993795659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9ba18d52e67%3A0xc9b61e36f2e71de2!2sPAUD%20Kasih%20Bunda%20Kenanga%20Bangsa!5e0!3m2!1sid!2sid!4v1690357146240!5m2!1sid!2sid" height="450" style="border:0; width: 100vw;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 

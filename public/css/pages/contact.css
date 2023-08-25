@@ -1,40 +1,24 @@
 /* Bagian List Contact */
-    .text-darkblue {
-        color: #355389;        
-    }
-
+.text-darkblue {
+    color: #355389;
+}
 
 /* Bagian Ajukan Kurikulum */
-    .container-ajukan{
-        background-color: #C2D8F2;
-    }
+.container-ajukan {
+    background-color: #c2d8f2;
+}
 
-    .card-ajukan .card-body-ajukan{
-        margin: 30px;
-    }
+.card-ajukan .card-body-ajukan {
+    margin: 30px;
+}
 
-    .form-group-ajukan label{
-        font-family: sans-serif;
-        font-weight: bold;
-        font-size: 20px;
-    }
+.form-group-ajukan label {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
 
-    .form-group-ajukan p{
-        font-family: sans-serif;
-        font-size: 15px;
-    }
-
-
-/* Bagian Kebijakan Privasi */
-    .container-kp{
-        width: 80%;
-        margin: 200px auto;
-        align-items: center;
-    }
-
-    .container-kp h1{
-        text-align: center;
-        font-family: sans-serif;
-        font-weight: bold;
-        color: #355389;
-    }
+.form-group-ajukan p {
+    font-family: sans-serif;
+    font-size: 15px;
+}

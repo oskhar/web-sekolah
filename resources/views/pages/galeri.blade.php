@@ -2,19 +2,16 @@
 
 @section('title', "Halaman Gallery")
 @section('mainContainer')
-<style>
-    #list-gambar {
-        height: 15rem;
-        width:100%;
-        object-fit:cover;
-    }
-</style>
+
+{{-- Link Css --}}
 <link rel="stylesheet" href="{{ asset('css/pages/gallery.css')}} ">
 
-{{-- Bagian Kebijakan Privasi--}}
 
+{{-- MAIN --}}
 <section class="content mt-5">
     <div class="container-fluid text-center row justify-content-center">
+
+        {{-- bagian gallery dan teks--}}
         <div class="col-lg-10">
             <h3>GALLERY</h3>
             <div class="teks-kp">
@@ -34,6 +31,7 @@
     </div>
 </section>
 
+{{-- Kontrol Js --}}
 <script>
     function lihatGambar(image, judul) {
         Swal.fire({

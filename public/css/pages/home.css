@@ -1,45 +1,42 @@
-    :root{
-        --putih : #F8F9FA;
+/* Kalimat Pembukaan */
+.jarak {
+    margin: 90px auto;
+}
 
-    }
+/* Bagian Svg LightBlue */
+#container-2 {
+    position: relative;
+    background-color: #c2d8f2;
+    margin-top: 200px;
+    height: 300px;
+}
+#container-2 svg {
+    position: relative;
+    margin-top: -20%;
+}
+#container-2 path {
+    fill: #c2d8f2;
+}
 
-    #container-2 {
-        position: relative;
-        background-color: #c2d8f2;
-        margin-top: 200px;
-        height: 300px;
-    }
-    #container-2 svg {
-        position: relative;
-        margin-top: -20%;
-    }
-    #container-2 path {
-        fill: #c2d8f2;
-    }
-
-    .display{
-        max-width: 1200px;
-        padding: 20px;
-        margin: 50px auto;
-    }
-
-    .jarak{
-        margin: 90px auto;
-    }
+/* Bagian Pengumuman */
+.display {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 50px auto;
+}
 
 /* Bagian 3 Kotak */
-    .data-sekolah{
-        position: relative;
-        top: -200px;
-        color: #355389;
-    }    
+.data-sekolah {
+    position: relative;
+    top: -200px;
+    color: #355389;
+}
 
-/* Bagian Prestasi */
-    .daftar-prestasi{
-        padding-top: 150px;
-        padding-bottom: 200px;
-    }
+.daftar-prestasi {
+    padding-top: 150px;
+    padding-bottom: 200px;
+}
 
-    .title-1{
-        line-height: 0.3rem;
-    }
+.title-1 {
+    line-height: 0.3rem;
+}

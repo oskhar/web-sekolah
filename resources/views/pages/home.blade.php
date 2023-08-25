@@ -2,12 +2,16 @@
 
 @section('title', "Halaman Utama")
 @section('mainContainer')
+
+{{-- Link Css --}}
+<link rel="stylesheet" href="{{ asset('css/pages/home.css')}} ">
     
-    {{-- Bagian Slide Home 1 --}}
-    {{-- Kalimat Pembukaan --}}
-    <link rel="stylesheet" href="{{ asset('css/pages/home.css')}} ">
+{{-- MAIN --}}
+
     <div class="display">
         <div id="container-1" class="row">
+
+            {{-- Kalimat Pembukaan --}}
             <div class="col-sm-7 jarak" >
                 <h2>SELAMAT DATANG DI PAUD</h2>
                 <h2>KASIH BUNDA KENANGA BANGSA</h2>
@@ -180,6 +184,7 @@
           </div>
           <!-- Tambahkan konten berikutnya sesuai kebutuhan -->
         </div>
+        
         <!-- Tombol Navigasi -->
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
