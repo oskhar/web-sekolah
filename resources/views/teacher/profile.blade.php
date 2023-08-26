@@ -17,7 +17,7 @@
             </ol>
         </div>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
 </section>
 
 <!-- Main content -->
@@ -56,6 +56,8 @@
                     Ganti Password
                   </a>
                 <h4 class="mb-4 mt-4">Informasi Pribadi</h4>
+
+                {{-- kolom input data profile --}}
                 <div class="row">
                   <div class="col-md-6">
                     <strong>Nama Panggilan</strong>
@@ -119,7 +121,7 @@
           </form>
         </div>
       </div>
-</section><!-- /.content -->
+</section>
 <script>
   function munculkanTombolUbahProfile () {
       let tombol = document.createElement('button');

@@ -2,8 +2,13 @@
 
 @section('title', "Dashboard")
 @section('mainContainer')
+
+{{-- Link Css --}}
+<link rel="stylesheet" href="plugins/fullcalendar/main.css">
+
+{{-- MAIN --}}
+
   <!-- fullCalendar -->
-  <link rel="stylesheet" href="plugins/fullcalendar/main.css">
   <!-- Content Header (Page header) -->
   <section class="content-header">
       <div class="container-fluid">
@@ -117,6 +122,8 @@
         </div>
       </div>
   </section>
+
+  
   <!-- fullCalendar 2.2.5 -->
   <script src="plugins/moment/moment.min.js"></script>
   <script src="plugins/fullcalendar/main.js"></script>
@@ -181,6 +188,8 @@
         }
       });
   </script>
+
+  {{-- Link Js --}}
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard-teacher.js"></script>
 @endsection
