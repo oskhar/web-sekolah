@@ -21,12 +21,12 @@
           <div class="text-center">
               <h2>Sejarah Paud Kasih Bunda Kenanga Bangsa</h2>
           </div>
-          {{-- tekx --}}
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis doloremque aliquam at sunt odit vel ipsam eum blanditiis, ipsa aliquid quas eaque nostrum soluta, laboriosam, architecto fuga delectus ad. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maximead. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maxime</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis doloremque aliquam at sunt odit vel ipsam eum blanditiis, ipsa aliquid quas eaque nostrum soluta, laboriosam, architecto fuga delectus ad. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maximead. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maxime</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis doloremque aliquam at sunt odit vel ipsam eum blanditiis, ipsa aliquid quas eaque nostrum soluta, laboriosam, architecto fuga delectus ad. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maximead. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maxime</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis doloremque aliquam at sunt odit vel ipsam eum blanditiis, ipsa aliquid quas eaque nostrum soluta, laboriosam, architecto fuga delectus ad. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maximead. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maxime</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis doloremque aliquam at sunt odit vel ipsam eum blanditiis, ipsa aliquid quas eaque nostrum soluta, laboriosam, architecto fuga delectus ad. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maximead. Adipisci, assumenda hic ex recusandae sapiente nihil, illum nostrum eaque consequatur dolor molestias! Voluptatem enim ducimus cumque quas nisi maxime</p>
+          {{-- informasi tidak ada berita --}}
+          <div class="mt-5">
+            <div class="info-box mb-3 bg-white row justify-content-center py-4">
+                <h5 class="text-center text-muted">Sedang Tahap Perkembangan!</h5>
+            </div>
+        </div>
       </div>
       
       {{-- 3 Kotak --}}

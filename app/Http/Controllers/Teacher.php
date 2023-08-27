@@ -97,6 +97,17 @@ class Teacher extends Controller
             'data_materi' => $data_materi,
         ]);
     }
+
+    public function editMateri(Request $request)
+    {
+        //
+        $id = $request->input('id');
+        $data = Blog::find($id);
+        return view('teacher.edit-materi', [
+            'data' => $data,
+        ]);
+    }
+
     public function writeMateri()
     {
         //

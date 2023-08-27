@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\StudentModel;
+use App\Models\HomeWork;
 use App\Models\TeacherModel;
-use Illuminate\Support\Facades\DB;
+use App\Models\StudentModel;
+use App\Models\ImageModel;
+use App\Models\Blog;
+use App\Models\Message;
+use App\Models\Event;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Image;
+use Carbon\Carbon;
+use Illuminate\Validation\Rule;
 
 class Admin extends Controller
 {
@@ -21,6 +28,15 @@ class Admin extends Controller
 
         return view('admin.dashboard', [
             'data_guru' => $data_guru,
+        ]);
+    }
+
+    public function materi()
+    {
+        //
+        $data_materi = Blog::all();
+        return view('admin.materi', [
+            'data_materi' => $data_materi,
         ]);
     }
 
@@ -39,7 +55,7 @@ class Admin extends Controller
             'nama_panggilan' => '',
             'nomor_telepon' => '',
             'email' => 'required|unique:teachers',
-            'password' => 'required',
+            'password' => 'required|min:6',
             'pengalaman_mengajar' => '',
             'jabatan' => '',
             'gender' => '',

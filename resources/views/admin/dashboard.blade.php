@@ -155,6 +155,9 @@
                                     </div>
                                     <input type="text" class="form-control @error('password') is-invalid @enderror" placeholder="Password..." id="password" name="password">
                                 </div>
+                                @error('password')
+                                    <sup>{{$message}}</sup>
+                                    @enderror
                             </div>
                         </div>
                     </div>

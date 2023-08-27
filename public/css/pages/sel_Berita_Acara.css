@@ -1,32 +1,32 @@
 /* Bagian container */
-.container-fluid{
+.container-fluid {
     width: 930px;
 }
 
-.text-overlay{
+.text-overlay {
     color: #355389;
     font-size: 25px;
     font-weight: bold;
     font-family: sans-serif;
 }
 
-.container-fluid img{
+.container-fluid img {
     margin-bottom: 50px;
-    object-fit:cover;
+    object-fit: cover;
 }
 
-.container-fluid hr{
+.container-fluid hr {
     margin: 1px;
     width: 900px;
 }
 
 /* Bagian Visi Misi */
-.visi_misi{
+.visi_misi {
     margin-top: 100px;
     margin-bottom: 200px;
 }
 
-.sejarah h2{
+.sejarah h2 {
     color: #355389;
     font-weight: bold;
     font-family: sans-serif;
