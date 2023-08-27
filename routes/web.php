@@ -67,21 +67,24 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher/', [Teacher::class, 'index'])->name('teacher');
 
     // Kelola materi
-    Route::get('/teacher/materi', [Teacher::class, 'materi']);
+    Route::get('/teacher/materi', [Teacher::class, 'materi'])->name('teacher.materi');
     Route::get('/teacher/write-materi', [Teacher::class, 'writeMateri'])->name('teacher.write-materi');
     Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
+    Route::post('/teacher/delete-materi', [Teacher::class, 'deleteMateri'])->name('teacher.delete-materi');
 
     // Kelola berita
     Route::get('/teacher/berita', [Teacher::class, 'berita'])->name('teacher.berita');
     Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
     Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
     Route::post('/teacher/delete-berita', [Teacher::class, 'deleteBerita'])->name('teacher.delete-berita');
+    Route::get('/teacher/edit-berita', [Teacher::class, 'editBerita'])->name('teacher.edit-berita');
 
     // Kelola murid
     Route::get('/teacher/murid', [Teacher::class, 'murid'])->name('teacher.murid');
     Route::get('/teacher/write-murid', [Teacher::class, 'writeMurid'])->name('teacher.write-murid');
     Route::post('/teacher/write-murid', [Teacher::class, 'createMurid']);
     Route::post('/teacher/delete-murid', [Teacher::class, 'deleteMurid'])->name('teacher.delete-murid');
+    Route::get('/teacher/edit-murid', [Teacher::class, 'editMurid'])->name('teacher.edit-murid');
 
     // Kelola pekerjaan rumah
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah'])->name('teacher.pekerjaan-rumah');
