@@ -110,13 +110,6 @@
             <!-- Konten Pertama -->
             <div class="row align-items-center justify-content-center">
                 @foreach ($data_materi as $data)
-
-                @if ($loop->iteration % 4 == 0)
-                        </div>
-                    </div>
-                    <div class="carousel-item bg-skyblue">
-                    <div class="row align-items-center justify-content-center">
-                @endif
                 <div class="col-sm-3 p-5">
                     <div class="card">
                         <div class="p-4 rounded" style="background: url({{ asset('assets/'.$data->gambar) }});height: 10rem;">
@@ -135,6 +128,13 @@
                       <!-- Isi Konten Pertama -->
                     </div>
                   </div>
+
+                  @if ($loop->iteration % 3 == 0)
+                          </div>
+                      </div>
+                      <div class="carousel-item bg-skyblue">
+                      <div class="row align-items-center justify-content-center">
+                  @endif
                   @endforeach
             </div>
           </div>

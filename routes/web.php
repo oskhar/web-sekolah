@@ -70,7 +70,8 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher/materi', [Teacher::class, 'materi']);
     Route::get('/teacher/write-materi', [Teacher::class, 'writeMateri'])->name('teacher.write-materi');
     Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
-
+    Route::get('/teacher/edit-materi/', [Teacher::class, 'editMateri'])->name('teacher.edit-materi');
+    
     // Kelola berita
     Route::get('/teacher/berita', [Teacher::class, 'berita'])->name('teacher.berita');
     Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
@@ -118,6 +119,10 @@ Route::get('/admin/murid', [Admin::class, 'murid'])->name('admin.murid');
 Route::get('/admin/write-murid', [Admin::class, 'writeMurid'])->name('admin.write-murid');
 Route::post('/admin/write-murid', [Admin::class, 'createMurid']);
 Route::post('/admin/delete-murid', [Admin::class, 'deleteMurid'])->name('admin.delete-murid');
+
+// Kelola materi
+Route::get('/admin/write-materi', [Admin::class, 'writeMateri'])->name('admin.write-materi');
+Route::get('/admin/materi', [Admin::class, 'materi']);
 
 // Testing purpose
 Route::get('/testing/', function () {

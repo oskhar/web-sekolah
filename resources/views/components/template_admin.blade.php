@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/admin/materi/') }}" class="nav-link @if(request()->is('teacher/materi')) active @endif">
+            <a href="{{ url('/admin/materi') }}" class="nav-link @if(request()->is('teacher/materi')) active @endif">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Blog Materi
