@@ -34,6 +34,7 @@
                   <div class="form-group">
                       <label class="col-form-label" for="nama_lengkap">Nama Lengkap:</label>
                       <input type="text" class="form-control @error('nama_lengkap') is-invalid @enderror" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap..." value="{{ old('nama_lengkap') }}">
+                      <sup class="text-danger">* Wajib diisi</sup>
                       @error('nama_lengkap')
                           <div class="invalid-feedback">{{ $message }}</div>
                       @enderror
@@ -52,6 +53,7 @@
                                   </div>
                                   <input type="text" class="form-control @error('token') is-invalid @enderror" placeholder="Token..." id="token" name="token" value="{{ old('token') }}" @error('token') title="{{ $message }}" @enderror>
                               </div>
+                              <sup class="text-danger">* Wajib diisi</sup>
                           </div>
                       </div>
                       <div class="col-sm-6">
@@ -66,6 +68,7 @@
                                   </div>
                                   <input type="text" class="form-control @error('password') is-invalid @enderror" placeholder="Password..." id="password" name="password" value="{{ old('password') }}">
                               </div>
+                              <sup class="text-danger">* Wajib diisi</sup>
                           </div>
                       </div>
                       <div class="col-sm-6">

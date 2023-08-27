@@ -16,7 +16,7 @@
             </ol>
         </div>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
 </section>
 
 <!-- Main content -->
@@ -32,6 +32,7 @@
                     </div>
                 </div>
             </div>
+            {{-- fungsi pesan --}}
             @if ($banyak_pesan_terbaru > 0)
                 @foreach ($pesan_terbaru as $data)
                 <div class="col-md-6">
@@ -46,12 +47,14 @@
                 </div>
                 @endforeach
             @else
+            {{-- pengecualian pesan terbaru --}}
             <div class="col-md-12">
                 <div class="info-box mb-3 bg-white row justify-content-center py-4">
                     <h5 class="text-center text-muted">Tidak ada pesan baru !</h5>
                 </div>
             </div>
             @endif
+            {{-- pesan lama --}}
             <div class="col-md-12">
                 <div class="info-box mb-3 bg-success">
                     <span class="info-box-icon"><i class="fas fa-check"></i></span>
@@ -61,6 +64,7 @@
                 </div>
             </div>
         </div>
+        {{-- fungsi pesan lama --}}
         @if ($banyak_pesan_lama > 0)
             @foreach ($pesan_lama as $data)
             <div class="col-md-6">
@@ -74,6 +78,7 @@
             </div>
             @endforeach
         @else
+        {{-- pengecualian pesan lama --}}
             <div class="col-md-12">
                 <div class="info-box mb-3 bg-white row justify-content-center py-4">
                     <h5 class="text-center text-muted">Tidak ada pesan !</h5>

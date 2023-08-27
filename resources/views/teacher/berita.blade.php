@@ -38,12 +38,14 @@
             <div class="card-header">
                 <h3 class="card-title my-2">Kumpulan Berita dan Acara</h3>
             </div>
+            {{-- Tambah berita & acara --}}
             <div class="card-body">
                 <div class="row">
                   <a href="{{ url('/teacher/write-berita') }}" class="btn border-primary text-primary btn-sm col-sm-2 p-2 ml-2" onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')">
                     Tambah Berita atau Acara
                   </a>
                 </div>
+                {{-- isi berita dan acara --}}
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -56,6 +58,7 @@
                             <td>Action</td>
                         </tr>
                     </thead>
+                    {{-- fungsi pada berita dan acara --}}
                     <tbody>
                       @foreach ($data_berita as $data)
                         <tr>
@@ -94,6 +97,8 @@
 <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+{{-- javaScript --}}
 <script>
     $(function () {
         $("#example1").DataTable({

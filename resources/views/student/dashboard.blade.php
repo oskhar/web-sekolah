@@ -3,64 +3,69 @@
 @section('title', "Dashboard")
 @section('mainContainer')
 
-  <!-- fullCalendar -->
-  <link rel="stylesheet" href="plugins/fullcalendar/main.css">
+<!-- fullCalendar -->
+<link rel="stylesheet" href="plugins/fullcalendar/main.css">
 
-<div class="container mt-4">
-  <div class="judul-tugas">
-    <h1 class="text-center text-primary">TUGAS - TUGAS</h1>
-  </div>
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <div class="card mb-4">
-          <h1><div class="card-header">Judul 1</div></h1>
-          <img src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus mollitia error unde quidem, veniam harum velit cum quisquam reprehenderit in reiciendis dolores quibusdam sint ut, vero fuga quas eos quae non deleniti repudiandae quis ea! Assumenda quod corrupti numquam odio consequatur sapiente vel nam ut? Consectetur autem dolorum cupiditate aperiam.</p>
-            <div class="alert alert-primary">Pengumpulan tugas sampai 12 juli 2023</div>
+{{-- MAIN --}}
+
+  {{-- kumpulan card tugas - tugas --}}
+  <div class="container mt-4">
+    {{-- judul --}}
+    <div class="judul-tugas">
+      <h1 class="text-center text-primary">TUGAS - TUGAS</h1>
+    </div>
+    {{-- card --}}
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <h1><div class="card-header">Judul 1</div></h1>
+            <img src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+            <div class="card-body">
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus mollitia error unde quidem, veniam harum velit cum quisquam reprehenderit in reiciendis dolores quibusdam sint ut, vero fuga quas eos quae non deleniti repudiandae quis ea! Assumenda quod corrupti numquam odio consequatur sapiente vel nam ut? Consectetur autem dolorum cupiditate aperiam.</p>
+              <div class="alert alert-primary">Pengumpulan tugas sampai 12 juli 2023</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <h1><div class="card-header">Judul 3</div></h1>
+            <img src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+            <div class="card-body">
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus mollitia error unde quidem, veniam harum velit cum quisquam reprehenderit in reiciendis dolores quibusdam sint ut, vero fuga quas eos quae non deleniti repudiandae quis ea! Assumenda quod corrupti numquam odio consequatur sapiente vel nam ut? Consectetur autem dolorum cupiditate aperiam.</p>
+              <div class="alert alert-primary">Pengumpulan tugas sampai 12 juli 2023</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card mb-4">
-          <h1><div class="card-header">Judul 3</div></h1>
-          <img src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus mollitia error unde quidem, veniam harum velit cum quisquam reprehenderit in reiciendis dolores quibusdam sint ut, vero fuga quas eos quae non deleniti repudiandae quis ea! Assumenda quod corrupti numquam odio consequatur sapiente vel nam ut? Consectetur autem dolorum cupiditate aperiam.</p>
-            <div class="alert alert-primary">Pengumpulan tugas sampai 12 juli 2023</div>
-          </div>
-        </div>
-      </div>
+    
+      <!-- Pagination -->
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mt-4">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  
-    <!-- Pagination -->
-    <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center mt-4">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-        </li>
-        <li class="page-item active" aria-current="page">
-          <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
 
-  {{-- Kalender --}}
-  <section class="connectedSortable" style="margin-top: 150px;>
-    <div class="card card-primary">
-      <div class="card-body p-0">
-        <!-- THE CALENDAR -->
-        <div id="calendar"></div>
+    {{-- Kalender --}}
+    <section class="connectedSortable" style="margin-top: 150px;>
+      <div class="card card-primary">
+        <div class="card-body p-0">
+          <!-- THE CALENDAR -->
+          <div id="calendar"></div>
+        </div>
+        <!-- /.card-body -->
       </div>
-      <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
-  </section>
+      <!-- /.card -->
+    </section>
   
   <!-- fullCalendar 2.2.5 -->
   <script src="plugins/moment/moment.min.js"></script>

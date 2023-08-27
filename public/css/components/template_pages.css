@@ -1,92 +1,99 @@
-:root{
-  --warning : #F1BC31;
+:root {
+    --warning: #f1bc31;
 }
 
-body{
-  overflow-x: hidden;
+body {
+    overflow-x: hidden;
 }
 
 /* Bagian Header */
 .header {
-  background-color: #f8f9fa;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
 }
-
 
 /* Bagian Navbar */
-.navbar{
-  background-color: #202040;
-  font-family: sans-serif;
+.navbar {
+    background-color: #202040;
+    font-family: sans-serif;
 }
 
-.active{
-  background-color: var(--warning);
+.active {
+    background-color: var(--warning);
 }
 
-main{
+main {
 }
 
 /* Bagian Footer */
 .footer {
-  background-color: #202040;
-  color: #fff;
+    background-color: #202040;
+    color: #fff;
 }
 
 .footer-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .footer-info {
-  text-align: center;
-  margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .footer-info p {
-  margin: 0;
+    margin: 0;
 }
 
 .bg-skyblue {
-  background: #c2d8f2;
+    background: #c2d8f2;
+}
+
+.kebijakan-privasi a {
+    color: white;
+}
+
+.kebijakan-privasi a:hover {
+    color: white;
 }
 
 body .text-darkblue {
-  color: #355389;
+    color: #355389;
 }
 
 .fab {
-  color: white;
-  cursor: pointer;
+    color: white;
+    cursor: pointer;
 }
 
 .fab:hover {
-  color: yellow;
+    color: yellow;
 }
 
 .social-icons {
-  display: flex;
+    display: flex;
 }
 
 .social-icons .btn {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-left: 5px;
-  color: #fff;
-  font-size: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+    color: #fff;
+    font-size: 14px;
 }
 
-.social-icons .btn fab:hover{
-  background-color: var(--warning);
+.social-icons .btn fab:hover {
+    background-color: var(--warning);
 }

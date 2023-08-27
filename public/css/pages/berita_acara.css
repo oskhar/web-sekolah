@@ -1,10 +1,12 @@
-/* Bagian container */
-    .text-overlay h2{
-        color: #355389;
-        font-family: sans-serif;
-        font-weight: bold;
-        text-align: center;
-    }
-    img {
-        max-height: 20rem;
-    }
+/* Bagian Judul - style berita & acara */
+.text-overlay h2 {
+    color: #355389;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* gambar card berita & acara */
+img {
+    max-height: 20rem;
+}

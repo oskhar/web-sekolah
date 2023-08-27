@@ -2,6 +2,8 @@
 
 @section('title', "Pekerjaan Rumah")
 @section('mainContainer')
+
+{{-- CSS --}}
 <style>
   .dataTables_filter {
     float: right;
@@ -11,30 +13,21 @@
   }
 </style>
 
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-        <div class="col-sm-6">
-            <h1>Pekerjaan Rumah</h1>
-        </div>
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active">Dashboard</li>
-            <li class="breadcrumb-item active">Pekerjaan Rumah</li>
-            </ol>
-        </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</section>
+{{-- MAIN --}}
 
-<!-- Main content -->
-<section class="content">
-    <div class="container-fluid">
-      <!-- Small boxes (Stat box) -->
-        <div class="card">
-            <div class="card-header">
-            <h3 class="card-title my-2">Pekerjaan Rumah (PR)</h3>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Pekerjaan Rumah</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item active">Dashboard</li>
+                <li class="breadcrumb-item active">Pekerjaan Rumah</li>
+                </ol>
+            </div>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -73,8 +66,8 @@
                 </table>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
 <!-- DataTables  & Plugins -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -85,6 +78,8 @@
 <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+{{-- JS --}}
 <script>
     $(function () {
         $("#example1").DataTable({

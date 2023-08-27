@@ -58,6 +58,7 @@ Route::group(['middleware' => 'auth:student'], function () {
     Route::get('/student/', [Student::class, 'index'])->name('student');
     Route::get('/student/profile', [Student::class, 'profile'])->name('profile');
     Route::get('/student/pesan', [Student::class, 'pesan'])->name('pesan');
+    Route::post('/student/ubah-foto-profile', [Student::class, 'ubahFotoProfile'])->name('student.ubah_foto_profile');
 });
 
 // Teacher views

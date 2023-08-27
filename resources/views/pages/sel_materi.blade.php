@@ -3,7 +3,9 @@
 @section('title', "Halaman Berita & Acara")
 @section('mainContainer')
 
+{{-- Link Css --}}
 <link rel="stylesheet" href="{{ asset('css/pages/sel_Berita_Acara.css')}} ">
+
 
 <div class="container-fluid mt-5">
     <div class="text-overlay text-center"><h1><b>{{ $data->judul }}</b></h1></div>
@@ -21,11 +23,6 @@
                 <p class="text-muted text-right">By {{ $data->nama_lengkap }}</p>
             </div>
         </div>
+
     </div>
-
-</div>
-
-
-
-
 @endsection
