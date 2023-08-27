@@ -109,77 +109,33 @@
           <div class="carousel-item active bg-skyblue">
             <!-- Konten Pertama -->
             <div class="row align-items-center justify-content-center">
-              <div class="col-sm-3 p-5">
-                <div class="card">
-                    <div class="p-4 bg-green text-darkblue rounded">
-                        <h2>Ini Judul</h2>
+                @foreach ($data_materi as $data)
+
+                @if ($loop->iteration % 4 == 0)
+                        </div>
                     </div>
-                    <div class="p-4 bg-white">
-                        <p>Ini Isi Materi</p>
-                    </div>
-                  <!-- Isi Konten Pertama -->
-                </div>
-              </div>
-              <div class="col-sm-3 p-5">
-                <div class="card">
-                    <div class="p-4 bg-green rounded">
-                        <h2>Ini Judul</h2>
-                    </div>
-                    <div class="p-4 bg-white">
-                        <p>Ini Isi Materi</p>
-                    </div>
-                  <!-- Isi Konten Pertama -->
-                </div>
-              </div>
-              <div class="col-sm-3 p-5">
-                <div class="card">
-                    <div class="p-4 bg-green rounded">
-                        <h2>Ini Judul</h2>
-                    </div>
-                    <div class="p-4 bg-white">
-                        <p>Ini Isi Materi</p>
-                    </div>
-                  <!-- Isi Konten Pertama -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item bg-skyblue">
-            <!-- Konten Kedua -->
-            <div class="row align-items-center justify-content-center">
+                    <div class="carousel-item bg-skyblue">
+                    <div class="row align-items-center justify-content-center">
+                @endif
                 <div class="col-sm-3 p-5">
                     <div class="card">
-                        <div class="p-4 bg-green rounded">
-                            <h2>Ini Judul</h2>
+                        <div class="p-4 rounded" style="background: url({{ asset('assets/'.$data->gambar) }});height: 10rem;">
+                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 10rem; background-color: rgba(0, 0, 0, 0.5);z-index:0;"></div>
+                            <h2 class="text-white">{{ $data->judul }}</h2>
                         </div>
                         <div class="p-4 bg-white">
-                            <p>Ini Isi Materi</p>
+                            <p>
+                                {!! nl2br(substr($data->isi, 0, 3 * 10)) !!}
+                                
+                                @if (strlen($data->isi) > 3 * 20)
+                                    <span class="read-more">... <a href="{{ url('sel-materi?id='.$data->id) }}" class="toggle-text">Selengkapnya</a></span>
+                                @endif</p>
+                            </p>
                         </div>
                       <!-- Isi Konten Pertama -->
                     </div>
                   </div>
-                  <div class="col-sm-3 p-5">
-                    <div class="card">
-                        <div class="p-4 bg-green rounded">
-                            <h2>Ini Judul</h2>
-                        </div>
-                        <div class="p-4 bg-white">
-                            <p>Ini Isi Materi</p>
-                        </div>
-                      <!-- Isi Konten Pertama -->
-                    </div>
-                  </div>
-                  <div class="col-sm-3 p-5">
-                    <div class="card">
-                        <div class="p-4 bg-green rounded">
-                            <h2>Ini Judul</h2>
-                        </div>
-                        <div class="p-4 bg-white">
-                            <p>Ini Isi Materi</p>
-                        </div>
-                      <!-- Isi Konten Pertama -->
-                    </div>
-                  </div>
+                  @endforeach
             </div>
           </div>
           <!-- Tambahkan konten berikutnya sesuai kebutuhan -->

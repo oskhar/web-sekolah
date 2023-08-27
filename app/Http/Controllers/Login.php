@@ -98,6 +98,7 @@ class Login extends Controller
 
     /**
      * Display a listing of the resource.
+     * @param Request $request
      */
     public function verifikasiAdmin(Request $request)
     {
@@ -119,6 +120,7 @@ class Login extends Controller
 
     /**
      * Display a listing of the resource.
+     * @param Request $request
      */
     protected function authenticated(Request $request, $user)
     {

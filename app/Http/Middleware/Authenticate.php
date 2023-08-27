@@ -20,11 +20,11 @@ class Authenticate extends Middleware
             $url = $request->url();
             // Cek url yang dilindungi otentikasi
             if (Str::startsWith($url, url('/teacher'))) {
-                return route('login.guru');
+                return route('login');
             }
             // Cek url yang dilindungi otentikasi
             if (Str::startsWith($url, url('/student'))) {
-                return route('login.murid');
+                return route('login');
             }
         }
         return redirect()->route('home');

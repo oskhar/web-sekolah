@@ -15,15 +15,13 @@
         <img src="{{ asset('assets/'.$data->gambar)}}" alt="Gambar Gedung Sekolah" class="centered-image mt-5 mb-1" width="900" height="400">
         <p class="text-muted mt-0">{{ $data->created_at->format('Y-m-d') }}</p>
 
-        <hr>
 
-    {{-- Bagian Visi Misi --}}
-        <div class="visi_misi">
-            <div class="sejarah">
-                <div class="visi">
-                    {!! $data->isi !!}
-                    <p>By {{ $pembuat_materi }}</p>
-                </div>
+{{-- Bagian Visi Misi --}}
+    <div class="visi_misi">
+        <div class="sejarah">
+            <div class="visi">
+                {!! $data->isi !!}
+                <p class="text-muted text-right">By {{ $data->nama_lengkap }}</p>
             </div>
         </div>
 
