@@ -48,8 +48,8 @@ Route::get('/login/murid', [Login::class, 'murid'])->name('login.murid')->middle
 Route::post('/login/murid', [Login::class, 'verifikasiMurid'])->name('login.murid');
 
 // Route login admin
-Route::get('/login/admin', [Login::class, 'admin'])->name('login.admin');
-Route::post('/login/admin', [Login::class, 'verifikasiGuru'])->name('login.admin');
+Route::get('/login/admin', [Login::class, 'admin'])->name('login.admin')->middleware('guest:admin');
+Route::post('/login/admin', [Login::class, 'verifikasiAdmin'])->name('login.admin');
 
 // Student views
 // Teacher views
@@ -67,22 +67,25 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher/', [Teacher::class, 'index'])->name('teacher');
 
     // Kelola materi
-    Route::get('/teacher/materi', [Teacher::class, 'materi']);
+    Route::get('/teacher/materi', [Teacher::class, 'materi'])->name('teacher.materi');
     Route::get('/teacher/write-materi', [Teacher::class, 'writeMateri'])->name('teacher.write-materi');
     Route::post('/teacher/write-materi', [Teacher::class, 'createMateri']);
     Route::get('/teacher/edit-materi/', [Teacher::class, 'editMateri'])->name('teacher.edit-materi');
-    
+    Route::post('/teacher/delete-materi', [Teacher::class, 'deleteMateri'])->name('teacher.delete-materi');
+  
     // Kelola berita
     Route::get('/teacher/berita', [Teacher::class, 'berita'])->name('teacher.berita');
     Route::get('/teacher/write-berita', [Teacher::class, 'writeBerita'])->name('teacher.write-berita');
     Route::post('/teacher/write-berita', [Teacher::class, 'createBerita']);
     Route::post('/teacher/delete-berita', [Teacher::class, 'deleteBerita'])->name('teacher.delete-berita');
+    Route::get('/teacher/edit-berita', [Teacher::class, 'editBerita'])->name('teacher.edit-berita');
 
     // Kelola murid
     Route::get('/teacher/murid', [Teacher::class, 'murid'])->name('teacher.murid');
     Route::get('/teacher/write-murid', [Teacher::class, 'writeMurid'])->name('teacher.write-murid');
     Route::post('/teacher/write-murid', [Teacher::class, 'createMurid']);
     Route::post('/teacher/delete-murid', [Teacher::class, 'deleteMurid'])->name('teacher.delete-murid');
+    Route::get('/teacher/edit-murid', [Teacher::class, 'editMurid'])->name('teacher.edit-murid');
 
     // Kelola pekerjaan rumah
     Route::get('/teacher/pekerjaan-rumah', [Teacher::class, 'pekerjaanRumah'])->name('teacher.pekerjaan-rumah');
@@ -110,21 +113,23 @@ Route::group(['middleware' => 'auth:teacher'], function () {
 });
 
 // Admin views
-Route::get('/admin/', [Admin::class, 'index']);
-Route::post('/admin/', [Admin::class, 'createTeacher']);
-Route::post('/admin/teacher/delete', [Admin::class, 'deleteTeacher'])->name('delete.teacher');
+Route::group(['middleware' => 'auth:admin'], function () {
+    Route::get('/admin/', [Admin::class, 'index'])->name('admin');
+    Route::post('/admin/', [Admin::class, 'createTeacher']);
+    Route::post('/admin/teacher/delete', [Admin::class, 'deleteTeacher'])->name('delete.teacher');
 
-// Kelola murid
-Route::get('/admin/murid', [Admin::class, 'murid'])->name('admin.murid');
-Route::get('/admin/write-murid', [Admin::class, 'writeMurid'])->name('admin.write-murid');
-Route::post('/admin/write-murid', [Admin::class, 'createMurid']);
-Route::post('/admin/delete-murid', [Admin::class, 'deleteMurid'])->name('admin.delete-murid');
+    // Kelola murid
+    Route::get('/admin/murid', [Admin::class, 'murid'])->name('admin.murid');
+    Route::get('/admin/write-murid', [Admin::class, 'writeMurid'])->name('admin.write-murid');
+    Route::post('/admin/write-murid', [Admin::class, 'createMurid']);
+    Route::post('/admin/delete-murid', [Admin::class, 'deleteMurid'])->name('admin.delete-murid');
+  
+  // Kelola materi
+  Route::get('/admin/write-materi', [Admin::class, 'writeMateri'])->name('admin.write-materi');
+  Route::get('/admin/materi', [Admin::class, 'materi']);
+});
 
-// Kelola materi
-Route::get('/admin/write-materi', [Admin::class, 'writeMateri'])->name('admin.write-materi');
-Route::get('/admin/materi', [Admin::class, 'materi']);
-
-// Testing purpose
+// Unit testing
 Route::get('/testing/', function () {
     return view('test');
 });

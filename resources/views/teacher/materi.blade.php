@@ -15,6 +15,7 @@
 
 {{-- MAIN --}}
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Content Header (Page header) -->
   <section class="content-header">
       <div class="container-fluid">
@@ -70,7 +71,7 @@
                               <a onmouseover="this.classList.add('btn-primary');this.classList.remove('text-primary')" onmouseout="this.classList.remove('btn-primary');this.classList.add('text-primary')" href="{{ route('teacher.edit-materi') }}?id={{$data->id}}" class="btn border-primary text-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i>
                               </a>
-                              <a onmouseover="this.classList.add('btn-danger');this.classList.remove('text-danger')" onmouseout="this.classList.remove('btn-danger');this.classList.add('text-danger')" onclick="doSoftDelete('')" class="btn border-danger text-danger btn-sm">
+                              <a onmouseover="this.classList.add('btn-danger');this.classList.remove('text-danger')" onmouseout="this.classList.remove('btn-danger');this.classList.add('text-danger')" onclick="deleteData({{$data->id}}, '{{$data->judul}}')" class="btn border-danger text-danger btn-sm">
                                 <i class="fas fa-trash"></i>
                               </a>
                             </td>
@@ -105,6 +106,38 @@
               }
           }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
       })
+
+      function deleteData(id, judul_materi) {
+            Swal.fire({
+                title: 'Hapus materi '+ judul_materi +'?',
+                showConfirmButton: false,
+                showDenyButton: true,
+                showCancelButton: true,
+                denyButtonText: `Hapus`,
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isDenied) {
+                    let data = {id: id};
+                    $.ajax({
+                        url: '{{ route("teacher.delete-murid") }}',
+                        type: 'post',
+                        data: data,
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Ambil token CSRF dari meta tag
+                        },
+                        success: function(response) {
+                            window.location.href = '{{ route('teacher.murid') }}';
+                        }, error: function(xhr, status, error) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Data gagal dihapus: " + xhr.status + "\n" + xhr.responseText + "\n" + error,
+                            });
+                        }
+                    });
+                }
+            });
+        }
   </script>
 
 @endsection

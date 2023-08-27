@@ -39,6 +39,15 @@ class Teacher extends Controller
             'data_berita' => $data_berita,
         ]);
     }
+
+    public function editBerita(Request $request)
+    {
+        $id = $request->input('id');
+        $data = Event::find($id);
+        return view('teacher.edit-berita', [
+            'data' => $data,
+        ]);
+    }
     public function writeBerita()
     {
         //
@@ -124,12 +133,43 @@ class Teacher extends Controller
         return back()->with('success_message', 'File berhasil diupload.');
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function deleteMateri(Request $request)
+    {
+        $id = $request->input('id');
+        $data_materi = Blog::find($id);
+        if ($data_materi) {
+            $data_materi->delete();
+            // Menambahkan response json
+            $response = [
+                'success_message' => 'Data berhasil dihapus',
+            ];
+            return response()->json($response);
+        }
+
+        $response = [
+            'error_message' => 'Data gagal dihapus',
+        ];
+        return response()->json($response);
+    }
+
     public function murid()
     {
         //
         $data_murid = StudentModel::all();
         return view('teacher.murid', [
             'data_murid' => $data_murid,
+        ]);
+    }
+
+    public function editMurid(Request $request)
+    {
+        $id = $request->input('id');
+        $data = StudentModel::find($id);
+        return view('teacher.edit-murid', [
+            'data' => $data,
         ]);
     }
     public function writeMurid()
@@ -165,7 +205,7 @@ class Teacher extends Controller
     public function deleteMurid(Request $request)
     {
         $id = $request->input('id');
-        $data_teacher = StudentModel::find($id);
+        $data_teacher = Blog::find($id);
         if ($data_teacher) {
             $data_teacher->delete();
             // Menambahkan response json
@@ -347,6 +387,15 @@ class Teacher extends Controller
 
         // Pindahkan ke halaman lain.
         return redirect()->route('galeri');
+    }
+
+    public function galeriDelete()
+    {
+        //
+        $data_foto = ImageModel::all();
+        return view('teacher.galeri', [
+            'data_foto' => $data_foto,
+        ]);
     }
 
     public function pesan()

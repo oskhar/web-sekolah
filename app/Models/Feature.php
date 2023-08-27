@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class TeacherModel extends Authenticatable
+class Feature extends Model
 {
     use HasFactory;
-    protected $guard = 'teacher';
-    protected $table = 'teachers';
 
     /**
      * The attributes that are mass assignable.
@@ -26,15 +24,5 @@ class TeacherModel extends Authenticatable
         'email',
         'password',
         'gender',
-        'gedung',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 }

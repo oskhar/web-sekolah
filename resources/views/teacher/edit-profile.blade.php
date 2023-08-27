@@ -129,10 +129,10 @@
                                 <label>Pengalaman Mengajar</label>
                                 <select class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="pengalaman_mengajar" id="pengalaman_mengajar">
                                     <option value="Kurang dari 1 Tahun" selected="selected">Kurang dari 1 Tahun</option>
-                                    <option value="1 Tahun - 3 Tahun">1 Tahun - 3 Tahun</option>
-                                    <option value="3 Tahun - 5 Tahun">3 Tahun - 5 Tahun</option>
-                                    <option value="5 Tahun - 10 Tahun">5 Tahun - 10 Tahun</option>
-                                    <option value="Lebih dari 10 Tahun">Lebih dari 10 Tahun</option>
+                                    <option value="1 Tahun - 3 Tahun" @if (Auth::user()->pengalaman_mengajar == "1 Tahun - 3 Tahun") selected="selected" @endif>1 Tahun - 3 Tahun</option>
+                                    <option value="3 Tahun - 5 Tahun" @if (Auth::user()->pengalaman_mengajar == "3 Tahun - 5 Tahun") selected="selected" @endif>3 Tahun - 5 Tahun</option>
+                                    <option value="5 Tahun - 10 Tahun" @if (Auth::user()->pengalaman_mengajar == "5 Tahun - 10 Tahun") selected="selected" @endif>5 Tahun - 10 Tahun</option>
+                                    <option value="Lebih dari 10 Tahun" @if (Auth::user()->pengalaman_mengajar == "Lebih dari 10 Tahun") selected="selected" @endif>Lebih dari 10 Tahun</option>
                                 </select>
                             </div>
                         </div>
