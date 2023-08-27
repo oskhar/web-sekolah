@@ -125,7 +125,7 @@
                                 </div>
                                 <div class="form-check">
                                     <input value="1" class="form-check-input" type="radio" name="gedung" id="gedung">
-                                    <label class="form-check-label">Gedung 1 (sipon)</label>
+                                    <label class="form-check-label">Gedung 2 (sipon)</label>
                                 </div>
                             </div>
                         </div>

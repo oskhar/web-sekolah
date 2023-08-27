@@ -19,6 +19,11 @@ class Authenticate extends Middleware
             // Mendapatkan url
             $url = $request->url();
             // Cek url yang dilindungi otentikasi
+            if (Str::startsWith($url, url('/admin'))) {
+                return route('login');
+            }
+
+            // Cek url yang dilindungi otentikasi
             if (Str::startsWith($url, url('/teacher'))) {
                 return route('login');
             }

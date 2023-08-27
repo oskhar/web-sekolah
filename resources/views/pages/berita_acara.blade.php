@@ -53,8 +53,8 @@
 
                 {{-- informasi tidak ada berita --}}
                 <div class="col-md-10 mt-5">
-                    <div class="info-box mb-3 bg-white row justify-content-center py-4">
-                        <h5 class="text-center text-muted">Tidak ada berita saat ini !</h5>
+                    <div class="info-box mb-3 bg-white row justify-content-center py-5">
+                        <h4 class="text-center text-muted py-5">Tidak ada berita saat ini !</h4>
                     </div>
                 </div>
             @endif

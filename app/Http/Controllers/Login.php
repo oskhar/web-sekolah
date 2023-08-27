@@ -106,15 +106,15 @@ class Login extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         $credential = $request->validate([
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required',
         ]);
-        if (Auth::guard('teacher')->attempt($credential)) {
+        if (Auth::guard('admin')->attempt($credential)) {
             // Login berhasil, redirect ke halaman dashboard guru
-            return redirect()->route('teacher');
+            return redirect()->route('admin');
         } else {
             // Login gagal, tampilkan pesan error
-            return back()->with(['error_message' => 'Email atau Password salah! Pastikan anda menggunakan Email dan Password Yang sesuai']);
+            return back()->with(['error_message' => 'username atau Password salah! Pastikan anda menggunakan username dan Password Yang sesuai']);
         }
     }
 

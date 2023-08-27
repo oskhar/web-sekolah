@@ -1,7 +1,7 @@
 @extends('components.template_login')
-@section('title', "Login Guru")
+@section('title', "Login Admin")
 @section('route_action')
-    {{ route('login.murid') }}
+    {{ route('login.admin') }}
 @endsection
 @section('image')
   {{ asset('/assets/images/imgLogin/admin-admin.png') }}

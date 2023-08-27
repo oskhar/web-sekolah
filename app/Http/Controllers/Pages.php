@@ -85,12 +85,14 @@ class Pages extends Controller
      */
     public function materi()
     {
+        $banyak_materi = Blog::count();
         $data_materi = Blog::select('blogs.*', 'teachers.nama_lengkap AS nama_lengkap')
             ->join('teachers', 'blogs.guru_id', '=', 'teachers.id')
             ->get();
 
         return view('pages.materi', [
             "data_materi" => $data_materi,
+            'banyak_materi' => $banyak_materi,
         ]);
     }
 
