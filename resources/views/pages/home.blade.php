@@ -77,8 +77,8 @@
             <div class="pengumuman card-header">
                 <div class="display-pengumuman">
                     <a href="{{url('/berita-acara')}}" class="btn float-right border">Selengkapnya</a>
-                    <h3>Pengumuman</h3>
-                    <p class="text-muted">Informasi terkait Paud Kasih Bunda Kenanga Bangsa diupload disini</p>
+                    <h3>SAMBUTAN KEPALA SEKOLAH</h3>
+                    <p class="text-muted">Wiwin Karmila, S.pd</p>
                 </div>
             </div>
 
@@ -90,7 +90,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="">
-                            <h3 class="card-title">PENDAFTARAN MURID BARU</h3>
+                            <h3 class="card-title">PENYAMPAIAN</h3>
                             <p class="card-text"><sup class="text-secondary">Di upload pukul 13.00</sup></p>
                             <p class="card-text">Pendaftaran murid baru sudah mulai di buka. Waktu pendaftaran di mulai pada tanggal 17 juli 2024, Bagi ibu dan bapak yang ingin anaknya bersekolah di Paud Kasih Bunda Kenanga Bangsa silahkan klik Selengkapnya. </p>
                         </div>
