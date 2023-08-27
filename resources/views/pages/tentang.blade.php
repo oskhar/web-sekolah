@@ -147,19 +147,19 @@
           <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
-        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+        <h3 class="profile-username text-center">BUNDA WIWIN</h3>
 
-        <p class="text-muted text-center">Nama Lengkap</p>
+        <p class="text-muted text-center">Wiwin Karmila</p>
 
         <ul class="list-group list-group-unbordered mb-3">
           <li class="list-group-item">
-            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+            <b>Tahun Pengajar</b> <a class="float-right">- Tahun</a>
           </li>
           <li class="list-group-item">
-            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+            <b>Jabatan</b> <a class="float-right">Kepala Sekolah</a>
           </li>
           <li class="list-group-item">
-            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+            <b>Nomor Telepon</b> <a class="float-right">+62 895-2360-3709</a>
           </li>
           <li class="list-group-item">
             <b>Email</b> <a class="float-right">nama@gmail.com</a>
@@ -178,25 +178,25 @@
     <div class="card-profile card-primary card-outline col-sm-4">
       <div class="card-body box-profile ">
         <div class="text-center gambar">
-          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+          <img class="profile-user-img" src="{{ asset('assets/images/imgProfileGuru/bunda-wida.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
-        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+        <h3 class="profile-username text-center">BUNDA WIDA</h3>
 
-        <p class="text-muted text-center">Nama Lengkap</p>
+        <p class="text-muted text-center">Wida Widianingsih</p>
 
         <ul class="list-group list-group-unbordered mb-3">
           <li class="list-group-item">
-            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+            <b>Tahun Pengajar</b> <a class="float-right">- Tahun</a>
           </li>
           <li class="list-group-item">
-            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+            <b>Jabatan</b> <a class="float-right">Guru</a>
           </li>
           <li class="list-group-item">
-            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+            <b>Nomor Telepon</b> <a class="float-right">+62 882-9170-6850</a>
           </li>
           <li class="list-group-item">
-            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+            <b>Email</b> <a class="float-right">Widawidia756@gmail.com</a>
           </li>
         </ul>
 
@@ -208,25 +208,25 @@
     <div class="card-profile card-primary card-outline col-sm-4">
       <div class="card-body box-profile">
         <div class="text-center gambar">
-          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+          <img class="profile-user-img" src="{{ asset('assets/images/imgProfileGuru/bunda-dewi.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
-        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+        <h3 class="profile-username text-center">BUNDA DEWI</h3>
 
-        <p class="text-muted text-center">Nama Lengkap</p>
+        <p class="text-muted text-center">Dewi Ratnasari</p>
 
         <ul class="list-group list-group-unbordered mb-3">
           <li class="list-group-item">
-            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+            <b>Tahun Pengajar</b> <a class="float-right">- Tahun</a>
           </li>
           <li class="list-group-item">
-            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+            <b>Jabatan</b> <a class="float-right">GURU</a>
           </li>
           <li class="list-group-item">
-            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+            <b>Nomor Telepon</b> <a class="float-right">+62 857-7550-8021</a>
           </li>
           <li class="list-group-item">
-            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+            <b>Email</b> <a class="float-right">azwanpasha@gmail.com</a>
           </li>
         </ul>
 
@@ -241,25 +241,25 @@
     <div class="card-profile card-primary card-outline col-sm-4">
       <div class="card-body box-profile ">
         <div class="text-center gambar">
-          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+          <img class="profile-user-img" src="{{ asset('assets/images/imgProfileGuru/bunda-iis.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
-        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+        <h3 class="profile-username text-center">BUNDA IIS</h3>
 
-        <p class="text-muted text-center">Nama Lengkap</p>
+        <p class="text-muted text-center">Iis Herawati</p>
 
         <ul class="list-group list-group-unbordered mb-3">
           <li class="list-group-item">
-            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+            <b>Tahun Pengajar</b> <a class="float-right">- Tahun</a>
           </li>
           <li class="list-group-item">
-            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+            <b>Jabatan</b> <a class="float-right">Guru</a>
           </li>
           <li class="list-group-item">
-            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+            <b>Nomor Telepon</b> <a class="float-right">+62 857-7550-8021</a>
           </li>
           <li class="list-group-item">
-            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+            <b>Email</b> <a class="float-right">isyabil115@gmail.com</a>
           </li>
         </ul>
 
@@ -271,25 +271,25 @@
     <div class="card-profile card-primary card-outline col-sm-4">
       <div class="card-body box-profile ">
         <div class="text-center gambar">
-          <img class="profile-user-img" src="{{ asset('assets/images/profile3.jpg')}}" class="img-fluid" alt="Gambar 1">
+          <img class="profile-user-img" src="{{ asset('assets/images/imgProfileGuru/bunda-nur.jpg')}}" class="img-fluid" alt="Gambar 1">
         </div>
 
-        <h3 class="profile-username text-center">NAMA PANGGILAN</h3>
+        <h3 class="profile-username text-center">BUNDA NUR</h3>
 
-        <p class="text-muted text-center">Nama Lengkap</p>
+        <p class="text-muted text-center">Nurhayati</p>
 
         <ul class="list-group list-group-unbordered mb-3">
           <li class="list-group-item">
-            <b>Tahun Pengajar</b> <a class="float-right">3 Tahun</a>
+            <b>Tahun Pengajar</b> <a class="float-right">- Tahun</a>
           </li>
           <li class="list-group-item">
-            <b>Jabatan</b> <a class="float-right">Sekretaris</a>
+            <b>Jabatan</b> <a class="float-right">Guru</a>
           </li>
           <li class="list-group-item">
-            <b>Nomor Telepon</b> <a class="float-right">097899923537</a>
+            <b>Nomor Telepon</b> <a class="float-right">+62 812-8623-8316</a>
           </li>
           <li class="list-group-item">
-            <b>Email</b> <a class="float-right">nama@gmail.com</a>
+            <b>Email</b> <a class="float-right">bunda050875@gmail.com</a>
           </li>
         </ul>
 
